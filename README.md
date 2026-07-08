@@ -1,6 +1,7 @@
 # xfx
 
-## Linux
+<details>
+<summary>Linux (16)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -21,7 +22,10 @@
 | [CVE-2025-32463](vulnerability/linux/CVE-2025-32463-sudo-chroot-nsswitch.md) | sudo `--chroot`가 정책 검사보다 먼저 일어나 공격자의 nsswitch.conf를 신뢰하는 취약점 |
 | [CVE-2025-6018](vulnerability/linux/CVE-2025-6018-pam-env-allow-active-spoof.md) | PAM `pam_env`로 SSH 세션을 물리 콘솔 세션처럼 속여 `allow_active` 권한 탈취 |
 
-## Opensource
+</details>
+
+<details>
+<summary>Opensource (3)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -29,16 +33,24 @@
 | [CVE-2019-5736](vulnerability/opensource/CVE-2019-5736-runc-proc-self-exe-escape.md) | runc가 `/proc/self/exe`를 통해 호스트 바이너리를 덮어쓸 수 있는 컨테이너 탈출 |
 | [CVE-2026-0770](vulnerability/opensource/CVE-2026-0770-langflow-validate-code-exec-rce.md) | Langflow의 코드 "검증" 엔드포인트가 실제로는 `exec()`로 임의 코드를 실행하던 취약점 |
 
-## Windows
+</details>
+
+<details>
+<summary>Windows (1)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2023-23397](vulnerability/windows/CVE-2023-23397-outlook-ntlm-reminder.md) | Outlook reminder 처리 중 사용자 상호작용 없이 NTLM 해시가 유출되는 권한 상승 |
 
-## Browser
+</details>
+
+<details>
+<summary>Browser (3)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2026-56645](vulnerability/browser/CVE-2026-56645-edge-heap-buffer-overflow.md) | Microsoft Edge(Chromium 기반) 힙 버퍼 오버플로우 |
 | [CVE-2026-57572](vulnerability/browser/CVE-2026-57572-crawl4ai-chromium-argument-injection.md) | Crawl4AI가 요청 값을 Chromium 실행 인자로 그대로 넘겨 발생한 원격 코드 실행 |
 | [CVE-2026-58289](vulnerability/browser/CVE-2026-58289-edge-type-confusion.md) | Microsoft Edge(Chromium 기반) type confusion |
+
+</details>
