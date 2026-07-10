@@ -5,6 +5,7 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2026-40369](vulnerability/windows/CVE-2026-40369-windows-kernel-pointer-overflow.md) | Windows | Windows Kernel이 신뢰할 수 없는 포인터와 길이 정보를 잘못 다룰 때 커널 풀 손상과 제한적 SYSTEM 권한 상승으로 이어질 수 있는 로컬 취약점이다. |
+| [CVE-2026-15113](vulnerability/browser/CVE-2026-15113-chrome-android-autofill-uaf.md) | Browser | Chrome Android Autofill의 renderer-browser form 상태와 객체 수명 관리가 어긋나 sandbox escape 가능성으로 이어질 수 있는 use-after-free 취약점이다. |
 
 <details>
 <summary>Linux (19)</summary>
@@ -59,12 +60,13 @@
 </details>
 
 <details>
-<summary>Browser (3)</summary>
+<summary>Browser (4)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2026-56645](vulnerability/browser/CVE-2026-56645-edge-heap-buffer-overflow.md) | Microsoft Edge(Chromium 기반) 힙 버퍼 오버플로우 |
 | [CVE-2026-57572](vulnerability/browser/CVE-2026-57572-crawl4ai-chromium-argument-injection.md) | Crawl4AI가 요청 값을 Chromium 실행 인자로 그대로 넘겨 발생한 원격 코드 실행 |
 | [CVE-2026-58289](vulnerability/browser/CVE-2026-58289-edge-type-confusion.md) | Microsoft Edge(Chromium 기반) type confusion |
+| [CVE-2026-15113](vulnerability/browser/CVE-2026-15113-chrome-android-autofill-uaf.md) | Chrome Android Autofill의 renderer-browser form 상태와 객체 수명 관리가 어긋나 sandbox escape 가능성으로 이어질 수 있는 use-after-free 취약점이다. |
 
 </details>
