@@ -5,6 +5,7 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2013-1775](vulnerability/linux/CVE-2013-1775-sudo-epoch-timestamp-bypass.md) | Linux | sudo -k가 타임스탬프를 삭제 대신 epoch로 리셋하는 설계 때문에, 인증 이력이 있는 로컬 사용자가 시스템 시계를 epoch로 되돌리기만 하면 재인증 없이 sudo를 계속 쓸 수 있었던 인증 우회 취약점. |
+| [CVE-2026-33264](vulnerability/opensource/CVE-2026-33264-airflow-trigger-deserialize-rce.md) | Opensource | Airflow가 직렬화된 DAG의 트리거 kwargs를 검증 없이 역직렬화하며 import_string으로 임의 클래스를 인스턴스화해, DAG 작성자가 스케줄러/API 서버(더 높은 신뢰 등급)에서 원격 코드를 실행할 수 있었던 Critical 취약점. |
 
 <details>
 <summary>Linux (22)</summary>
@@ -37,7 +38,7 @@
 </details>
 
 <details>
-<summary>Opensource (7)</summary>
+<summary>Opensource (8)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -48,6 +49,7 @@
 | [CVE-2020-8165](vulnerability/opensource/CVE-2020-8165-rails-cache-raw-marshal-load-rce.md) | Rails의 MemCacheStore/RedisCacheStore가 raw: true로 저장된(Marshal 직렬화를 거치지 않은) 캐시 값도 읽을 때 구분 없이 Marshal.load를 먼저 시도해, 공격자가 raw 캐시 값에 심은 Marshal 페이로드가 역직렬화되어 원격 코드 실행으로 이어질 수 있었던 취약점. |
 | [CVE-2019-20372](vulnerability/opensource/CVE-2019-20372-nginx-error-page-request-smuggling.md) | nginx가 error_page를 외부 URL로 리다이렉트할 때 아직 읽지 않은 요청 바디를 폐기하지 않아, keep-alive 연결에서 그 바디가 다음 파이프라인 요청으로 오인되어 로드밸런서의 접근 제어를 우회하는 HTTP 요청 밀수가 가능했던 문제 |
 | [CVE-2018-16843](vulnerability/opensource/CVE-2018-16843-nginx-http2-frame-flood-memory-exhaustion.md) | nginx HTTP/2가 SETTINGS/PING 확인 응답 프레임 할당 개수에 상한을 두지 않아, 클라이언트가 응답을 읽지 않으면서 프레임을 계속 보내면 워커 프로세스 메모리가 무제한으로 늘어날 수 있었던 취약점. |
+| [CVE-2026-33264](vulnerability/opensource/CVE-2026-33264-airflow-trigger-deserialize-rce.md) | Airflow가 직렬화된 DAG의 트리거 kwargs를 검증 없이 역직렬화하며 import_string으로 임의 클래스를 인스턴스화해, DAG 작성자가 스케줄러/API 서버(더 높은 신뢰 등급)에서 원격 코드를 실행할 수 있었던 Critical 취약점. |
 
 </details>
 
