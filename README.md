@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | [CVE-2026-28292](vulnerability/opensource/CVE-2026-28292-simple-git-protocol-allow-case-bypass.md) | Opensource | simple-git의 protocol.allow 차단기가 Git 설정 키의 대소문자 비구분 규칙을 놓쳐 외부 helper 실행 경로를 열었던 취약점이다. |
 | [CVE-2026-15719](vulnerability/browser/CVE-2026-15719-firefox-dom-navigation-site-isolation.md) | Browser | Firefox의 교차 프로세스 탐색에서 문서·IPC actor 교체가 site isolation 보안 경계를 이루는 방식을 설명하고, 비공개 결함 세부는 제한적 모델로 구분한다. |
+| [CVE-2006-3918](vulnerability/opensource/CVE-2006-3918-apache-expect-header-reflected-xss.md) | Opensource | Apache HTTP Server가 417 Expectation Failed 에러 페이지에 클라이언트가 보낸 Expect 헤더 값을 HTML 이스케이프 없이 그대로 반사해, 임의 헤더 전송이 가능한 클라이언트를 통해 반사형 XSS가 가능했던 문제 |
 
 <details>
 <summary>Linux (22)</summary>
@@ -38,7 +39,7 @@
 </details>
 
 <details>
-<summary>Opensource (11)</summary>
+<summary>Opensource (12)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -53,6 +54,7 @@
 | [CVE-2018-12326](vulnerability/opensource/CVE-2018-12326-redis-cli-buffer-overflow.md) | redis-cli가 snprintf 반환값을 실제로 쓴 바이트 수로 착각해 다음 오프셋 계산에 재사용하면서, 긴 -h 호스트명 하나로 정수 언더플로우를 유발해 128바이트 프롬프트 버퍼를 넘어서는 스택 버퍼 오버플로우가 발생하는 문제. |
 | [CVE-2022-1592](vulnerability/opensource/CVE-2022-1592-scout-remote-cors-ssrf.md) | Scout의 remote_cors가 사용자 제공 URL을 서버 측 requests.request()로 그대로 프록시해 SSRF가 가능했던 문제를, 인증된 세션의 IGV 트랙 허용 목록으로 목적지 권한을 묶어 해결한 취약점. |
 | [CVE-2026-28292](vulnerability/opensource/CVE-2026-28292-simple-git-protocol-allow-case-bypass.md) | simple-git의 protocol.allow 차단기가 Git 설정 키의 대소문자 비구분 규칙을 놓쳐 외부 helper 실행 경로를 열었던 취약점이다. |
+| [CVE-2006-3918](vulnerability/opensource/CVE-2006-3918-apache-expect-header-reflected-xss.md) | Apache HTTP Server가 417 Expectation Failed 에러 페이지에 클라이언트가 보낸 Expect 헤더 값을 HTML 이스케이프 없이 그대로 반사해, 임의 헤더 전송이 가능한 클라이언트를 통해 반사형 XSS가 가능했던 문제 |
 
 </details>
 
