@@ -5,6 +5,7 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2026-14906](vulnerability/browser/CVE-2026-14906-firefox-ios-pdf-title-path-overwrite.md) | Browser | 악성 웹 페이지 제목이 PDF 저장 경로에 영향을 주며 Firefox for iOS 앱 샌드박스 안의 기존 PDF 또는 번들 콘텐츠를 덮어쓸 수 있었던 문제를 파일명 정규화와 저장 경계 관점에서 분석한다. |
+| [CVE-2026-62390](vulnerability/opensource/CVE-2026-62390-apache-kylin-catalog-cache-refresh-sql-injection.md) | Opensource | Apache Kylin의 카탈로그 캐시 새로고침이 테이블 이름을 SQL에 그대로 이어 붙인 문제와 식별자 allowlist 패치를 분석한다. |
 
 <details>
 <summary>Linux (22)</summary>
@@ -37,7 +38,7 @@
 </details>
 
 <details>
-<summary>Opensource (12)</summary>
+<summary>Opensource (13)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -53,6 +54,7 @@
 | [CVE-2022-1592](vulnerability/opensource/CVE-2022-1592-scout-remote-cors-ssrf.md) | Scout의 remote_cors가 사용자 제공 URL을 서버 측 requests.request()로 그대로 프록시해 SSRF가 가능했던 문제를, 인증된 세션의 IGV 트랙 허용 목록으로 목적지 권한을 묶어 해결한 취약점. |
 | [CVE-2026-28292](vulnerability/opensource/CVE-2026-28292-simple-git-protocol-allow-case-bypass.md) | simple-git의 protocol.allow 차단기가 Git 설정 키의 대소문자 비구분 규칙을 놓쳐 외부 helper 실행 경로를 열었던 취약점이다. |
 | [CVE-2006-3918](vulnerability/opensource/CVE-2006-3918-apache-expect-header-reflected-xss.md) | Apache HTTP Server가 417 Expectation Failed 에러 페이지에 클라이언트가 보낸 Expect 헤더 값을 HTML 이스케이프 없이 그대로 반사해, 임의 헤더 전송이 가능한 클라이언트를 통해 반사형 XSS가 가능했던 문제 |
+| [CVE-2026-62390](vulnerability/opensource/CVE-2026-62390-apache-kylin-catalog-cache-refresh-sql-injection.md) | Apache Kylin의 카탈로그 캐시 새로고침이 테이블 이름을 SQL에 그대로 이어 붙인 문제와 식별자 allowlist 패치를 분석한다. |
 
 </details>
 
