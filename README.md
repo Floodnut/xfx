@@ -8,6 +8,7 @@
 | [CVE-2026-62392](vulnerability/opensource/CVE-2026-62392-apache-kylin-async-query-os-command-injection.md) | Opensource | Apache Kylin 비동기 쿼리의 YARN 큐 이름을 검증 없이 spark-submit 셸 명령에 작은따옴표로 감싸 이어붙이던 CVE-2026-62392를 분석했다 — 값에 작은따옴표 하나만 넣으면 인용 구간이 끊겨 임의 OS 명령이 실행된다. |
 | [CVE-2026-15718](vulnerability/browser/CVE-2026-15718-firefox-webassembly-invalid-pointer.md) | Browser | Firefox WebAssembly의 모듈·인스턴스·메모리 수명 모델을 통해 invalid pointer 경계가 왜 중요한지 설명한 분석 |
 | [CVE-2026-53519](vulnerability/opensource/CVE-2026-53519-nezha-dashboard-prefix-confusion-path-traversal.md) | Opensource | Nezha Monitoring의 관리자 정적 파일 fallback에서 문자열 접두사 검사와 경로 정규화가 결합해 인증 전 경로 순회와 JWT 키 노출로 이어진 원리를 분석한다. |
+| [CVE-2022-46292](vulnerability/opensource/CVE-2022-46292-openbabel-mopac-translation-vector-stack-overflow.md) | Opensource | Open Babel MOPAC 파서가 UNIT CELL TRANSLATION 벡터 개수를 검증하지 않아 고정 크기 스택 배열(translationVectors[3])을 넘어 계속 쓰는 스택 버퍼 오버플로우 |
 
 <details>
 <summary>Linux (23)</summary>
@@ -41,7 +42,7 @@
 </details>
 
 <details>
-<summary>Opensource (15)</summary>
+<summary>Opensource (16)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -60,6 +61,7 @@
 | [CVE-2026-62390](vulnerability/opensource/CVE-2026-62390-apache-kylin-catalog-cache-refresh-sql-injection.md) | Apache Kylin의 카탈로그 캐시 새로고침이 테이블 이름을 SQL에 그대로 이어 붙인 문제와 식별자 allowlist 패치를 분석한다. |
 | [CVE-2026-62392](vulnerability/opensource/CVE-2026-62392-apache-kylin-async-query-os-command-injection.md) | Apache Kylin 비동기 쿼리의 YARN 큐 이름을 검증 없이 spark-submit 셸 명령에 작은따옴표로 감싸 이어붙이던 CVE-2026-62392를 분석했다 — 값에 작은따옴표 하나만 넣으면 인용 구간이 끊겨 임의 OS 명령이 실행된다. |
 | [CVE-2026-53519](vulnerability/opensource/CVE-2026-53519-nezha-dashboard-prefix-confusion-path-traversal.md) | Nezha Monitoring의 관리자 정적 파일 fallback에서 문자열 접두사 검사와 경로 정규화가 결합해 인증 전 경로 순회와 JWT 키 노출로 이어진 원리를 분석한다. |
+| [CVE-2022-46292](vulnerability/opensource/CVE-2022-46292-openbabel-mopac-translation-vector-stack-overflow.md) | Open Babel MOPAC 파서가 UNIT CELL TRANSLATION 벡터 개수를 검증하지 않아 고정 크기 스택 배열(translationVectors[3])을 넘어 계속 쓰는 스택 버퍼 오버플로우 |
 
 </details>
 
