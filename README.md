@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | [CVE-2010-3847](vulnerability/linux/CVE-2010-3847-glibc-ld-audit-origin-privesc.md) | Linux | glibc ld.so가 setuid 프로그램에서 $ORIGIN 단독 사용만 예외로 허용하던 버그를 LD_AUDIT=$ORIGIN과 하드링크로 결합해 임의 공유 오브젝트를 로드시켜 루트 권한을 얻는 CVE-2010-3847을 분석했다. |
 | [CVE-2026-62392](vulnerability/opensource/CVE-2026-62392-apache-kylin-async-query-os-command-injection.md) | Opensource | Apache Kylin 비동기 쿼리의 YARN 큐 이름을 검증 없이 spark-submit 셸 명령에 작은따옴표로 감싸 이어붙이던 CVE-2026-62392를 분석했다 — 값에 작은따옴표 하나만 넣으면 인용 구간이 끊겨 임의 OS 명령이 실행된다. |
+| [CVE-2026-15718](vulnerability/browser/CVE-2026-15718-firefox-webassembly-invalid-pointer.md) | Browser | Firefox WebAssembly의 모듈·인스턴스·메모리 수명 모델을 통해 invalid pointer 경계가 왜 중요한지 설명한 분석 |
 
 <details>
 <summary>Linux (23)</summary>
@@ -73,7 +74,7 @@
 </details>
 
 <details>
-<summary>Browser (6)</summary>
+<summary>Browser (7)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -83,5 +84,6 @@
 | [CVE-2026-15113](vulnerability/browser/CVE-2026-15113-chrome-android-autofill-uaf.md) | Chrome Android Autofill의 renderer-browser form 상태와 객체 수명 관리가 어긋나 sandbox escape 가능성으로 이어질 수 있는 use-after-free 취약점이다. |
 | [CVE-2026-15719](vulnerability/browser/CVE-2026-15719-firefox-dom-navigation-site-isolation.md) | Firefox의 교차 프로세스 탐색에서 문서·IPC actor 교체가 site isolation 보안 경계를 이루는 방식을 설명하고, 비공개 결함 세부는 제한적 모델로 구분한다. |
 | [CVE-2026-14906](vulnerability/browser/CVE-2026-14906-firefox-ios-pdf-title-path-overwrite.md) | 악성 웹 페이지 제목이 PDF 저장 경로에 영향을 주며 Firefox for iOS 앱 샌드박스 안의 기존 PDF 또는 번들 콘텐츠를 덮어쓸 수 있었던 문제를 파일명 정규화와 저장 경계 관점에서 분석한다. |
+| [CVE-2026-15718](vulnerability/browser/CVE-2026-15718-firefox-webassembly-invalid-pointer.md) | Firefox WebAssembly의 모듈·인스턴스·메모리 수명 모델을 통해 invalid pointer 경계가 왜 중요한지 설명한 분석 |
 
 </details>
