@@ -5,6 +5,7 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2026-9090](vulnerability/opensource/CVE-2026-9090-casdoor-saml-response-certificate-trust-confusion.md) | Opensource | Casdoor가 SAML 응답에 포함된 공격자 인증서를 신뢰 저장소로 사용해 위조 assertion을 검증할 수 있었던 인증 우회 취약점 분석. |
+| [CVE-2026-27771](vulnerability/opensource/CVE-2026-27771-gitea-composer-source-link-permission-bypass.md) | Opensource | Gitea Composer 레지스트리가 패키지에 링크된 저장소를 응답에 넣을 때 요청자의 실제 저장소 접근 권한을 확인하지 않아, 공개 패키지에 링크된 비공개/내부 저장소의 존재와 URL이 인증 없이 노출됐다(1.26.2에서 수정). |
 
 <details>
 <summary>Linux (23)</summary>
@@ -38,7 +39,7 @@
 </details>
 
 <details>
-<summary>Opensource (17)</summary>
+<summary>Opensource (18)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -59,6 +60,7 @@
 | [CVE-2026-53519](vulnerability/opensource/CVE-2026-53519-nezha-dashboard-prefix-confusion-path-traversal.md) | Nezha Monitoring의 관리자 정적 파일 fallback에서 문자열 접두사 검사와 경로 정규화가 결합해 인증 전 경로 순회와 JWT 키 노출로 이어진 원리를 분석한다. |
 | [CVE-2022-46292](vulnerability/opensource/CVE-2022-46292-openbabel-mopac-translation-vector-stack-overflow.md) | Open Babel MOPAC 파서가 UNIT CELL TRANSLATION 벡터 개수를 검증하지 않아 고정 크기 스택 배열(translationVectors[3])을 넘어 계속 쓰는 스택 버퍼 오버플로우 |
 | [CVE-2026-9090](vulnerability/opensource/CVE-2026-9090-casdoor-saml-response-certificate-trust-confusion.md) | Casdoor가 SAML 응답에 포함된 공격자 인증서를 신뢰 저장소로 사용해 위조 assertion을 검증할 수 있었던 인증 우회 취약점 분석. |
+| [CVE-2026-27771](vulnerability/opensource/CVE-2026-27771-gitea-composer-source-link-permission-bypass.md) | Gitea Composer 레지스트리가 패키지에 링크된 저장소를 응답에 넣을 때 요청자의 실제 저장소 접근 권한을 확인하지 않아, 공개 패키지에 링크된 비공개/내부 저장소의 존재와 URL이 인증 없이 노출됐다(1.26.2에서 수정). |
 
 </details>
 
