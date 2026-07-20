@@ -1,11 +1,10 @@
 # xfx
 
-## 마지막 업데이트 (2026-07-19)
+## 마지막 업데이트 (2026-07-20)
 
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
-| [CVE-2026-9090](vulnerability/opensource/CVE-2026-9090-casdoor-saml-response-certificate-trust-confusion.md) | Opensource | Casdoor가 SAML 응답에 포함된 공격자 인증서를 신뢰 저장소로 사용해 위조 assertion을 검증할 수 있었던 인증 우회 취약점 분석. |
-| [CVE-2026-27771](vulnerability/opensource/CVE-2026-27771-gitea-composer-source-link-permission-bypass.md) | Opensource | Gitea Composer 레지스트리가 패키지에 링크된 저장소를 응답에 넣을 때 요청자의 실제 저장소 접근 권한을 확인하지 않아, 공개 패키지에 링크된 비공개/내부 저장소의 존재와 URL이 인증 없이 노출됐다(1.26.2에서 수정). |
+| [CVE-2004-0836](vulnerability/opensource/CVE-2004-0836-mysql-real-connect-dns-hlength-overflow.md) | Opensource | MySQL 클라이언트 mysql_real_connect()가 DNS 응답의 h_length를 검증 없이 memcpy 길이로 써 sockaddr_in.sin_addr 고정 버퍼를 넘길 수 있었던 2004년 스택 오버플로 취약점 분석 |
 
 <details>
 <summary>Linux (23)</summary>
@@ -39,7 +38,7 @@
 </details>
 
 <details>
-<summary>Opensource (18)</summary>
+<summary>Opensource (19)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -61,6 +60,7 @@
 | [CVE-2022-46292](vulnerability/opensource/CVE-2022-46292-openbabel-mopac-translation-vector-stack-overflow.md) | Open Babel MOPAC 파서가 UNIT CELL TRANSLATION 벡터 개수를 검증하지 않아 고정 크기 스택 배열(translationVectors[3])을 넘어 계속 쓰는 스택 버퍼 오버플로우 |
 | [CVE-2026-9090](vulnerability/opensource/CVE-2026-9090-casdoor-saml-response-certificate-trust-confusion.md) | Casdoor가 SAML 응답에 포함된 공격자 인증서를 신뢰 저장소로 사용해 위조 assertion을 검증할 수 있었던 인증 우회 취약점 분석. |
 | [CVE-2026-27771](vulnerability/opensource/CVE-2026-27771-gitea-composer-source-link-permission-bypass.md) | Gitea Composer 레지스트리가 패키지에 링크된 저장소를 응답에 넣을 때 요청자의 실제 저장소 접근 권한을 확인하지 않아, 공개 패키지에 링크된 비공개/내부 저장소의 존재와 URL이 인증 없이 노출됐다(1.26.2에서 수정). |
+| [CVE-2004-0836](vulnerability/opensource/CVE-2004-0836-mysql-real-connect-dns-hlength-overflow.md) | MySQL 클라이언트 mysql_real_connect()가 DNS 응답의 h_length를 검증 없이 memcpy 길이로 써 sockaddr_in.sin_addr 고정 버퍼를 넘길 수 있었던 2004년 스택 오버플로 취약점 분석 |
 
 </details>
 
