@@ -1,13 +1,13 @@
 # xfx
 
-## 마지막 업데이트 (2026-07-20)
+## 마지막 업데이트 (2026-07-22)
 
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
-| [CVE-2004-0836](vulnerability/opensource/CVE-2004-0836-mysql-real-connect-dns-hlength-overflow.md) | Opensource | MySQL 클라이언트 mysql_real_connect()가 DNS 응답의 h_length를 검증 없이 memcpy 길이로 써 sockaddr_in.sin_addr 고정 버퍼를 넘길 수 있었던 2004년 스택 오버플로 취약점 분석 |
+| [CVE-2026-53359](vulnerability/linux/CVE-2026-53359-kvm-shadow-paging-role-uaf.md) | Linux | KVM shadow paging의 GFN만 비교한 child shadow page 재사용이 role 불일치와 stale rmap을 만들어 Use-After-Free로 이어지는 경로와 role 비교 패치를 설명한다. |
 
 <details>
-<summary>Linux (23)</summary>
+<summary>Linux (24)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -34,6 +34,7 @@
 | [CVE-2002-0639](vulnerability/linux/CVE-2002-0639-openssh-challenge-response-integer-overflow.md) | OpenSSH의 keyboard-interactive 인증에서 클라이언트가 주장하는 응답 개수를 검증 없이 배열 크기 계산에 곱해, 정수 오버플로로 작게 할당된 힙 버퍼 너머로 원격 root 권한 쓰기가 가능했던 취약점. |
 | [CVE-2013-1775](vulnerability/linux/CVE-2013-1775-sudo-epoch-timestamp-bypass.md) | sudo -k가 타임스탬프를 삭제 대신 epoch로 리셋하는 설계 때문에, 인증 이력이 있는 로컬 사용자가 시스템 시계를 epoch로 되돌리기만 하면 재인증 없이 sudo를 계속 쓸 수 있었던 인증 우회 취약점. |
 | [CVE-2010-3847](vulnerability/linux/CVE-2010-3847-glibc-ld-audit-origin-privesc.md) | glibc ld.so가 setuid 프로그램에서 $ORIGIN 단독 사용만 예외로 허용하던 버그를 LD_AUDIT=$ORIGIN과 하드링크로 결합해 임의 공유 오브젝트를 로드시켜 루트 권한을 얻는 CVE-2010-3847을 분석했다. |
+| [CVE-2026-53359](vulnerability/linux/CVE-2026-53359-kvm-shadow-paging-role-uaf.md) | KVM shadow paging의 GFN만 비교한 child shadow page 재사용이 role 불일치와 stale rmap을 만들어 Use-After-Free로 이어지는 경로와 role 비교 패치를 설명한다. |
 
 </details>
 
