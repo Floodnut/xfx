@@ -5,6 +5,7 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2026-53359](vulnerability/linux/CVE-2026-53359-kvm-shadow-paging-role-uaf.md) | Linux | KVM shadow paging의 GFN만 비교한 child shadow page 재사용이 role 불일치와 stale rmap을 만들어 Use-After-Free로 이어지는 경로와 role 비교 패치를 설명한다. |
+| [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Others | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
 
 <details>
 <summary>Linux (24)</summary>
@@ -89,5 +90,14 @@
 | [CVE-2026-15719](vulnerability/browser/CVE-2026-15719-firefox-dom-navigation-site-isolation.md) | Firefox의 교차 프로세스 탐색에서 문서·IPC actor 교체가 site isolation 보안 경계를 이루는 방식을 설명하고, 비공개 결함 세부는 제한적 모델로 구분한다. |
 | [CVE-2026-14906](vulnerability/browser/CVE-2026-14906-firefox-ios-pdf-title-path-overwrite.md) | 악성 웹 페이지 제목이 PDF 저장 경로에 영향을 주며 Firefox for iOS 앱 샌드박스 안의 기존 PDF 또는 번들 콘텐츠를 덮어쓸 수 있었던 문제를 파일명 정규화와 저장 경계 관점에서 분석한다. |
 | [CVE-2026-15718](vulnerability/browser/CVE-2026-15718-firefox-webassembly-invalid-pointer.md) | Firefox WebAssembly의 모듈·인스턴스·메모리 수명 모델을 통해 invalid pointer 경계가 왜 중요한지 설명한 분석 |
+
+</details>
+
+<details>
+<summary>Others (1)</summary>
+
+| CVE | 내용 |
+| --- | --- |
+| [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
 
 </details>
