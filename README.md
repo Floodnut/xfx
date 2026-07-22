@@ -8,6 +8,7 @@
 | [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Others | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
 | [CVE-2026-46113](vulnerability/linux/CVE-2026-46113-kvm-shadow-paging-gfn-uaf.md) | Linux | KVM/x86 shadow paging에서 kvm_mmu_get_child_sp()가 child shadow page의 GFN을 재검증하지 않아, 게스트 페이지 테이블이 VM 진입 사이 바뀌면 stale rmap이 남아 해제된 shadow page를 참조하는 Use-After-Free가 발생한다. |
 | [CVE-2026-35355](vulnerability/opensource/CVE-2026-35355-uutils-install-toctou-symlink.md) | Opensource | uutils coreutils install이 대상 파일을 unlink 후 O_EXCL 없이 경로 이름으로 재생성해, 그 틈에 심볼릭 링크를 심으면 root 권한으로 임의 시스템 파일을 덮어쓸 수 있는 TOCTOU 레이스가 존재했다. |
+| [CVE-2026-35341](vulnerability/opensource/CVE-2026-35341-uutils-mkfifo-missing-continue.md) | Opensource | uutils coreutils mkfifo가 FIFO 생성 실패 시 continue 문이 빠져 있어, 이미 존재하던 파일(예: SSH 개인키)의 권한을 실수로 기본 모드로 덮어써 노출시킬 수 있었다. |
 
 <details>
 <summary>Linux (25)</summary>
@@ -43,7 +44,7 @@
 </details>
 
 <details>
-<summary>Opensource (20)</summary>
+<summary>Opensource (21)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -67,6 +68,7 @@
 | [CVE-2026-27771](vulnerability/opensource/CVE-2026-27771-gitea-composer-source-link-permission-bypass.md) | Gitea Composer 레지스트리가 패키지에 링크된 저장소를 응답에 넣을 때 요청자의 실제 저장소 접근 권한을 확인하지 않아, 공개 패키지에 링크된 비공개/내부 저장소의 존재와 URL이 인증 없이 노출됐다(1.26.2에서 수정). |
 | [CVE-2004-0836](vulnerability/opensource/CVE-2004-0836-mysql-real-connect-dns-hlength-overflow.md) | MySQL 클라이언트 mysql_real_connect()가 DNS 응답의 h_length를 검증 없이 memcpy 길이로 써 sockaddr_in.sin_addr 고정 버퍼를 넘길 수 있었던 2004년 스택 오버플로 취약점 분석 |
 | [CVE-2026-35355](vulnerability/opensource/CVE-2026-35355-uutils-install-toctou-symlink.md) | uutils coreutils install이 대상 파일을 unlink 후 O_EXCL 없이 경로 이름으로 재생성해, 그 틈에 심볼릭 링크를 심으면 root 권한으로 임의 시스템 파일을 덮어쓸 수 있는 TOCTOU 레이스가 존재했다. |
+| [CVE-2026-35341](vulnerability/opensource/CVE-2026-35341-uutils-mkfifo-missing-continue.md) | uutils coreutils mkfifo가 FIFO 생성 실패 시 continue 문이 빠져 있어, 이미 존재하던 파일(예: SSH 개인키)의 권한을 실수로 기본 모드로 덮어써 노출시킬 수 있었다. |
 
 </details>
 
