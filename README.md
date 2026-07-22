@@ -1,14 +1,10 @@
 # xfx
 
-## 마지막 업데이트 (2026-07-22)
+## 마지막 업데이트 (2026-07-23)
 
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
-| [CVE-2026-53359](vulnerability/linux/CVE-2026-53359-kvm-shadow-paging-role-uaf.md) | Linux | KVM shadow paging의 GFN만 비교한 child shadow page 재사용이 role 불일치와 stale rmap을 만들어 Use-After-Free로 이어지는 경로와 role 비교 패치를 설명한다. |
-| [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Others | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
-| [CVE-2026-46113](vulnerability/linux/CVE-2026-46113-kvm-shadow-paging-gfn-uaf.md) | Linux | KVM/x86 shadow paging에서 kvm_mmu_get_child_sp()가 child shadow page의 GFN을 재검증하지 않아, 게스트 페이지 테이블이 VM 진입 사이 바뀌면 stale rmap이 남아 해제된 shadow page를 참조하는 Use-After-Free가 발생한다. |
-| [CVE-2026-35355](vulnerability/opensource/CVE-2026-35355-uutils-install-toctou-symlink.md) | Opensource | uutils coreutils install이 대상 파일을 unlink 후 O_EXCL 없이 경로 이름으로 재생성해, 그 틈에 심볼릭 링크를 심으면 root 권한으로 임의 시스템 파일을 덮어쓸 수 있는 TOCTOU 레이스가 존재했다. |
-| [CVE-2026-35341](vulnerability/opensource/CVE-2026-35341-uutils-mkfifo-missing-continue.md) | Opensource | uutils coreutils mkfifo가 FIFO 생성 실패 시 continue 문이 빠져 있어, 이미 존재하던 파일(예: SSH 개인키)의 권한을 실수로 기본 모드로 덮어써 노출시킬 수 있었다. |
+| [CVE-2025-31277](vulnerability/browser/CVE-2025-31277-javascriptcore-jit-type-confusion.md) | Browser | JavaScriptCore JIT의 타입 가정이 실제 값 표현과 어긋날 때 메모리 손상으로 이어지는 원리와 DarkSword 초기 RCE 단계에서의 역할을 분석한다. |
 
 <details>
 <summary>Linux (25)</summary>
@@ -85,7 +81,7 @@
 </details>
 
 <details>
-<summary>Browser (7)</summary>
+<summary>Browser (8)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -96,6 +92,7 @@
 | [CVE-2026-15719](vulnerability/browser/CVE-2026-15719-firefox-dom-navigation-site-isolation.md) | Firefox의 교차 프로세스 탐색에서 문서·IPC actor 교체가 site isolation 보안 경계를 이루는 방식을 설명하고, 비공개 결함 세부는 제한적 모델로 구분한다. |
 | [CVE-2026-14906](vulnerability/browser/CVE-2026-14906-firefox-ios-pdf-title-path-overwrite.md) | 악성 웹 페이지 제목이 PDF 저장 경로에 영향을 주며 Firefox for iOS 앱 샌드박스 안의 기존 PDF 또는 번들 콘텐츠를 덮어쓸 수 있었던 문제를 파일명 정규화와 저장 경계 관점에서 분석한다. |
 | [CVE-2026-15718](vulnerability/browser/CVE-2026-15718-firefox-webassembly-invalid-pointer.md) | Firefox WebAssembly의 모듈·인스턴스·메모리 수명 모델을 통해 invalid pointer 경계가 왜 중요한지 설명한 분석 |
+| [CVE-2025-31277](vulnerability/browser/CVE-2025-31277-javascriptcore-jit-type-confusion.md) | JavaScriptCore JIT의 타입 가정이 실제 값 표현과 어긋날 때 메모리 손상으로 이어지는 원리와 DarkSword 초기 RCE 단계에서의 역할을 분석한다. |
 
 </details>
 
