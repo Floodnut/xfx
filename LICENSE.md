@@ -16,6 +16,10 @@ No additional restrictions — you may not apply legal terms or technological me
 
 Full license text: https://creativecommons.org/licenses/by-nc/4.0/
 
+**Why NonCommercial**: each report draws on many external primary sources (vendor advisories, researcher writeups, upstream commits, etc.), each under its own license or terms that we cannot fully audit or guarantee compliance with. We try to respect the rights of those original authors, and given that, we can't responsibly extend a commercial-use permission on top of material that itself rests on sources with unknown or varied licensing.
+
 ---
 
-취약점 분석 리포트(`vulnerability/`)와 용어집(`GLOSSARY.md`, `glossary/`)은 **CC BY-NC 4.0**(저작자표시-비영리 4.0 국제) 라이선스를 따릅니다. 출처(이 저장소 링크)를 표시하면 자유롭게 복사, 배포, 수정, 2차 창작이 가능하지만 **상업적 이용은 허용하지 않습니다** — 각 리포트가 참고하는 원본 자료(벤더 어드바이저리, 리서처 writeup 등)의 라이선스 조건을 다 파악할 수 없어, 상업적 이용까지는 안전하게 허용하기 어렵기 때문입니다.
+취약점 분석 리포트(`vulnerability/`)와 용어집(`GLOSSARY.md`, `glossary/`)은 **CC BY-NC 4.0**(저작자표시-비영리 4.0 국제) 라이선스를 따릅니다. 출처(이 저장소 링크)를 표시하면 자유롭게 복사, 배포, 수정, 2차 창작이 가능하지만 **상업적 이용은 허용하지 않습니다.**
+
+**왜 비영리인가**: 각 리포트는 벤더 어드바이저리, 리서처 writeup, 업스트림 커밋 등 다양한 외부 1차 자료를 참고하는데, 이 자료들은 각자 다른 라이선스/이용조건을 가지고 있어 전부를 완전히 파악하고 보증하기 어렵습니다. 저희는 이런 참고 자료 원작자의 권리를 최대한 존중하려고 하며, 그런 상황에서 그 위에 쓰인 저희 콘텐츠에 상업적 이용까지 허용하는 건 안전하게 보장하기 어렵다고 판단했습니다.
