@@ -6,6 +6,7 @@
 | --- | --- | --- |
 | [CVE-2026-9181](vulnerability/linux/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | Linux | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
 | [CVE-2026-22874](vulnerability/opensource/CVE-2026-22874-gitea-ssrf-allowlist-reserved-ranges.md) | Opensource | Gitea 웹훅/마이그레이션의 SSRF 허용목록이 net.IP.IsPrivate()에만 의존해 클라우드 메타데이터·CGNAT·NAT64 등 예약 대역을 걸러내지 못했다 |
+| [CVE-2026-13676](vulnerability/opensource/CVE-2026-13676-fast-uri-idn-canonicalization-bypass.md) | Opensource | fast-uri가 존재하지 않는 URL.domainToASCII를 호출해 IDN 호스트 정규화에 실패, 표준 URL/fetch와 다른 호스트를 반환한다 |
 
 <details>
 <summary>Linux (26)</summary>
@@ -42,7 +43,7 @@
 </details>
 
 <details>
-<summary>Opensource (22)</summary>
+<summary>Opensource (23)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -68,6 +69,7 @@
 | [CVE-2026-35355](vulnerability/opensource/CVE-2026-35355-uutils-install-toctou-symlink.md) | uutils coreutils install이 대상 파일을 unlink 후 O_EXCL 없이 경로 이름으로 재생성해, 그 틈에 심볼릭 링크를 심으면 root 권한으로 임의 시스템 파일을 덮어쓸 수 있는 TOCTOU 레이스가 존재했다. |
 | [CVE-2026-35341](vulnerability/opensource/CVE-2026-35341-uutils-mkfifo-missing-continue.md) | uutils coreutils mkfifo가 FIFO 생성 실패 시 continue 문이 빠져 있어, 이미 존재하던 파일(예: SSH 개인키)의 권한을 실수로 기본 모드로 덮어써 노출시킬 수 있었다. |
 | [CVE-2026-22874](vulnerability/opensource/CVE-2026-22874-gitea-ssrf-allowlist-reserved-ranges.md) | Gitea 웹훅/마이그레이션의 SSRF 허용목록이 net.IP.IsPrivate()에만 의존해 클라우드 메타데이터·CGNAT·NAT64 등 예약 대역을 걸러내지 못했다 |
+| [CVE-2026-13676](vulnerability/opensource/CVE-2026-13676-fast-uri-idn-canonicalization-bypass.md) | fast-uri가 존재하지 않는 URL.domainToASCII를 호출해 IDN 호스트 정규화에 실패, 표준 URL/fetch와 다른 호스트를 반환한다 |
 
 </details>
 
