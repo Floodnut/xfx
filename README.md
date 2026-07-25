@@ -6,9 +6,10 @@
 | --- | --- | --- |
 | [CVE-2003-0127](vulnerability/linux/CVE-2003-0127-ptrace-kmod-kernel-thread-race.md) | Linux | Linux 2.2/2.4 커널의 kmod 모듈 자동 로더가 만드는 root 권한 커널 스레드가 ptrace 보호 사각지대에 있어, 로컬 공격자가 modprobe 실행 순간에 셸코드를 주입해 root 권한을 획득할 수 있었다. |
 | [CVE-2026-57516](vulnerability/opensource/CVE-2026-57516-ray-webdataset-pickle-torch-load-rce.md) | Opensource | Ray의 read_webdataset 기본 디코더가 .pkl/.pt 파일을 검증 없이 pickle.loads/torch.load로 역직렬화해, 신뢰할 수 없는 WebDataset TAR를 미리보기만 해도 Ray 워커에서 임의 코드가 실행될 수 있었다. |
+| [CVE-2012-0864](vulnerability/linux/CVE-2012-0864-glibc-vfprintf-nargs-integer-overflow.md) | Linux | glibc vfprintf()의 위치 지정 인자 개수 곱셈이 32비트에서 오버플로해 FORTIFY_SOURCE 검사 배열 밖 쓰기와 형식 문자열 보호 우회를 허용했다. |
 
 <details>
-<summary>Linux (27)</summary>
+<summary>Linux (28)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -39,6 +40,7 @@
 | [CVE-2026-46113](vulnerability/linux/CVE-2026-46113-kvm-shadow-paging-gfn-uaf.md) | KVM/x86 shadow paging에서 kvm_mmu_get_child_sp()가 child shadow page의 GFN을 재검증하지 않아, 게스트 페이지 테이블이 VM 진입 사이 바뀌면 stale rmap이 남아 해제된 shadow page를 참조하는 Use-After-Free가 발생한다. |
 | [CVE-2026-9181](vulnerability/linux/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
 | [CVE-2003-0127](vulnerability/linux/CVE-2003-0127-ptrace-kmod-kernel-thread-race.md) | Linux 2.2/2.4 커널의 kmod 모듈 자동 로더가 만드는 root 권한 커널 스레드가 ptrace 보호 사각지대에 있어, 로컬 공격자가 modprobe 실행 순간에 셸코드를 주입해 root 권한을 획득할 수 있었다. |
+| [CVE-2012-0864](vulnerability/linux/CVE-2012-0864-glibc-vfprintf-nargs-integer-overflow.md) | glibc vfprintf()의 위치 지정 인자 개수 곱셈이 32비트에서 오버플로해 FORTIFY_SOURCE 검사 배열 밖 쓰기와 형식 문자열 보호 우회를 허용했다. |
 
 </details>
 
