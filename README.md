@@ -5,6 +5,7 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2003-0127](vulnerability/linux/CVE-2003-0127-ptrace-kmod-kernel-thread-race.md) | Linux | Linux 2.2/2.4 커널의 kmod 모듈 자동 로더가 만드는 root 권한 커널 스레드가 ptrace 보호 사각지대에 있어, 로컬 공격자가 modprobe 실행 순간에 셸코드를 주입해 root 권한을 획득할 수 있었다. |
+| [CVE-2026-57516](vulnerability/opensource/CVE-2026-57516-ray-webdataset-pickle-torch-load-rce.md) | Opensource | Ray의 read_webdataset 기본 디코더가 .pkl/.pt 파일을 검증 없이 pickle.loads/torch.load로 역직렬화해, 신뢰할 수 없는 WebDataset TAR를 미리보기만 해도 Ray 워커에서 임의 코드가 실행될 수 있었다. |
 
 <details>
 <summary>Linux (27)</summary>
@@ -42,7 +43,7 @@
 </details>
 
 <details>
-<summary>Opensource (23)</summary>
+<summary>Opensource (24)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -69,6 +70,7 @@
 | [CVE-2026-35341](vulnerability/opensource/CVE-2026-35341-uutils-mkfifo-missing-continue.md) | uutils coreutils mkfifo가 FIFO 생성 실패 시 continue 문이 빠져 있어, 이미 존재하던 파일(예: SSH 개인키)의 권한을 실수로 기본 모드로 덮어써 노출시킬 수 있었다. |
 | [CVE-2026-22874](vulnerability/opensource/CVE-2026-22874-gitea-ssrf-allowlist-reserved-ranges.md) | Gitea 웹훅/마이그레이션의 SSRF 허용목록이 net.IP.IsPrivate()에만 의존해 클라우드 메타데이터·CGNAT·NAT64 등 예약 대역을 걸러내지 못했다 |
 | [CVE-2026-13676](vulnerability/opensource/CVE-2026-13676-fast-uri-idn-canonicalization-bypass.md) | fast-uri가 존재하지 않는 URL.domainToASCII를 호출해 IDN 호스트 정규화에 실패, 표준 URL/fetch와 다른 호스트를 반환한다 |
+| [CVE-2026-57516](vulnerability/opensource/CVE-2026-57516-ray-webdataset-pickle-torch-load-rce.md) | Ray의 read_webdataset 기본 디코더가 .pkl/.pt 파일을 검증 없이 pickle.loads/torch.load로 역직렬화해, 신뢰할 수 없는 WebDataset TAR를 미리보기만 해도 Ray 워커에서 임의 코드가 실행될 수 있었다. |
 
 </details>
 
