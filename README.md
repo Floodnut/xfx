@@ -1,13 +1,13 @@
 # xfx
 
-## 마지막 업데이트 (2026-07-23)
+## 마지막 업데이트 (2026-07-25)
 
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
-| [CVE-2025-31277](vulnerability/browser/CVE-2025-31277-javascriptcore-jit-type-confusion.md) | Browser | JavaScriptCore JIT의 타입 가정이 실제 값 표현과 어긋날 때 메모리 손상으로 이어지는 원리와 DarkSword 초기 RCE 단계에서의 역할을 분석한다. |
+| [CVE-2026-9181](vulnerability/linux/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | Linux | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
 
 <details>
-<summary>Linux (25)</summary>
+<summary>Linux (26)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -36,6 +36,7 @@
 | [CVE-2010-3847](vulnerability/linux/CVE-2010-3847-glibc-ld-audit-origin-privesc.md) | glibc ld.so가 setuid 프로그램에서 $ORIGIN 단독 사용만 예외로 허용하던 버그를 LD_AUDIT=$ORIGIN과 하드링크로 결합해 임의 공유 오브젝트를 로드시켜 루트 권한을 얻는 CVE-2010-3847을 분석했다. |
 | [CVE-2026-53359](vulnerability/linux/CVE-2026-53359-kvm-shadow-paging-role-uaf.md) | KVM shadow paging의 GFN만 비교한 child shadow page 재사용이 role 불일치와 stale rmap을 만들어 Use-After-Free로 이어지는 경로와 role 비교 패치를 설명한다. |
 | [CVE-2026-46113](vulnerability/linux/CVE-2026-46113-kvm-shadow-paging-gfn-uaf.md) | KVM/x86 shadow paging에서 kvm_mmu_get_child_sp()가 child shadow page의 GFN을 재검증하지 않아, 게스트 페이지 테이블이 VM 진입 사이 바뀌면 stale rmap이 남아 해제된 shadow page를 참조하는 Use-After-Free가 발생한다. |
+| [CVE-2026-9181](vulnerability/linux/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
 
 </details>
 
