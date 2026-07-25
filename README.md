@@ -7,6 +7,7 @@
 | [CVE-2003-0127](vulnerability/linux/CVE-2003-0127-ptrace-kmod-kernel-thread-race.md) | Linux | Linux 2.2/2.4 커널의 kmod 모듈 자동 로더가 만드는 root 권한 커널 스레드가 ptrace 보호 사각지대에 있어, 로컬 공격자가 modprobe 실행 순간에 셸코드를 주입해 root 권한을 획득할 수 있었다. |
 | [CVE-2026-57516](vulnerability/opensource/CVE-2026-57516-ray-webdataset-pickle-torch-load-rce.md) | Opensource | Ray의 read_webdataset 기본 디코더가 .pkl/.pt 파일을 검증 없이 pickle.loads/torch.load로 역직렬화해, 신뢰할 수 없는 WebDataset TAR를 미리보기만 해도 Ray 워커에서 임의 코드가 실행될 수 있었다. |
 | [CVE-2012-0864](vulnerability/linux/CVE-2012-0864-glibc-vfprintf-nargs-integer-overflow.md) | Linux | glibc vfprintf()의 위치 지정 인자 개수 곱셈이 32비트에서 오버플로해 FORTIFY_SOURCE 검사 배열 밖 쓰기와 형식 문자열 보호 우회를 허용했다. |
+| [CVE-2026-50524](vulnerability/opensource/CVE-2026-50524-dotnet-sslstream-malformed-tls-frame-dos.md) | Opensource | .NET SslStream이 malformed TLS 후속 헤더의 -1 길이를 정상값처럼 소비해 버퍼 진행을 역전시키고 원격 서비스 거부를 일으켰다. |
 
 <details>
 <summary>Linux (28)</summary>
@@ -45,7 +46,7 @@
 </details>
 
 <details>
-<summary>Opensource (24)</summary>
+<summary>Opensource (25)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -73,6 +74,7 @@
 | [CVE-2026-22874](vulnerability/opensource/CVE-2026-22874-gitea-ssrf-allowlist-reserved-ranges.md) | Gitea 웹훅/마이그레이션의 SSRF 허용목록이 net.IP.IsPrivate()에만 의존해 클라우드 메타데이터·CGNAT·NAT64 등 예약 대역을 걸러내지 못했다 |
 | [CVE-2026-13676](vulnerability/opensource/CVE-2026-13676-fast-uri-idn-canonicalization-bypass.md) | fast-uri가 존재하지 않는 URL.domainToASCII를 호출해 IDN 호스트 정규화에 실패, 표준 URL/fetch와 다른 호스트를 반환한다 |
 | [CVE-2026-57516](vulnerability/opensource/CVE-2026-57516-ray-webdataset-pickle-torch-load-rce.md) | Ray의 read_webdataset 기본 디코더가 .pkl/.pt 파일을 검증 없이 pickle.loads/torch.load로 역직렬화해, 신뢰할 수 없는 WebDataset TAR를 미리보기만 해도 Ray 워커에서 임의 코드가 실행될 수 있었다. |
+| [CVE-2026-50524](vulnerability/opensource/CVE-2026-50524-dotnet-sslstream-malformed-tls-frame-dos.md) | .NET SslStream이 malformed TLS 후속 헤더의 -1 길이를 정상값처럼 소비해 버퍼 진행을 역전시키고 원격 서비스 거부를 일으켰다. |
 
 </details>
 
