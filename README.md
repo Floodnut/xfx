@@ -5,12 +5,11 @@
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
 | [CVE-2018-12562](vulnerability/linux/CVE-2018-12562-cantata-mounter-unquoted-argv-glob-expansion.md) | Linux | Cantata의 root D-Bus mounter가 Bash 래퍼의 따옴표 없는 $@ 때문에 한 개의 마운트 지점 인자를 로컬 파일명 여러 개로 재확장하던 문제다. |
-| [CVE-2018-12562](vulnerability/linux/CVE-2018-12562-cantata-mounter-cifs-wrapper-shell-injection.md) | Linux | Cantata의 cantata-mounter D-Bus 서비스는 root로 mount.cifs.wrapper를 실행하는데, 이 셸 스크립트가 인자를 인용 부호 없이 $@로 전달해 로컬 사용자가 전달하는 마운트 경로의 와일드카드가 셸에 의해 재해석된다. |
 | [CVE-2002-0969](vulnerability/opensource/CVE-2002-0969-mysql-win32-datadir-buffer-overflow.md) | Opensource | MySQL Win32 mysqld-nt 서비스가 SYSTEM 권한으로 my.ini의 datadir 값을 길이 검사 없는 strmov로 512바이트 고정 전역 버퍼에 복사해, 느슨한 파일 ACL과 결합하면 로컬 사용자가 SYSTEM 권한 코드 실행까지 이어질 수 있었다. |
 | [CVE-2007-3280](vulnerability/opensource/CVE-2007-3280-postgresql-dblink-arbitrary-library-function-mapping.md) | Opensource | PostgreSQL의 dblink 모듈과 기본 local trust 인증을 조합하면 저권한 사용자가 슈퍼유저로 재접속해 임의 공유 라이브러리 함수를 SQL 함수로 매핑할 수 있었고, libc의 system()을 매핑해 셸 명령 실행까지 도달할 수 있었다. |
 
 <details>
-<summary>Linux (30)</summary>
+<summary>Linux (29)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -43,7 +42,6 @@
 | [CVE-2003-0127](vulnerability/linux/CVE-2003-0127-ptrace-kmod-kernel-thread-race.md) | Linux 2.2/2.4 커널의 kmod 모듈 자동 로더가 만드는 root 권한 커널 스레드가 ptrace 보호 사각지대에 있어, 로컬 공격자가 modprobe 실행 순간에 셸코드를 주입해 root 권한을 획득할 수 있었다. |
 | [CVE-2012-0864](vulnerability/linux/CVE-2012-0864-glibc-vfprintf-nargs-integer-overflow.md) | glibc vfprintf()의 위치 지정 인자 개수 곱셈이 32비트에서 오버플로해 FORTIFY_SOURCE 검사 배열 밖 쓰기와 형식 문자열 보호 우회를 허용했다. |
 | [CVE-2018-12562](vulnerability/linux/CVE-2018-12562-cantata-mounter-unquoted-argv-glob-expansion.md) | Cantata의 root D-Bus mounter가 Bash 래퍼의 따옴표 없는 $@ 때문에 한 개의 마운트 지점 인자를 로컬 파일명 여러 개로 재확장하던 문제다. |
-| [CVE-2018-12562](vulnerability/linux/CVE-2018-12562-cantata-mounter-cifs-wrapper-shell-injection.md) | Cantata의 cantata-mounter D-Bus 서비스는 root로 mount.cifs.wrapper를 실행하는데, 이 셸 스크립트가 인자를 인용 부호 없이 $@로 전달해 로컬 사용자가 전달하는 마운트 경로의 와일드카드가 셸에 의해 재해석된다. |
 
 </details>
 
