@@ -24,10 +24,11 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>Karpenter (0)</summary>
+<summary>Karpenter (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Disruption Budgets (NodePool)](changes/karpenter/1.0-disruption-budgets-nodepool.md) | v1.0에서 NodePool.Spec.Disruption.Budgets 도입 — cron 시간창 × 동시성 제한 교집합 방식으로 노드 제거 통제 |
 
 </details>
 
