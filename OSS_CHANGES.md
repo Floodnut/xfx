@@ -42,9 +42,10 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>OPA (0)</summary>
+<summary>OPA (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [컨테이너 자원 인지 (GOMAXPROCS/GOMEMLIMIT)](oss-changes/opa/1.18.0-container-aware-gomaxprocs-gomemlimit.md) | v1.18.0에서 automaxprocs 복원 + automemlimit 신규 추가 — Go 네이티브 cgroup 인지의 최소값 차이(1 vs 2)로 저메모리 배포에서 발생한 OOM 회귀를 되돌린 사례 |
 
 </details>
