@@ -8,6 +8,6 @@
 !glossary/
 !glossary/**
 !LICENSE.md
-!CHANGES.md
-!changes/
-!changes/**
+!OSS_CHANGES.md
+!oss-changes/
+!oss-changes/**
