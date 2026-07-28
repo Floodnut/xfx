@@ -33,9 +33,10 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>Cilium (0)</summary>
+<summary>Cilium (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [로드밸런싱 컨트롤 플레인 재설계](changes/cilium/1.18-loadbalancer-statedb-redesign.md) | v1.18에서 뮤텍스+해시맵 기반 명령형 모델을 StateDB 테이블 기반 데이터 중심 모델로 전환 |
 
 </details>
