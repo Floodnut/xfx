@@ -24,12 +24,13 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>Karpenter (2)</summary>
+<summary>Karpenter (3)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Disruption Budgets (NodePool)](oss-changes/karpenter/1.0-disruption-budgets-nodepool.md) | v1.0에서 NodePool.Spec.Disruption.Budgets 도입 — cron 시간창 × 동시성 제한 교집합 방식으로 노드 제거 통제 |
 | [v1.14 — Karpenter Balanced Consolidation](oss-changes/karpenter/1.14-balanced-consolidation-scoring.md) | 저장액 대비 disruption 비율을 점수화해 손해 보는 통합(consolidation)을 걸러내는 새 consolidationPolicy: Balanced 도입 |
+| [Karpenter CapacityBuffer: 가상 파드로 여유 용량을 미리 만들어두는 사전 프로비저닝](oss-changes/karpenter/1.14-capacity-buffer-active-provisioning.md) | v1.14에서 alpha로 추가된 CapacityBuffer API가 파드 없이도 노드를 미리 켜두는 방식(가상 파드를 매 루프 주입)과, 그로 인한 노미네이션/emptiness/consolidation 경계 처리를 다룬다. |
 
 </details>
 
