@@ -23,6 +23,8 @@
 - [Path Traversal (경로 순회)](glossary/path-traversal.md)
 - [Command Injection (명령어 인젝션)](glossary/command-injection.md)
 - [SQL Injection (SQL 인젝션)](glossary/sql-injection.md)
+- [Format String (형식 문자열 취약점)](glossary/format-string.md)
+- [Argument Injection (인자 인젝션)](glossary/argument-injection.md)
 - [SSRF](glossary/ssrf.md)
 - [XSS (크로스사이트 스크립팅)](glossary/xss.md)
 - [Deserialization (역직렬화) 취약점](glossary/deserialization.md)
