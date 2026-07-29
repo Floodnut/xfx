@@ -35,11 +35,12 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>Cilium (1)</summary>
+<summary>Cilium (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [로드밸런싱 컨트롤 플레인 재설계](oss-changes/cilium/1.18-loadbalancer-statedb-redesign.md) | v1.18에서 뮤텍스+해시맵 기반 명령형 모델을 StateDB 테이블 기반 데이터 중심 모델로 전환 |
+| [로드밸런서 백엔드 평탄화 (Aggregated Load-Balancer State)](oss-changes/cilium/1.20-loadbalancer-backend-flatten.md) | v1.19에서 서비스별 인스턴스를 중첩 맵으로 담던 백엔드 행 구조가 실제 프로덕션 메모리 급증을 유발한 사례 — v1.20에서 (서비스,주소,우선순위) 조합마다 독립된 테이블 행으로 평탄화해 해결 |
 
 </details>
 
