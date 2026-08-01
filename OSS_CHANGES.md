@@ -6,11 +6,12 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 `glossary`와 같은 스타일로 유지되는 별도 루틴 문서를 따른다.
 
 <details>
-<summary>Linux Kernel (1)</summary>
+<summary>Linux Kernel (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Live Update Orchestrator / KHO](oss-changes/linux-kernel/6.19-live-update-orchestrator-kexec-hypervisor.md) | kexec로 VM을 안 끄고 커널을 업데이트하는 프레임워크 — KHO의 radix tree/FDT 기반 메모리 보존과 LUO의 콜백 기반 자원 생명주기 관리 |
+| [Linux Kernel pidfd Process Lifecycle: CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL](oss-changes/linux-kernel/7.1-pidfd-process-lifecycle-autoreap-autokill.md) | clone3()에 CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL 플래그를 추가해, 부모 전체에 걸리던 SIGCHLD 기반 auto-reap을 자식 단위로 세분화하고 pidfd 소유권에 자식 생명주기를 묶었다. |
 
 </details>
 
