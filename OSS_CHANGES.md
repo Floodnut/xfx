@@ -16,11 +16,12 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>Kubernetes (1)</summary>
+<summary>Kubernetes (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [In-Place Pod Resize GA (KEP-1287)](oss-changes/kubernetes/1.35-in-place-pod-resize-ga.md) | Pod 재시작 없이 CPU/메모리를 바꾸는 기능이 v1.35에서 GA — Desired/Allocated/Actuated/Actual 4단계 상태 기계 |
+| [Server-Side Sharded List/Watch](oss-changes/kubernetes/1.36-server-side-sharded-list-and-watch.md) | shardSelector로 LIST/WATCH 필터링을 API 서버(워치 캐시)로 옮겨 컨트롤러 수평 확장 시 레플리카 수에 비례해 커지던 네트워크/CPU 낭비를 없앤 KEP-5866 Alpha 기능. |
 
 </details>
 
