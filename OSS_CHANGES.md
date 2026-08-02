@@ -74,9 +74,10 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>OVN (0)</summary>
+<summary>OVN (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [OVN Flow-Based Tunnels](oss-changes/ovn/26.03-flow-based-tunnels.md) | v26.03에서 원격 chassis별 tunnel port 대신 type별 shared port를 만들고 OpenFlow가 패킷마다 tunnel endpoint를 설정해 대규모 환경의 port 수를 줄인 실험적 설계. |
 
 </details>
