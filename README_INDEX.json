@@ -28,6 +28,14 @@
         "summary": "curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다.",
         "created_at": "2026-08-03T05:08:52+09:00",
         "updated_at": "2026-08-03T05:09:39+09:00"
+      },
+      {
+        "label": "CVE-2025-2783",
+        "category": "Browser",
+        "path": "vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md",
+        "summary": "Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다.",
+        "created_at": "2026-08-03T05:11:52+09:00",
+        "updated_at": "2026-08-03T05:11:52+09:00"
       }
     ]
   },
@@ -557,6 +565,13 @@
           "summary": "JavaScriptCore JIT의 타입 가정이 실제 값 표현과 어긋날 때 메모리 손상으로 이어지는 원리와 DarkSword 초기 RCE 단계에서의 역할을 분석한다.",
           "created_at": "2026-07-23T05:04:14+09:00",
           "updated_at": "2026-07-23T05:04:14+09:00"
+        },
+        {
+          "label": "CVE-2025-2783",
+          "path": "vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md",
+          "summary": "Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다.",
+          "created_at": "2026-08-03T05:11:52+09:00",
+          "updated_at": "2026-08-03T05:11:52+09:00"
         }
       ]
     },
