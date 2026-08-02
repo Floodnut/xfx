@@ -8,6 +8,7 @@
 !glossary/
 !glossary/**
 !LICENSE.md
-!OSS_CHANGES.md
+!README_INDEX.json
 !oss-changes/
 !oss-changes/**
+.DS_Store
