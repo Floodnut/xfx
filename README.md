@@ -4,9 +4,11 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
+| 2026-08-03 | [CVE-2008-0166](vulnerability/linux/CVE-2008-0166-debian-openssl-predictable-prng.md) | Linux | Debian OpenSSL 패치 실수로 PRNG 엔트로피가 PID 값 하나로 축소된 이슈 |
+| 2026-08-03 | [CVE-2026-9181](vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | Others | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
+| 2026-08-03 | [LoxiLB HA Egress Cluster Routing](oss-changes/loxilb/0.9.8-ha-egress-cluster-routing.md) | OSS / LoxiLB | v0.9.8에서 기존 LB·VIP·HA 상태 기계를 egress 모드로 연결해, 대기 노드의 트래픽을 전용 VXLAN으로 활성 노드에 전달하고 안정적인 SNAT/VIP를 유지하는 초기 설계. |
 | 2026-08-03 | [Ceph mgmt-gateway High Availability](oss-changes/ceph/20.2.0-mgmt-gateway-ha.md) | OSS / Ceph | Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계. |
-| 2026-08-02 | [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Opensource | Apache mod_proxy_http TE/CL request smuggling analysis |
-| 2026-08-02 | [CVE-2007-4772](vulnerability/opensource/CVE-2007-4772-tcl-regex-nfa-error-propagation-infinite-loop.md) | Opensource | Tcl regex NFA error propagation infinite loop analysis |
+| 2026-08-03 | [OVN Flow-Based Tunnels](oss-changes/ovn/26.03-flow-based-tunnels.md) | OSS / OVN | v26.03에서 원격 chassis별 tunnel port 대신 type별 shared port를 만들고 OpenFlow가 패킷마다 tunnel endpoint를 설정해 대규모 환경의 port 수를 줄인 실험적 설계. |
 
 ## CVE 취약점 분석
 
