@@ -1,10 +1,10 @@
 # xfx
 
-## 마지막 업데이트 (2026-07-30)
+## 마지막 업데이트 (2026-08-02)
 
 | CVE | 도메인 | 내용 |
 | --- | --- | --- |
-| [CVE-2026-50559](vulnerability/opensource/CVE-2026-50559-quarkus-http-path-normalization-auth-bypass.md) | Opensource | Quarkus HTTP 경로 정책이 부분 디코딩 경로를 검사한 뒤 후단 핸들러가 예약 문자를 추가로 해석해 보호 엔드포인트와 정적 자원에 대한 인증을 우회할 수 있었다. |
+| [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Opensource | Apache mod_proxy_http TE/CL request smuggling analysis |
 
 <details>
 <summary>Linux (30)</summary>
@@ -45,7 +45,7 @@
 </details>
 
 <details>
-<summary>Opensource (28)</summary>
+<summary>Opensource (29)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -77,6 +77,7 @@
 | [CVE-2002-0969](vulnerability/opensource/CVE-2002-0969-mysql-win32-datadir-buffer-overflow.md) | MySQL Win32 mysqld-nt 서비스가 SYSTEM 권한으로 my.ini의 datadir 값을 길이 검사 없는 strmov로 512바이트 고정 전역 버퍼에 복사해, 느슨한 파일 ACL과 결합하면 로컬 사용자가 SYSTEM 권한 코드 실행까지 이어질 수 있었다. |
 | [CVE-2007-3280](vulnerability/opensource/CVE-2007-3280-postgresql-dblink-arbitrary-library-function-mapping.md) | PostgreSQL의 dblink 모듈과 기본 local trust 인증을 조합하면 저권한 사용자가 슈퍼유저로 재접속해 임의 공유 라이브러리 함수를 SQL 함수로 매핑할 수 있었고, libc의 system()을 매핑해 셸 명령 실행까지 도달할 수 있었다. |
 | [CVE-2026-50559](vulnerability/opensource/CVE-2026-50559-quarkus-http-path-normalization-auth-bypass.md) | Quarkus HTTP 경로 정책이 부분 디코딩 경로를 검사한 뒤 후단 핸들러가 예약 문자를 추가로 해석해 보호 엔드포인트와 정적 자원에 대한 인증을 우회할 수 있었다. |
+| [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Apache mod_proxy_http TE/CL request smuggling analysis |
 
 </details>
 
