@@ -1,13 +1,14 @@
 # xfx
 
+## 마지막 업데이트
+
+| 일자 | 리포트 | 분류 | 내용 |
+| --- | --- | --- | --- |
+| 2026-08-03 | [Ceph mgmt-gateway High Availability](oss-changes/ceph/20.2.0-mgmt-gateway-ha.md) | OSS / Ceph | Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계. |
+| 2026-08-02 | [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Opensource | Apache mod_proxy_http TE/CL request smuggling analysis |
+| 2026-08-02 | [CVE-2007-4772](vulnerability/opensource/CVE-2007-4772-tcl-regex-nfa-error-propagation-infinite-loop.md) | Opensource | Tcl regex NFA error propagation infinite loop analysis |
+
 ## CVE 취약점 분석
-
-### 마지막 업데이트 (2026-08-02)
-
-| 리포트 | 분류 | 내용 |
-| --- | --- | --- |
-| [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Opensource | Apache mod_proxy_http TE/CL request smuggling analysis |
-| [CVE-2007-4772](vulnerability/opensource/CVE-2007-4772-tcl-regex-nfa-error-propagation-infinite-loop.md) | Opensource | Tcl regex NFA error propagation infinite loop analysis |
 
 <details>
 <summary>Linux (30)</summary>

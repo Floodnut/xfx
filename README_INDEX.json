@@ -419,6 +419,17 @@
   "oss_changes": {
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
+    "last_updated": {
+      "date": "2026-08-03",
+      "entries": [
+        {
+          "project_slug": "ceph",
+          "label": "Ceph mgmt-gateway High Availability",
+          "path": "oss-changes/ceph/20.2.0-mgmt-gateway-ha.md",
+          "summary": "Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계."
+        }
+      ]
+    },
     "projects": [
       {
         "slug": "linux-kernel",
