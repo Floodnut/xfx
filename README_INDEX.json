@@ -27,7 +27,7 @@
         "path": "vulnerability/opensource/CVE-2005-0490-curl-authentication-base64-stack-buffer-overflow.md",
         "summary": "curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다.",
         "created_at": "2026-08-03T05:08:52+09:00",
-        "updated_at": "2026-08-03T05:08:52+09:00"
+        "updated_at": "2026-08-03T05:09:39+09:00"
       }
     ]
   },
@@ -460,7 +460,7 @@
           "path": "vulnerability/opensource/CVE-2005-0490-curl-authentication-base64-stack-buffer-overflow.md",
           "summary": "curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다.",
           "created_at": "2026-08-03T05:08:52+09:00",
-          "updated_at": "2026-08-03T05:08:52+09:00"
+          "updated_at": "2026-08-03T05:09:39+09:00"
         }
       ]
     },
