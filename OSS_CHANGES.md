@@ -66,10 +66,11 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 </details>
 
 <details>
-<summary>Ceph (0)</summary>
+<summary>Ceph (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Ceph mgmt-gateway High Availability](oss-changes/ceph/20.2.0-mgmt-gateway-ha.md) | Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계. |
 
 </details>
 
