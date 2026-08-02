@@ -6,9 +6,13 @@
 | --- | --- | --- | --- |
 | 2026-08-03 | [CVE-2008-0166](vulnerability/linux/CVE-2008-0166-debian-openssl-predictable-prng.md) | Linux | Debian OpenSSL 패치 실수로 PRNG 엔트로피가 PID 값 하나로 축소된 이슈 |
 | 2026-08-03 | [CVE-2026-9181](vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | Others | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
+| 2026-08-03 | [CVE-2005-0490](vulnerability/opensource/CVE-2005-0490-curl-authentication-base64-stack-buffer-overflow.md) | Opensource | curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다. |
+| 2026-08-03 | [CVE-2025-2783](vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md) | Browser | Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다. |
+| 2026-08-03 | [CVE-2022-21882](vulnerability/windows/CVE-2022-21882-win32k-window-object-type-confusion.md) | Windows | Win32k user-mode callback 뒤 창 객체 표현을 재검증하지 않아 생긴 타입 혼동과 ConsoleWindow 상태 검증 패치를 분석한다. |
 | 2026-08-03 | [LoxiLB HA Egress Cluster Routing](oss-changes/loxilb/0.9.8-ha-egress-cluster-routing.md) | OSS / LoxiLB | v0.9.8에서 기존 LB·VIP·HA 상태 기계를 egress 모드로 연결해, 대기 노드의 트래픽을 전용 VXLAN으로 활성 노드에 전달하고 안정적인 SNAT/VIP를 유지하는 초기 설계. |
 | 2026-08-03 | [Ceph mgmt-gateway High Availability](oss-changes/ceph/20.2.0-mgmt-gateway-ha.md) | OSS / Ceph | Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계. |
 | 2026-08-03 | [OVN Flow-Based Tunnels](oss-changes/ovn/26.03-flow-based-tunnels.md) | OSS / OVN | v26.03에서 원격 chassis별 tunnel port 대신 type별 shared port를 만들고 OpenFlow가 패킷마다 tunnel endpoint를 설정해 대규모 환경의 port 수를 줄인 실험적 설계. |
+| 2026-08-03 | [Linux Kernel NTFS Driver Resurrection](oss-changes/linux-kernel/7.1-ntfs-driver-resurrection-iomap-rewrite.md) | OSS / Linux Kernel | 제거됐던 read-only NTFS 드라이버가 4년의 재작성을 거쳐 iomap/folio 기반 쓰기 지원 드라이버로 ntfs3와 나란히 공존하며 부활했다. |
 
 ## CVE 취약점 분석
 
@@ -51,7 +55,7 @@
 </details>
 
 <details>
-<summary>Opensource (29)</summary>
+<summary>Opensource (30)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -84,11 +88,12 @@
 | [CVE-2026-50559](vulnerability/opensource/CVE-2026-50559-quarkus-http-path-normalization-auth-bypass.md) | Quarkus HTTP 경로 정책이 부분 디코딩 경로를 검사한 뒤 후단 핸들러가 예약 문자를 추가로 해석해 보호 엔드포인트와 정적 자원에 대한 인증을 우회할 수 있었다. |
 | [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Apache mod_proxy_http TE/CL request smuggling analysis |
 | [CVE-2007-4772](vulnerability/opensource/CVE-2007-4772-tcl-regex-nfa-error-propagation-infinite-loop.md) | Tcl regex NFA error propagation infinite loop analysis |
+| [CVE-2005-0490](vulnerability/opensource/CVE-2005-0490-curl-authentication-base64-stack-buffer-overflow.md) | curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다. |
 
 </details>
 
 <details>
-<summary>Windows (4)</summary>
+<summary>Windows (5)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -96,11 +101,12 @@
 | [CVE-2025-33073](vulnerability/windows/CVE-2025-33073-windows-smb-client-ntlm-reflection.md) | Windows SMB Client가 marshalled target info가 붙은 특수 대상 이름을 로컬 호스트로 오판해, SMB signing이 강제되지 않은 환경에서 NTLM reflection을 SYSTEM 권한 작업으로 확장할 수 있는 취약점이다. |
 | [CVE-2025-21333](vulnerability/windows/CVE-2025-21333-windows-hyperv-crossvmevent-heap-overflow.md) | Hyper-V NT Kernel Integration VSP의 CrossVmEvent 생성 경로에서 발생한 heap overflow가 WNF/I/O ring 기반 커널 객체 손상과 로컬 권한 상승으로 이어질 수 있는 취약점이다. |
 | [CVE-2026-40369](vulnerability/windows/CVE-2026-40369-windows-kernel-pointer-overflow.md) | Windows Kernel이 신뢰할 수 없는 포인터와 길이 정보를 잘못 다룰 때 커널 풀 손상과 제한적 SYSTEM 권한 상승으로 이어질 수 있는 로컬 취약점이다. |
+| [CVE-2022-21882](vulnerability/windows/CVE-2022-21882-win32k-window-object-type-confusion.md) | Win32k user-mode callback 뒤 창 객체 표현을 재검증하지 않아 생긴 타입 혼동과 ConsoleWindow 상태 검증 패치를 분석한다. |
 
 </details>
 
 <details>
-<summary>Browser (8)</summary>
+<summary>Browser (9)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -112,6 +118,7 @@
 | [CVE-2026-14906](vulnerability/browser/CVE-2026-14906-firefox-ios-pdf-title-path-overwrite.md) | 악성 웹 페이지 제목이 PDF 저장 경로에 영향을 주며 Firefox for iOS 앱 샌드박스 안의 기존 PDF 또는 번들 콘텐츠를 덮어쓸 수 있었던 문제를 파일명 정규화와 저장 경계 관점에서 분석한다. |
 | [CVE-2026-15718](vulnerability/browser/CVE-2026-15718-firefox-webassembly-invalid-pointer.md) | Firefox WebAssembly의 모듈·인스턴스·메모리 수명 모델을 통해 invalid pointer 경계가 왜 중요한지 설명한 분석 |
 | [CVE-2025-31277](vulnerability/browser/CVE-2025-31277-javascriptcore-jit-type-confusion.md) | JavaScriptCore JIT의 타입 가정이 실제 값 표현과 어긋날 때 메모리 손상으로 이어지는 원리와 DarkSword 초기 RCE 단계에서의 역할을 분석한다. |
+| [CVE-2025-2783](vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md) | Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다. |
 
 </details>
 
@@ -128,12 +135,13 @@
 ## OSS 아키텍처 변경 분석
 
 <details>
-<summary>Linux Kernel (2)</summary>
+<summary>Linux Kernel (3)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Live Update Orchestrator / KHO](oss-changes/linux-kernel/6.19-live-update-orchestrator-kexec-hypervisor.md) | kexec로 VM을 안 끄고 커널을 업데이트하는 프레임워크 — KHO의 radix tree/FDT 기반 메모리 보존과 LUO의 콜백 기반 자원 생명주기 관리 |
 | [Linux Kernel pidfd Process Lifecycle: CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL](oss-changes/linux-kernel/7.1-pidfd-process-lifecycle-autoreap-autokill.md) | clone3()에 CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL 플래그를 추가해, 부모 전체에 걸리던 SIGCHLD 기반 auto-reap을 자식 단위로 세분화하고 pidfd 소유권에 자식 생명주기를 묶었다. |
+| [Linux Kernel NTFS Driver Resurrection](oss-changes/linux-kernel/7.1-ntfs-driver-resurrection-iomap-rewrite.md) | 제거됐던 read-only NTFS 드라이버가 4년의 재작성을 거쳐 iomap/folio 기반 쓰기 지원 드라이버로 ntfs3와 나란히 공존하며 부활했다. |
 
 </details>
 
