@@ -2,6 +2,8 @@
 
 이 저장소의 취약점 분석 리포트에서 반복적으로 등장하는 **소프트웨어 무관 범용 개념**들을 정리한다. 각 리포트의 "사전 지식" 섹션은 그 소프트웨어 고유의 동작 방식을 설명하는 데 집중하고, 여기 실린 범용 개념은 최초 등장 시 링크만 걸어서 참조한다.
 
+##
+
 ## 메모리 손상 계열
 
 - [Memory Corruption (메모리 손상)](glossary/memory-corruption.md) — 상위 개념
@@ -29,6 +31,13 @@
 - [XSS (크로스사이트 스크립팅)](glossary/xss.md)
 - [Deserialization (역직렬화) 취약점](glossary/deserialization.md)
 - [Prototype Pollution (프로토타입 오염)](glossary/prototype-pollution.md)
+- [Path Canonicalization (경로 정규화)](glossary/path-canonicalization.md)
+
+## 프로토콜/연동 경계 해석
+- [HTTP Request Smuggling (HTTP 요청 스머글링)](glossary/http-request-smuggling.md)
+
+## 엔진 아키텍처/계산 모델
+- [NFA (비결정성 유한 오토마타)](glossary/nfa.md)
 
 ## 권한/격리
 
