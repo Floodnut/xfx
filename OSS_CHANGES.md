@@ -55,3 +55,28 @@ CVE가 아니라, 정착된 오픈소스/클라우드 네이티브 프로젝트�
 | [컨테이너 자원 인지 (GOMAXPROCS/GOMEMLIMIT)](oss-changes/opa/1.18.0-container-aware-gomaxprocs-gomemlimit.md) | v1.18.0에서 automaxprocs 복원 + automemlimit 신규 추가 — Go 네이티브 cgroup 인지의 최소값 차이(1 vs 2)로 저메모리 배포에서 발생한 OOM 회귀를 되돌린 사례 |
 
 </details>
+
+<details>
+<summary>LoxiLB (1)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+| [LoxiLB HA Egress Cluster Routing](oss-changes/loxilb/0.9.8-ha-egress-cluster-routing.md) | v0.9.8에서 기존 LB·VIP·HA 상태 기계를 egress 모드로 연결해, 대기 노드의 트래픽을 전용 VXLAN으로 활성 노드에 전달하고 안정적인 SNAT/VIP를 유지하는 초기 설계. |
+
+</details>
+
+<details>
+<summary>Ceph (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>OVN (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
