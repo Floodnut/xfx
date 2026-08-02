@@ -37,7 +37,7 @@
 | [CVE-2010-3847](vulnerability/linux/CVE-2010-3847-glibc-ld-audit-origin-privesc.md) | glibc ld.so가 setuid 프로그램에서 $ORIGIN 단독 사용만 예외로 허용하던 버그를 LD_AUDIT=$ORIGIN과 하드링크로 결합해 임의 공유 오브젝트를 로드시켜 루트 권한을 얻는 CVE-2010-3847을 분석했다. |
 | [CVE-2026-53359](vulnerability/linux/CVE-2026-53359-kvm-shadow-paging-role-uaf.md) | KVM shadow paging의 GFN만 비교한 child shadow page 재사용이 role 불일치와 stale rmap을 만들어 Use-After-Free로 이어지는 경로와 role 비교 패치를 설명한다. |
 | [CVE-2026-46113](vulnerability/linux/CVE-2026-46113-kvm-shadow-paging-gfn-uaf.md) | KVM/x86 shadow paging에서 kvm_mmu_get_child_sp()가 child shadow page의 GFN을 재검증하지 않아, 게스트 페이지 테이블이 VM 진입 사이 바뀌면 stale rmap이 남아 해제된 shadow page를 참조하는 Use-After-Free가 발생한다. |
-| [CVE-2026-9181](vulnerability/linux/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
+| [CVE-2008-0166](vulnerability/linux/CVE-2008-0166-debian-openssl-predictable-prng.md) | Debian OpenSSL 패치 실수로 PRNG 엔트로피가 PID 값 하나로 축소된 이슈 |
 | [CVE-2003-0127](vulnerability/linux/CVE-2003-0127-ptrace-kmod-kernel-thread-race.md) | Linux 2.2/2.4 커널의 kmod 모듈 자동 로더가 만드는 root 권한 커널 스레드가 ptrace 보호 사각지대에 있어, 로컬 공격자가 modprobe 실행 순간에 셸코드를 주입해 root 권한을 획득할 수 있었다. |
 | [CVE-2012-0864](vulnerability/linux/CVE-2012-0864-glibc-vfprintf-nargs-integer-overflow.md) | glibc vfprintf()의 위치 지정 인자 개수 곱셈이 32비트에서 오버플로해 FORTIFY_SOURCE 검사 배열 밖 쓰기와 형식 문자열 보호 우회를 허용했다. |
 | [CVE-2018-12562](vulnerability/linux/CVE-2018-12562-cantata-mounter-unquoted-argv-glob-expansion.md) | Cantata의 root D-Bus mounter가 Bash 래퍼의 따옴표 없는 $@ 때문에 한 개의 마운트 지점 인자를 로컬 파일명 여러 개로 재확장하던 문제다. |
@@ -46,11 +46,10 @@
 </details>
 
 <details>
-<summary>Opensource (30)</summary>
+<summary>Opensource (29)</summary>
 
 | CVE | 내용 |
 | --- | --- |
-| [CVE-2008-0166](vulnerability/opensource/CVE-2008-0166-debian-openssl-predictable-prng.md) | Debian OpenSSL 패치 실수로 PRNG 엔트로피가 PID 값 하나로 축소된 이슈 |
 | [CVE-2019-5736](vulnerability/opensource/CVE-2019-5736-runc-proc-self-exe-escape.md) | runc가 `/proc/self/exe`를 통해 호스트 바이너리를 덮어쓸 수 있는 컨테이너 탈출 |
 | [CVE-2026-0770](vulnerability/opensource/CVE-2026-0770-langflow-validate-code-exec-rce.md) | Langflow의 코드 "검증" 엔드포인트가 실제로는 `exec()`로 임의 코드를 실행하던 취약점 |
 | [CVE-2019-11358](vulnerability/opensource/CVE-2019-11358-jquery-extend-prototype-pollution.md) | jQuery의 $.extend(true, ...) 깊은 병합 로직이 속성 이름 __proto__를 일반 키와 구분하지 않아, 공격자가 넣은 데이터가 재귀적으로 전역 공유 객체인 Object.prototype 자체를 오염시킬 수 있었다. |
@@ -112,10 +111,11 @@
 </details>
 
 <details>
-<summary>Others (1)</summary>
+<summary>Others (2)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
+| [CVE-2026-9181](vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
 
 </details>

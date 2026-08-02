@@ -10,4 +10,4 @@
 공격 요청:  GET /files?name=../../etc/passwd → /var/app/uploads/../../etc/passwd → /etc/passwd
 ```
 
-**이 저장소의 예**: [CVE-2026-9181](../vulnerability/linux/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) (ArcGIS 업로드 파일명), [CVE-2026-53519](../vulnerability/opensource/CVE-2026-53519-nezha-dashboard-prefix-confusion-path-traversal.md) (Nezha Dashboard)
+**이 저장소의 예**: [CVE-2026-9181](../vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) (ArcGIS 업로드 파일명), [CVE-2026-53519](../vulnerability/opensource/CVE-2026-53519-nezha-dashboard-prefix-confusion-path-traversal.md) (Nezha Dashboard)
