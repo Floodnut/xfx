@@ -624,6 +624,14 @@
           "summary": "RWOP 볼륨에 한해 컨테이너 런타임의 재귀적 SELinux 재라벨링 대신 커널 마운트 옵션으로 라벨을 한 번에 적용하는 방식이 GA로 승격됐다.",
           "created_at": "2026-08-05T03:12:48+09:00",
           "updated_at": "2026-08-05T03:12:48+09:00"
+        },
+        {
+          "project_slug": "ceph",
+          "label": "Ceph FastEC Partial Writes",
+          "path": "oss-changes/ceph/20.2.0-fastec-partial-writes.md",
+          "summary": "소거 코드 풀의 덮어쓰기가 스트라이프 전체를 읽고 다시 쓰던 방식 대신, 건드린 조각만 처리하는 partial write와 parity delta write로 I/O 증폭을 줄이는 새 경로가 추가됐다.",
+          "created_at": "2026-08-05T03:12:55+09:00",
+          "updated_at": "2026-08-05T03:12:55+09:00"
         }
       ]
     },
@@ -772,6 +780,13 @@
             "summary": "Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계.",
             "created_at": "2026-08-03T00:16:33+09:00",
             "updated_at": "2026-08-03T00:16:33+09:00"
+          },
+          {
+            "label": "Ceph FastEC Partial Writes",
+            "path": "oss-changes/ceph/20.2.0-fastec-partial-writes.md",
+            "summary": "소거 코드 풀의 덮어쓰기가 스트라이프 전체를 읽고 다시 쓰던 방식 대신, 건드린 조각만 처리하는 partial write와 parity delta write로 I/O 증폭을 줄이는 새 경로가 추가됐다.",
+            "created_at": "2026-08-05T03:12:55+09:00",
+            "updated_at": "2026-08-05T03:12:55+09:00"
           }
         ]
       },
