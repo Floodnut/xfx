@@ -3,47 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-03",
+    "date": "2026-08-05",
     "entries": [
       {
-        "label": "CVE-2008-0166",
-        "category": "Linux",
-        "path": "vulnerability/linux/CVE-2008-0166-debian-openssl-predictable-prng.md",
-        "summary": "Debian OpenSSL 패치 실수로 PRNG 엔트로피가 PID 값 하나로 축소된 이슈",
-        "created_at": "2026-07-07T09:01:24+09:00",
-        "updated_at": "2026-08-03T00:23:45+09:00"
-      },
-      {
-        "label": "CVE-2026-9181",
-        "category": "Others",
-        "path": "vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md",
-        "summary": "ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다.",
-        "created_at": "2026-07-25T19:34:45+09:00",
-        "updated_at": "2026-08-03T00:23:45+09:00"
-      },
-      {
-        "label": "CVE-2005-0490",
-        "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2005-0490-curl-authentication-base64-stack-buffer-overflow.md",
-        "summary": "curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다.",
-        "created_at": "2026-08-03T05:08:52+09:00",
-        "updated_at": "2026-08-03T05:09:39+09:00"
-      },
-      {
-        "label": "CVE-2025-2783",
-        "category": "Browser",
-        "path": "vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md",
-        "summary": "Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다.",
-        "created_at": "2026-08-03T05:11:52+09:00",
-        "updated_at": "2026-08-03T05:11:52+09:00"
-      },
-      {
-        "label": "CVE-2022-21882",
+        "label": "CVE-2025-5986",
         "category": "Windows",
-        "path": "vulnerability/windows/CVE-2022-21882-win32k-window-object-type-confusion.md",
-        "summary": "Win32k user-mode callback 뒤 창 객체 표현을 재검증하지 않아 생긴 타입 혼동과 ConsoleWindow 상태 검증 패치를 분석한다.",
-        "created_at": "2026-08-03T05:11:52+09:00",
-        "updated_at": "2026-08-03T05:11:52+09:00"
+        "path": "vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md",
+        "summary": "Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석.",
+        "created_at": "2026-08-05T05:12:42+09:00",
+        "updated_at": "2026-08-05T05:12:42+09:00"
       }
     ]
   },
@@ -518,6 +486,13 @@
           "summary": "Win32k user-mode callback 뒤 창 객체 표현을 재검증하지 않아 생긴 타입 혼동과 ConsoleWindow 상태 검증 패치를 분석한다.",
           "created_at": "2026-08-03T05:11:52+09:00",
           "updated_at": "2026-08-03T05:11:52+09:00"
+        },
+        {
+          "label": "CVE-2025-5986",
+          "path": "vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md",
+          "summary": "Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석.",
+          "created_at": "2026-08-05T05:12:42+09:00",
+          "updated_at": "2026-08-05T05:12:42+09:00"
         }
       ]
     },
