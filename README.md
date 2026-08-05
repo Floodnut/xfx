@@ -4,10 +4,9 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
+| 2026-08-06 | [Cilium Datapath Plugins](oss-changes/cilium/1.20-cilium-datapath-plugins.md) | OSS / Cilium | 서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘 |
 | 2026-08-05 | [CVE-2025-5986](vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md) | Windows | Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석. |
 | 2026-08-05 | [CVE-2026-15772](vulnerability/browser/CVE-2026-15772-chrome-android-gpu-fbo-uaf-sandbox-escape.md) | Browser | Chrome Android GPU 읽기 경로가 임시 FBO를 해제하기 전에 바인딩을 복원하도록 고쳐 드라이버 내부 UAF와 잠재적 샌드박스 탈출을 차단한 CVE-2026-15772 분석. |
-| 2026-08-05 | [Kubernetes SELinux Mount GA](oss-changes/kubernetes/1.36-selinux-mount-ga.md) | OSS / Kubernetes | RWOP 볼륨에 한해 컨테이너 런타임의 재귀적 SELinux 재라벨링 대신 커널 마운트 옵션으로 라벨을 한 번에 적용하는 방식이 GA로 승격됐다. |
-| 2026-08-05 | [Ceph FastEC Partial Writes](oss-changes/ceph/20.2.0-fastec-partial-writes.md) | OSS / Ceph | 소거 코드 풀의 덮어쓰기가 스트라이프 전체를 읽고 다시 쓰던 방식 대신, 건드린 조각만 처리하는 partial write와 parity delta write로 I/O 증폭을 줄이는 새 경로가 추가됐다. |
 
 ## CVE 취약점 분석
 
@@ -166,12 +165,13 @@
 </details>
 
 <details>
-<summary>Cilium (2)</summary>
+<summary>Cilium (3)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [로드밸런싱 컨트롤 플레인 재설계](oss-changes/cilium/1.18-loadbalancer-statedb-redesign.md) | v1.18에서 뮤텍스+해시맵 기반 명령형 모델을 StateDB 테이블 기반 데이터 중심 모델로 전환 |
 | [로드밸런서 백엔드 평탄화 (Aggregated Load-Balancer State)](oss-changes/cilium/1.20-loadbalancer-backend-flatten.md) | v1.19에서 서비스별 인스턴스를 중첩 맵으로 담던 백엔드 행 구조가 실제 프로덕션 메모리 급증을 유발한 사례 — v1.20에서 (서비스,주소,우선순위) 조합마다 독립된 테이블 행으로 평탄화해 해결 |
+| [Cilium Datapath Plugins](oss-changes/cilium/1.20-cilium-datapath-plugins.md) | 서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘 |
 
 </details>
 
