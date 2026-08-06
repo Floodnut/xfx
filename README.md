@@ -4,9 +4,8 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-06 | [Cilium Datapath Plugins](oss-changes/cilium/1.20-cilium-datapath-plugins.md) | OSS / Cilium | 서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘 |
-| 2026-08-05 | [CVE-2025-5986](vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md) | Windows | Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석. |
-| 2026-08-05 | [CVE-2026-15772](vulnerability/browser/CVE-2026-15772-chrome-android-gpu-fbo-uaf-sandbox-escape.md) | Browser | Chrome Android GPU 읽기 경로가 임시 FBO를 해제하기 전에 바인딩을 복원하도록 고쳐 드라이버 내부 UAF와 잠재적 샌드박스 탈출을 차단한 CVE-2026-15772 분석. |
+| 2026-08-07 | [CVE-2025-6428](vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md) | Others | Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석 |
+| 2026-08-07 | [Karpenter Resize-Aware Resource Accounting](oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md) | OSS / Karpenter | InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석 |
 
 ## CVE 취약점 분석
 
@@ -119,12 +118,13 @@
 </details>
 
 <details>
-<summary>Others (2)</summary>
+<summary>Others (3)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
 | [CVE-2026-9181](vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
+| [CVE-2025-6428](vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md) | Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석 |
 
 </details>
 
@@ -153,7 +153,7 @@
 </details>
 
 <details>
-<summary>Karpenter (4)</summary>
+<summary>Karpenter (5)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -161,6 +161,7 @@
 | [v1.14 — Karpenter Balanced Consolidation](oss-changes/karpenter/1.14-balanced-consolidation-scoring.md) | 저장액 대비 disruption 비율을 점수화해 손해 보는 통합(consolidation)을 걸러내는 새 consolidationPolicy: Balanced 도입 |
 | [Karpenter CapacityBuffer: 가상 파드로 여유 용량을 미리 만들어두는 사전 프로비저닝](oss-changes/karpenter/1.14-capacity-buffer-active-provisioning.md) | v1.14에서 alpha로 추가된 CapacityBuffer API가 파드 없이도 노드를 미리 켜두는 방식(가상 파드를 매 루프 주입)과, 그로 인한 노미네이션/emptiness/consolidation 경계 처리를 다룬다. |
 | [Karpenter Dynamic Resource Allocation Scheduling](oss-changes/karpenter/1.14-dynamic-resource-allocation-scheduling.md) | Karpenter가 아직 인스턴스 타입이 확정되지 않은 NodeClaim 상태에서 GPU 등 DRA 디바이스를 배분하기 위해 전용 할당기(pkg/scheduling/dynamicresources)를 새로 구현하고 스케줄러/디스럽션/노드 초기화 전반에 통합한 변경을 분석. |
+| [Karpenter Resize-Aware Resource Accounting](oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md) | InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석 |
 
 </details>
 
