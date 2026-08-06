@@ -3,23 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-05",
+    "date": "2026-08-07",
     "entries": [
       {
-        "label": "CVE-2025-5986",
-        "category": "Windows",
-        "path": "vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md",
-        "summary": "Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석.",
-        "created_at": "2026-08-05T05:12:42+09:00",
-        "updated_at": "2026-08-05T05:12:42+09:00"
-      },
-      {
-        "label": "CVE-2026-15772",
-        "category": "Browser",
-        "path": "vulnerability/browser/CVE-2026-15772-chrome-android-gpu-fbo-uaf-sandbox-escape.md",
-        "summary": "Chrome Android GPU 읽기 경로가 임시 FBO를 해제하기 전에 바인딩을 복원하도록 고쳐 드라이버 내부 UAF와 잠재적 샌드박스 탈출을 차단한 CVE-2026-15772 분석.",
-        "created_at": "2026-08-05T05:12:42+09:00",
-        "updated_at": "2026-08-05T05:12:42+09:00"
+        "label": "CVE-2025-6428",
+        "category": "Others",
+        "path": "vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md",
+        "summary": "Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석",
+        "created_at": "2026-08-07T05:05:07+09:00",
+        "updated_at": "2026-08-07T05:05:07+09:00"
       }
     ]
   },
@@ -597,6 +589,13 @@
           "summary": "ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다.",
           "created_at": "2026-07-25T19:34:45+09:00",
           "updated_at": "2026-08-03T00:23:45+09:00"
+        },
+        {
+          "label": "CVE-2025-6428",
+          "path": "vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md",
+          "summary": "Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석",
+          "created_at": "2026-08-07T05:05:07+09:00",
+          "updated_at": "2026-08-07T05:05:07+09:00"
         }
       ]
     }
