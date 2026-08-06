@@ -605,15 +605,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-08-06",
+      "date": "2026-08-07",
       "entries": [
         {
-          "project_slug": "cilium",
-          "label": "Cilium Datapath Plugins",
-          "path": "oss-changes/cilium/1.20-cilium-datapath-plugins.md",
-          "summary": "서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘",
-          "created_at": "2026-08-06T03:08:48+09:00",
-          "updated_at": "2026-08-06T03:08:48+09:00"
+          "project_slug": "karpenter",
+          "label": "Karpenter Resize-Aware Resource Accounting",
+          "path": "oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md",
+          "summary": "InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석",
+          "created_at": "2026-08-07T03:12:35+09:00",
+          "updated_at": "2026-08-07T03:12:35+09:00"
         }
       ]
     },
@@ -703,6 +703,13 @@
             "summary": "Karpenter가 아직 인스턴스 타입이 확정되지 않은 NodeClaim 상태에서 GPU 등 DRA 디바이스를 배분하기 위해 전용 할당기(pkg/scheduling/dynamicresources)를 새로 구현하고 스케줄러/디스럽션/노드 초기화 전반에 통합한 변경을 분석.",
             "created_at": "2026-07-31T03:08:31+09:00",
             "updated_at": "2026-07-31T03:08:31+09:00"
+          },
+          {
+            "label": "Karpenter Resize-Aware Resource Accounting",
+            "path": "oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md",
+            "summary": "InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석",
+            "created_at": "2026-08-07T03:12:35+09:00",
+            "updated_at": "2026-08-07T03:12:35+09:00"
           }
         ]
       },
