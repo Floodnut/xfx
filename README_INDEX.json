@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-07",
+    "date": "2026-08-08",
     "entries": [
       {
-        "label": "CVE-2025-6428",
-        "category": "Others",
-        "path": "vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md",
-        "summary": "Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석",
-        "created_at": "2026-08-07T05:05:07+09:00",
-        "updated_at": "2026-08-07T05:05:07+09:00"
+        "label": "CVE-2026-33278",
+        "category": "Opensource",
+        "path": "vulnerability/opensource/CVE-2026-33278-unbound-dnssec-deepcopy-dangling-rrsets.md",
+        "summary": "Unbound가 NSEC3 계산 예산 고갈로 DNSSEC 검증을 중단할 때 응답 메시지를 상위 쿼리 리전으로 깊은 복사하면서 구조체를 통째로 대입해 RRset 포인터 배열이 곧 해제될 서브쿼리 리전을 가리킨 채 남았고, 검증 재개 시 그 배열을 다시 읽어 Use-After-Free가 발생한다.",
+        "created_at": "2026-08-08T11:48:13+09:00",
+        "updated_at": "2026-08-08T11:48:13+09:00"
       }
     ]
   },
@@ -445,6 +445,13 @@
           "summary": "curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다.",
           "created_at": "2026-08-03T05:08:52+09:00",
           "updated_at": "2026-08-03T05:09:39+09:00"
+        },
+        {
+          "label": "CVE-2026-33278",
+          "path": "vulnerability/opensource/CVE-2026-33278-unbound-dnssec-deepcopy-dangling-rrsets.md",
+          "summary": "Unbound가 NSEC3 계산 예산 고갈로 DNSSEC 검증을 중단할 때 응답 메시지를 상위 쿼리 리전으로 깊은 복사하면서 구조체를 통째로 대입해 RRset 포인터 배열이 곧 해제될 서브쿼리 리전을 가리킨 채 남았고, 검증 재개 시 그 배열을 다시 읽어 Use-After-Free가 발생한다.",
+          "created_at": "2026-08-08T11:48:13+09:00",
+          "updated_at": "2026-08-08T11:48:13+09:00"
         }
       ]
     },
