@@ -3,23 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-08",
+    "date": "2026-08-12",
     "entries": [
       {
-        "label": "CVE-2026-33278",
-        "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2026-33278-unbound-dnssec-deepcopy-dangling-rrsets.md",
-        "summary": "Unbound가 NSEC3 계산 예산 고갈로 DNSSEC 검증을 중단할 때 응답 메시지를 상위 쿼리 리전으로 깊은 복사하면서 구조체를 통째로 대입해 RRset 포인터 배열이 곧 해제될 서브쿼리 리전을 가리킨 채 남았고, 검증 재개 시 그 배열을 다시 읽어 Use-After-Free가 발생한다.",
-        "created_at": "2026-08-08T11:48:13+09:00",
-        "updated_at": "2026-08-08T11:48:13+09:00"
-      },
-      {
-        "label": "CVE-2026-64561",
-        "category": "Linux",
-        "path": "vulnerability/linux/CVE-2026-64561-kvm-recursive-zap-active-list-uaf.md",
-        "summary": "중첩 가상화에서 KVM/x86 shadow MMU의 재귀 zap이 사용 중인 root를 무효화한 뒤에도 매핑을 계속해 invalid child를 활성 목록에 넣고, 해제 후 list_add가 stale link에 쓰는 Use-After-Free 경로와 Zapscape의 Intel/AMD 조건을 설명한다.",
-        "created_at": "2026-08-08T18:57:54+09:00",
-        "updated_at": "2026-08-08T20:14:35+09:00"
+        "label": "CVE-2025-50168",
+        "category": "Windows",
+        "path": "vulnerability/windows/CVE-2025-50168-win32k-directcomposition-shared-resource-type-confusion.md",
+        "summary": "CVE-2025-50168은 DirectComposition 공유 리소스의 타입 태그와 실제 marshaler 객체 레이아웃 불일치가 속성 setter의 범위 밖 쓰기로 이어진 Windows 권한 상승 취약점이다.",
+        "created_at": "2026-08-12T13:28:57+09:00",
+        "updated_at": "2026-08-12T13:28:57+09:00"
       }
     ]
   },
@@ -515,6 +507,13 @@
           "summary": "Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석.",
           "created_at": "2026-08-05T05:12:42+09:00",
           "updated_at": "2026-08-05T05:12:42+09:00"
+        },
+        {
+          "label": "CVE-2025-50168",
+          "path": "vulnerability/windows/CVE-2025-50168-win32k-directcomposition-shared-resource-type-confusion.md",
+          "summary": "CVE-2025-50168은 DirectComposition 공유 리소스의 타입 태그와 실제 marshaler 객체 레이아웃 불일치가 속성 setter의 범위 밖 쓰기로 이어진 Windows 권한 상승 취약점이다.",
+          "created_at": "2026-08-12T13:28:57+09:00",
+          "updated_at": "2026-08-12T13:28:57+09:00"
         }
       ]
     },
@@ -635,6 +634,14 @@
           "summary": "EC SubOp 읽기의 priority 기반 mClock 분류와 프로파일 조정으로 대규모 EC 클러스터의 백필 시 클라이언트 I/O 지연 개선",
           "created_at": "2026-08-12T13:28:56+09:00",
           "updated_at": "2026-08-12T13:28:56+09:00"
+        },
+        {
+          "project_slug": "kubernetes",
+          "label": "Kubernetes PodGroup API를 Workload에서 분리해 독립 런타임 객체로 만들기",
+          "path": "oss-changes/kubernetes/1.36-kubernetes-decouple-podgroup-api-from-workload-api.md",
+          "summary": "KEP-5832로 PodGroup을 Workload 내장에서 독립 API 객체로 분리하는 v1alpha2 설계 변경 분석",
+          "created_at": "2026-08-12T13:29:30+09:00",
+          "updated_at": "2026-08-12T13:29:30+09:00"
         }
       ]
     },
@@ -697,6 +704,13 @@
             "summary": "RWOP 볼륨에 한해 컨테이너 런타임의 재귀적 SELinux 재라벨링 대신 커널 마운트 옵션으로 라벨을 한 번에 적용하는 방식이 GA로 승격됐다.",
             "created_at": "2026-08-05T03:12:48+09:00",
             "updated_at": "2026-08-05T03:12:48+09:00"
+          },
+          {
+            "label": "Kubernetes PodGroup API를 Workload에서 분리해 독립 런타임 객체로 만들기",
+            "path": "oss-changes/kubernetes/1.36-kubernetes-decouple-podgroup-api-from-workload-api.md",
+            "summary": "KEP-5832로 PodGroup을 Workload 내장에서 독립 API 객체로 분리하는 v1alpha2 설계 변경 분석",
+            "created_at": "2026-08-12T13:29:30+09:00",
+            "updated_at": "2026-08-12T13:29:30+09:00"
           }
         ]
       },
