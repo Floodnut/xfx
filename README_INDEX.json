@@ -36,6 +36,14 @@
         "summary": "PwnKit — pkexec가 argc=0 실행을 예상 못해 환경변수를 인자로 오인",
         "created_at": "2026-08-16T02:09:29+09:00",
         "updated_at": "2026-08-16T02:09:29+09:00"
+      },
+      {
+        "label": "CVE-2025-6018",
+        "category": "Linux",
+        "path": "vulnerability/linux/CVE-2025-6018-pam-env-allow-active-spoof.md",
+        "summary": "PAM pam_env로 SSH 세션을 물리 콘솔 세션처럼 속여 allow_active 권한 탈취",
+        "created_at": "2026-08-16T02:09:29+09:00",
+        "updated_at": "2026-08-16T02:09:29+09:00"
       }
     ]
   },
@@ -152,9 +160,9 @@
         {
           "label": "CVE-2025-6018",
           "path": "vulnerability/linux/CVE-2025-6018-pam-env-allow-active-spoof.md",
-          "summary": "PAM `pam_env`로 SSH 세션을 물리 콘솔 세션처럼 속여 `allow_active` 권한 탈취",
+          "summary": "PAM pam_env로 SSH 세션을 물리 콘솔 세션처럼 속여 allow_active 권한 탈취",
           "created_at": "2026-07-07T00:33:32+09:00",
-          "updated_at": "2026-07-07T00:33:32+09:00"
+          "updated_at": "2026-08-16T02:09:29+09:00"
         },
         {
           "label": "CVE-2026-28372",
