@@ -12,6 +12,14 @@
         "summary": "WeasyPrint 68.0 이전 default_url_fetcher가 내부 urllib 리다이렉트를 자동 추적해 사용자 정의 호스트 차단 정책을 우회하던 SSRF를 allow_redirects=False로 수정한 CVE-2025-68616 분석",
         "created_at": "2026-08-15T11:57:22+09:00",
         "updated_at": "2026-08-15T11:57:22+09:00"
+      },
+      {
+        "label": "CVE-2019-14271",
+        "category": "Opensource",
+        "path": "vulnerability/opensource/CVE-2019-14271-docker-tar-nss-chroot-code-injection.md",
+        "summary": "Docker 19.03.0의 docker-tar가 컨테이너 rootfs로 전환한 뒤 glibc NSS를 처음 로드해 컨테이너의 libnss 공유 라이브러리를 호스트 측 프로세스에서 실행할 수 있었고, 19.03.1은 chroot 전에 NSS를 초기화한다.",
+        "created_at": "2026-08-15T23:08:38+09:00",
+        "updated_at": "2026-08-15T23:08:38+09:00"
       }
     ]
   },
@@ -473,6 +481,13 @@
           "summary": "WeasyPrint 68.0 이전 default_url_fetcher가 내부 urllib 리다이렉트를 자동 추적해 사용자 정의 호스트 차단 정책을 우회하던 SSRF를 allow_redirects=False로 수정한 CVE-2025-68616 분석",
           "created_at": "2026-08-15T11:57:22+09:00",
           "updated_at": "2026-08-15T11:57:22+09:00"
+        },
+        {
+          "label": "CVE-2019-14271",
+          "path": "vulnerability/opensource/CVE-2019-14271-docker-tar-nss-chroot-code-injection.md",
+          "summary": "Docker 19.03.0의 docker-tar가 컨테이너 rootfs로 전환한 뒤 glibc NSS를 처음 로드해 컨테이너의 libnss 공유 라이브러리를 호스트 측 프로세스에서 실행할 수 있었고, 19.03.1은 chroot 전에 NSS를 초기화한다.",
+          "created_at": "2026-08-15T23:08:38+09:00",
+          "updated_at": "2026-08-15T23:08:38+09:00"
         }
       ]
     },
