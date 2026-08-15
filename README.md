@@ -4,24 +4,24 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-07 | [CVE-2025-6428](vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md) | Others | Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석 |
-| 2026-08-07 | [Karpenter Resize-Aware Resource Accounting](oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md) | OSS / Karpenter | InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석 |
+| 2026-08-16 | [CVE-2018-15664](vulnerability/opensource/CVE-2018-15664-docker-cp-followsymlinkinscope-toctou-symlink-race.md) | Opensource | Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점 |
+| 2026-08-16 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | OSS / Kubernetes | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (30)</summary>
+<summary>Linux (32)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2014-6271](vulnerability/linux/CVE-2014-6271-shellshock.md) | Shellshock — Bash 함수 정의 파싱이 끝나지 않아 뒤에 붙은 명령까지 실행되는 취약점 |
-| [CVE-2014-7169](vulnerability/linux/CVE-2014-7169-shellshock-incomplete-patch.md) | Shellshock 최초 패치가 불완전해 리다이렉션 경로로 우회된 후속 취약점 |
+| [CVE-2014-7169](vulnerability/linux/CVE-2014-7169-shellshock-incomplete-patch.md) | Shellshock 최초 패치 이후에도 파서가 lookahead 문자를 초기화하지 않아 뒷부분이 재해석되던 후속 취약점 |
 | [CVE-2018-15686](vulnerability/linux/CVE-2018-15686-systemd-notify-reexec-state-injection.md) | systemd 재실행 시 상태 역직렬화 스택 버퍼 오버플로우 |
 | [CVE-2018-19788](vulnerability/linux/CVE-2018-19788-polkit-uid-int-overflow.md) | polkit이 UID를 부호 있는 정수로 다뤄 INT_MAX 초과 UID가 root로 오인되는 취약점 |
 | [CVE-2019-13272](vulnerability/linux/CVE-2019-13272-ptrace-traceme-cred.md) | `ptrace_link()`가 잘못된 프로세스의 자격증명을 기록해 pkexec와 결합 시 권한 상승 |
-| [CVE-2019-18276](vulnerability/linux/CVE-2019-18276-bash-disable-priv-mode.md) | Bash `disable_priv_mode()`가 saved-UID를 안 지워서 setuid 권한이 남는 취약점 |
+| [CVE-2019-18276](vulnerability/linux/CVE-2019-18276-bash-disable-priv-mode.md) | Bash disable_priv_mode()가 saved-UID를 안 지워서 setuid 권한이 남는 취약점 |
 | [CVE-2021-3560](vulnerability/linux/CVE-2021-3560-polkit-dbus-race.md) | polkit이 D-Bus 조회 실패를 root(UID 0)로 오인하는 레이스 컨디션 |
-| [CVE-2021-4034](vulnerability/linux/CVE-2021-4034-pwnkit.md) | PwnKit — pkexec가 `argc=0` 실행을 예상 못해 환경변수를 인자로 오인 |
+| [CVE-2021-4034](vulnerability/linux/CVE-2021-4034-pwnkit.md) | PwnKit — pkexec가 argc=0 실행을 예상 못해 환경변수를 인자로 오인 |
 | [CVE-2022-0847](vulnerability/linux/CVE-2022-0847-dirty-pipe.md) | Dirty Pipe — 파이프 버퍼 flags 미초기화로 읽기 전용 파일 덮어쓰기 |
 | [CVE-2022-1015](vulnerability/linux/CVE-2022-1015-nf-tables-register-overflow.md) | nf_tables 레지스터 번호 검증의 32비트 정수 오버플로우 |
 | [CVE-2023-0179](vulnerability/linux/CVE-2023-0179-nft-payload-vlan-overflow.md) | nft_payload VLAN 헤더 처리의 정수 언더플로우로 인한 스택 버퍼 오버플로우 |
@@ -29,7 +29,7 @@
 | [CVE-2023-4147](vulnerability/linux/CVE-2023-4147-nftables-bound-chain-rule-injection-uaf.md) | 바인딩된 체인에 트랜잭션 로컬 ID로 규칙을 몰래 추가할 수 있는 검사 우회 |
 | [CVE-2024-28085](vulnerability/linux/CVE-2024-28085-wall-escape-sequence-injection.md) | util-linux `wall`이 argv 경로만 이스케이프 필터링을 안 해 생긴 터미널 인젝션 |
 | [CVE-2025-32463](vulnerability/linux/CVE-2025-32463-sudo-chroot-nsswitch.md) | sudo `--chroot`가 정책 검사보다 먼저 일어나 공격자의 nsswitch.conf를 신뢰하는 취약점 |
-| [CVE-2025-6018](vulnerability/linux/CVE-2025-6018-pam-env-allow-active-spoof.md) | PAM `pam_env`로 SSH 세션을 물리 콘솔 세션처럼 속여 `allow_active` 권한 탈취 |
+| [CVE-2025-6018](vulnerability/linux/CVE-2025-6018-pam-env-allow-active-spoof.md) | PAM pam_env로 SSH 세션을 물리 콘솔 세션처럼 속여 allow_active 권한 탈취 |
 | [CVE-2026-28372](vulnerability/linux/CVE-2026-28372-telnetd-systemd-credentials-noauth-bypass.md) | util-linux 2.40의 systemd 자격증명 지원(login.noauth/CREDENTIALS_DIRECTORY)을 GNU inetutils telnetd가 클라이언트 환경변수를 무검증으로 전달하며 그대로 신뢰해버려, 로컬 사용자가 텔넷 접속만으로 root 인증을 건너뛸 수 있었다. |
 | [CVE-2006-5051](vulnerability/linux/CVE-2006-5051-openssh-sigalrm-cleanup-double-free.md) | OpenSSH sshd의 로그인 유예시간 알람(SIGALRM) 핸들러가 인증 완료 여부를 구분하지 않고 비동기 시그널 불안전한 정리 함수(fatal/syslog, GSSAPI 정리)를 호출해 이중 해제로 이어질 수 있었던 경쟁 조건으로, 이 설계 결함은 18년 뒤 CVE-2024-6387로 재발했다. |
 | [CVE-2018-16865](vulnerability/linux/CVE-2018-16865-systemd-journald-alloca-stack-clash.md) | systemd-journald의 네이티브 로그 프로토콜이 항목당 필드 개수에 상한을 두지 않아, journal_file_append_entry()가 필드 수에 비례한 크기(최대 약 4GB)를 검사 없이 alloca()로 할당하면서 스택이 인접 메모리 영역과 충돌(Stack Clash)해 DoS/코드 실행으로 이어질 수 있었던 취약점. |
@@ -44,11 +44,13 @@
 | [CVE-2012-0864](vulnerability/linux/CVE-2012-0864-glibc-vfprintf-nargs-integer-overflow.md) | glibc vfprintf()의 위치 지정 인자 개수 곱셈이 32비트에서 오버플로해 FORTIFY_SOURCE 검사 배열 밖 쓰기와 형식 문자열 보호 우회를 허용했다. |
 | [CVE-2018-12562](vulnerability/linux/CVE-2018-12562-cantata-mounter-unquoted-argv-glob-expansion.md) | Cantata의 root D-Bus mounter가 Bash 래퍼의 따옴표 없는 $@ 때문에 한 개의 마운트 지점 인자를 로컬 파일명 여러 개로 재확장하던 문제다. |
 | [CVE-2018-12559](vulnerability/linux/CVE-2018-12559-cantata-mounter-lexical-home-prefix-path-traversal.md) | Cantata의 root D-Bus mounter는 마운트 지점을 정규화하지 않고 /home/ 문자열 접두사만 검사해 일반 사용자가 홈 밖 위치에 CIFS 공유를 마운트하거나 해제할 수 있었다. |
+| [CVE-2026-64561](vulnerability/linux/CVE-2026-64561-kvm-recursive-zap-active-list-uaf.md) | 중첩 가상화에서 KVM/x86 shadow MMU의 재귀 zap이 사용 중인 root를 무효화한 뒤에도 매핑을 계속해 invalid child를 활성 목록에 넣고, 해제 후 list_add가 stale link에 쓰는 Use-After-Free 경로와 Zapscape의 Intel/AMD 조건을 설명한다. |
+| [CVE-2026-46316](vulnerability/linux/CVE-2026-46316-kvm-arm64-vgic-its-translation-cache-uaf.md) | KVM arm64의 VGIC ITS 번역 캐시가 경쟁 중 같은 IRQ 참조를 두 번 해제해 Use-After-Free를 일으키는 원인과 xa_erase 반환값을 사용하는 수정 방법을 설명한다. |
 
 </details>
 
 <details>
-<summary>Opensource (30)</summary>
+<summary>Opensource (34)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -82,11 +84,15 @@
 | [CVE-2005-2088](vulnerability/opensource/CVE-2005-2088-apache-proxy-te-cl-request-smuggling.md) | Apache mod_proxy_http TE/CL request smuggling analysis |
 | [CVE-2007-4772](vulnerability/opensource/CVE-2007-4772-tcl-regex-nfa-error-propagation-infinite-loop.md) | Tcl regex NFA error propagation infinite loop analysis |
 | [CVE-2005-0490](vulnerability/opensource/CVE-2005-0490-curl-authentication-base64-stack-buffer-overflow.md) | curl의 NTLM·Kerberos v4 인증 응답을 고정 버퍼에 길이 검증 없이 Base64 디코드하던 경로와 동적 할당·상한 검사 패치 체인을 설명한다. |
+| [CVE-2026-33278](vulnerability/opensource/CVE-2026-33278-unbound-dnssec-deepcopy-dangling-rrsets.md) | Unbound가 NSEC3 계산 예산 고갈로 DNSSEC 검증을 중단할 때 응답 메시지를 상위 쿼리 리전으로 깊은 복사하면서 구조체를 통째로 대입해 RRset 포인터 배열이 곧 해제될 서브쿼리 리전을 가리킨 채 남았고, 검증 재개 시 그 배열을 다시 읽어 Use-After-Free가 발생한다. |
+| [CVE-2025-68616](vulnerability/opensource/CVE-2025-68616-weasyprint-default-url-fetcher-redirect-ssrf-bypass.md) | WeasyPrint 68.0 이전 default_url_fetcher가 내부 urllib 리다이렉트를 자동 추적해 사용자 정의 호스트 차단 정책을 우회하던 SSRF를 allow_redirects=False로 수정한 CVE-2025-68616 분석 |
+| [CVE-2019-14271](vulnerability/opensource/CVE-2019-14271-docker-tar-nss-chroot-code-injection.md) | Docker 19.03.0의 docker-tar가 컨테이너 rootfs로 전환한 뒤 glibc NSS를 처음 로드해 컨테이너의 libnss 공유 라이브러리를 호스트 측 프로세스에서 실행할 수 있었고, 19.03.1은 chroot 전에 NSS를 초기화한다. |
+| [CVE-2018-15664](vulnerability/opensource/CVE-2018-15664-docker-cp-followsymlinkinscope-toctou-symlink-race.md) | Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점 |
 
 </details>
 
 <details>
-<summary>Windows (6)</summary>
+<summary>Windows (7)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -96,6 +102,7 @@
 | [CVE-2026-40369](vulnerability/windows/CVE-2026-40369-windows-kernel-pointer-overflow.md) | Windows Kernel이 신뢰할 수 없는 포인터와 길이 정보를 잘못 다룰 때 커널 풀 손상과 제한적 SYSTEM 권한 상승으로 이어질 수 있는 로컬 취약점이다. |
 | [CVE-2022-21882](vulnerability/windows/CVE-2022-21882-win32k-window-object-type-confusion.md) | Win32k user-mode callback 뒤 창 객체 표현을 재검증하지 않아 생긴 타입 혼동과 ConsoleWindow 상태 검증 패치를 분석한다. |
 | [CVE-2025-5986](vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md) | Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석. |
+| [CVE-2025-50168](vulnerability/windows/CVE-2025-50168-win32k-directcomposition-shared-resource-type-confusion.md) | CVE-2025-50168은 DirectComposition 공유 리소스의 타입 태그와 실제 marshaler 객체 레이아웃 불일치가 속성 setter의 범위 밖 쓰기로 이어진 Windows 권한 상승 취약점이다. |
 
 </details>
 
@@ -131,24 +138,27 @@
 ## OSS 아키텍처 변경 분석
 
 <details>
-<summary>Linux Kernel (3)</summary>
+<summary>Linux Kernel (4)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Live Update Orchestrator / KHO](oss-changes/linux-kernel/6.19-live-update-orchestrator-kexec-hypervisor.md) | kexec로 VM을 안 끄고 커널을 업데이트하는 프레임워크 — KHO의 radix tree/FDT 기반 메모리 보존과 LUO의 콜백 기반 자원 생명주기 관리 |
 | [Linux Kernel pidfd Process Lifecycle: CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL](oss-changes/linux-kernel/7.1-pidfd-process-lifecycle-autoreap-autokill.md) | clone3()에 CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL 플래그를 추가해, 부모 전체에 걸리던 SIGCHLD 기반 auto-reap을 자식 단위로 세분화하고 pidfd 소유권에 자식 생명주기를 묶었다. |
 | [Linux Kernel NTFS Driver Resurrection](oss-changes/linux-kernel/7.1-ntfs-driver-resurrection-iomap-rewrite.md) | 제거됐던 read-only NTFS 드라이버가 4년의 재작성을 거쳐 iomap/folio 기반 쓰기 지원 드라이버로 ntfs3와 나란히 공존하며 부활했다. |
+| [Linux Kernel FRED Enabled by Default](oss-changes/linux-kernel/7.1-linux-kernel-fred-enabled-by-default.md) | 6.9에 병합되고도 fred=on 없이는 쓰이지 않던 FRED가 7.1에서 기본값이 되면서, x86-64의 기본 이벤트 전달 경로가 IDT에서 FRED로 넘어갔다. |
 
 </details>
 
 <details>
-<summary>Kubernetes (3)</summary>
+<summary>Kubernetes (5)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [In-Place Pod Resize GA (KEP-1287)](oss-changes/kubernetes/1.35-in-place-pod-resize-ga.md) | Pod 재시작 없이 CPU/메모리를 바꾸는 기능이 v1.35에서 GA — Desired/Allocated/Actuated/Actual 4단계 상태 기계 |
 | [Server-Side Sharded List/Watch](oss-changes/kubernetes/1.36-server-side-sharded-list-and-watch.md) | shardSelector로 LIST/WATCH 필터링을 API 서버(워치 캐시)로 옮겨 컨트롤러 수평 확장 시 레플리카 수에 비례해 커지던 네트워크/CPU 낭비를 없앤 KEP-5866 Alpha 기능. |
 | [Kubernetes SELinux Mount GA](oss-changes/kubernetes/1.36-selinux-mount-ga.md) | RWOP 볼륨에 한해 컨테이너 런타임의 재귀적 SELinux 재라벨링 대신 커널 마운트 옵션으로 라벨을 한 번에 적용하는 방식이 GA로 승격됐다. |
+| [Kubernetes PodGroup API를 Workload에서 분리해 독립 런타임 객체로 만들기](oss-changes/kubernetes/1.36-kubernetes-decouple-podgroup-api-from-workload-api.md) | KEP-5832로 PodGroup을 Workload 내장에서 독립 API 객체로 분리하는 v1alpha2 설계 변경 분석 |
+| [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
 
 </details>
 
@@ -195,12 +205,13 @@
 </details>
 
 <details>
-<summary>Ceph (2)</summary>
+<summary>Ceph (3)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Ceph mgmt-gateway High Availability](oss-changes/ceph/20.2.0-mgmt-gateway-ha.md) | Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계. |
 | [Ceph FastEC Partial Writes](oss-changes/ceph/20.2.0-fastec-partial-writes.md) | 소거 코드 풀의 덮어쓰기가 스트라이프 전체를 읽고 다시 쓰던 방식 대신, 건드린 조각만 처리하는 partial write와 parity delta write로 I/O 증폭을 줄이는 새 경로가 추가됐다. |
+| [Ceph mClock EC SubOp Read 스케줄링 분류 개선](oss-changes/ceph/20.2.3-ceph-mclock-ec-subop-read-classification.md) | EC SubOp 읽기의 priority 기반 mClock 분류와 프로파일 조정으로 대규모 EC 클러스터의 백필 시 클라이언트 I/O 지연 개선 |
 
 </details>
 
@@ -210,5 +221,117 @@
 | 변경 | 내용 |
 | --- | --- |
 | [OVN Flow-Based Tunnels](oss-changes/ovn/26.03-flow-based-tunnels.md) | v26.03에서 원격 chassis별 tunnel port 대신 type별 shared port를 만들고 OpenFlow가 패킷마다 tunnel endpoint를 설정해 대규모 환경의 port 수를 줄인 실험적 설계. |
+
+</details>
+
+<details>
+<summary>Slurm (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>containerd (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>Istio (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>etcd (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>Cluster API (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>Harvester (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>Envoy (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>libvirt (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>ClickHouse (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>ScyllaDB (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>Apache Kafka (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>TCMalloc (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>NATS Server (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
+
+</details>
+
+<details>
+<summary>RabbitMQ (0)</summary>
+
+| 변경 | 내용 |
+| --- | --- |
 
 </details>
