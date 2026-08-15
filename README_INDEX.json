@@ -692,6 +692,14 @@
           "summary": "kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석",
           "created_at": "2026-08-16T01:57:03+09:00",
           "updated_at": "2026-08-16T01:57:03+09:00"
+        },
+        {
+          "project_slug": "kafka",
+          "label": "Kafka 컨트롤러 등록 해제",
+          "path": "oss-changes/kafka/2026-kafka-08-03-kafka-controller-unregistration.md",
+          "summary": "KRaft 컨트롤러 등록을 지울 방법이 없어 이미 클러스터에서 빠진 노드의 등록이 피처 업그레이드를 계속 거부하던 문제를, UnregisterController RPC와 UnregisterControllerRecord로 메타데이터 계층에 등록 해제 경로를 뚫어 해결한 KIP-1312 변경 분석",
+          "created_at": "2026-08-16T06:11:03+09:00",
+          "updated_at": "2026-08-16T06:11:03+09:00"
         }
       ]
     },
@@ -958,7 +966,15 @@
       {
         "slug": "kafka",
         "title": "Apache Kafka",
-        "entries": []
+        "entries": [
+          {
+            "label": "Kafka 컨트롤러 등록 해제",
+            "path": "oss-changes/kafka/2026-kafka-08-03-kafka-controller-unregistration.md",
+            "summary": "KRaft 컨트롤러 등록을 지울 방법이 없어 이미 클러스터에서 빠진 노드의 등록이 피처 업그레이드를 계속 거부하던 문제를, UnregisterController RPC와 UnregisterControllerRecord로 메타데이터 계층에 등록 해제 경로를 뚫어 해결한 KIP-1312 변경 분석",
+            "created_at": "2026-08-16T06:11:03+09:00",
+            "updated_at": "2026-08-16T06:11:03+09:00"
+          }
+        ]
       },
       {
         "slug": "tcmalloc",
