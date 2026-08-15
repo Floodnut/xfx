@@ -20,6 +20,14 @@
         "summary": "Shellshock — Bash 함수 정의 파싱이 끝나지 않아 뒤에 붙은 명령까지 실행되는 취약점",
         "created_at": "2026-08-16T02:09:29+09:00",
         "updated_at": "2026-08-16T02:09:29+09:00"
+      },
+      {
+        "label": "CVE-2014-7169",
+        "category": "Linux",
+        "path": "vulnerability/linux/CVE-2014-7169-shellshock-incomplete-patch.md",
+        "summary": "Shellshock 최초 패치 이후에도 파서가 lookahead 문자를 초기화하지 않아 뒷부분이 재해석되던 후속 취약점",
+        "created_at": "2026-08-16T02:09:29+09:00",
+        "updated_at": "2026-08-16T02:09:29+09:00"
       }
     ]
   },
@@ -38,9 +46,9 @@
         {
           "label": "CVE-2014-7169",
           "path": "vulnerability/linux/CVE-2014-7169-shellshock-incomplete-patch.md",
-          "summary": "Shellshock 최초 패치가 불완전해 리다이렉션 경로로 우회된 후속 취약점",
+          "summary": "Shellshock 최초 패치 이후에도 파서가 lookahead 문자를 초기화하지 않아 뒷부분이 재해석되던 후속 취약점",
           "created_at": "2026-07-07T00:18:21+09:00",
-          "updated_at": "2026-07-07T00:18:21+09:00"
+          "updated_at": "2026-08-16T02:09:29+09:00"
         },
         {
           "label": "CVE-2018-15686",
