@@ -20,6 +20,14 @@
         "summary": "util-linux libmount의 FUSE 언마운트 권한 검사 함수 is_fuse_usermount()에 있던 두 논리 오류(CVE-2021-3996, CVE-2021-3995)로 저권한 로컬 사용자가 다른 사용자 소유 파일시스템을 강제로 언마운트해 서비스 거부를 일으킬 수 있었던 취약점을 분석했다.",
         "created_at": "2026-08-16T04:54:09+09:00",
         "updated_at": "2026-08-16T04:54:09+09:00"
+      },
+      {
+        "label": "CVE-2017-7529",
+        "category": "Opensource",
+        "path": "vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md",
+        "summary": "nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다.",
+        "created_at": "2026-08-16T05:14:00+09:00",
+        "updated_at": "2026-08-16T05:14:00+09:00"
       }
     ]
   },
@@ -502,6 +510,13 @@
           "summary": "Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점",
           "created_at": "2026-08-16T01:55:28+09:00",
           "updated_at": "2026-08-16T01:55:28+09:00"
+        },
+        {
+          "label": "CVE-2017-7529",
+          "path": "vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md",
+          "summary": "nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다.",
+          "created_at": "2026-08-16T05:14:00+09:00",
+          "updated_at": "2026-08-16T05:14:00+09:00"
         }
       ]
     },
