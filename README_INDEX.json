@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-14",
+    "date": "2026-08-15",
     "entries": [
       {
-        "label": "CVE-2026-46316",
-        "category": "Linux",
-        "path": "vulnerability/linux/CVE-2026-46316-kvm-arm64-vgic-its-translation-cache-uaf.md",
-        "summary": "KVM arm64의 VGIC ITS 번역 캐시가 경쟁 중 같은 IRQ 참조를 두 번 해제해 Use-After-Free를 일으키는 원인과 xa_erase 반환값을 사용하는 수정 방법을 설명한다.",
-        "created_at": "2026-08-14T15:37:08+09:00",
-        "updated_at": "2026-08-14T15:37:08+09:00"
+        "label": "CVE-2025-68616",
+        "category": "Opensource",
+        "path": "vulnerability/opensource/CVE-2025-68616-weasyprint-default-url-fetcher-redirect-ssrf-bypass.md",
+        "summary": "WeasyPrint 68.0 이전 default_url_fetcher가 내부 urllib 리다이렉트를 자동 추적해 사용자 정의 호스트 차단 정책을 우회하던 SSRF를 allow_redirects=False로 수정한 CVE-2025-68616 분석",
+        "created_at": "2026-08-15T11:57:22+09:00",
+        "updated_at": "2026-08-15T11:57:22+09:00"
       }
     ]
   },
@@ -466,6 +466,13 @@
           "summary": "Unbound가 NSEC3 계산 예산 고갈로 DNSSEC 검증을 중단할 때 응답 메시지를 상위 쿼리 리전으로 깊은 복사하면서 구조체를 통째로 대입해 RRset 포인터 배열이 곧 해제될 서브쿼리 리전을 가리킨 채 남았고, 검증 재개 시 그 배열을 다시 읽어 Use-After-Free가 발생한다.",
           "created_at": "2026-08-08T11:48:13+09:00",
           "updated_at": "2026-08-08T11:48:13+09:00"
+        },
+        {
+          "label": "CVE-2025-68616",
+          "path": "vulnerability/opensource/CVE-2025-68616-weasyprint-default-url-fetcher-redirect-ssrf-bypass.md",
+          "summary": "WeasyPrint 68.0 이전 default_url_fetcher가 내부 urllib 리다이렉트를 자동 추적해 사용자 정의 호스트 차단 정책을 우회하던 SSRF를 allow_redirects=False로 수정한 CVE-2025-68616 분석",
+          "created_at": "2026-08-15T11:57:22+09:00",
+          "updated_at": "2026-08-15T11:57:22+09:00"
         }
       ]
     },
