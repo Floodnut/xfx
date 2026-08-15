@@ -90,9 +90,9 @@
         {
           "label": "CVE-2019-18276",
           "path": "vulnerability/linux/CVE-2019-18276-bash-disable-priv-mode.md",
-          "summary": "Bash `disable_priv_mode()`가 saved-UID를 안 지워서 setuid 권한이 남는 취약점",
+          "summary": "Bash disable_priv_mode()가 saved-UID를 안 지워서 setuid 권한이 남는 취약점",
           "created_at": "2026-07-07T09:08:36+09:00",
-          "updated_at": "2026-07-07T09:08:36+09:00"
+          "updated_at": "2026-08-16T02:09:37+09:00"
         },
         {
           "label": "CVE-2021-3560",
