@@ -5,12 +5,14 @@
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
 | 2026-08-16 | [CVE-2018-15664](vulnerability/opensource/CVE-2018-15664-docker-cp-followsymlinkinscope-toctou-symlink-race.md) | Opensource | Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점 |
+| 2026-08-16 | [CVE-2021-3996](vulnerability/linux/CVE-2021-3996-libmount-fuse-unmount-permission-bypass.md) | Linux | util-linux libmount의 FUSE 언마운트 권한 검사 함수 is_fuse_usermount()에 있던 두 논리 오류(CVE-2021-3996, CVE-2021-3995)로 저권한 로컬 사용자가 다른 사용자 소유 파일시스템을 강제로 언마운트해 서비스 거부를 일으킬 수 있었던 취약점을 분석했다. |
+| 2026-08-16 | [CVE-2017-7529](vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md) | Opensource | nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다. |
 | 2026-08-16 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | OSS / Kubernetes | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (32)</summary>
+<summary>Linux (33)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -46,11 +48,12 @@
 | [CVE-2018-12559](vulnerability/linux/CVE-2018-12559-cantata-mounter-lexical-home-prefix-path-traversal.md) | Cantata의 root D-Bus mounter는 마운트 지점을 정규화하지 않고 /home/ 문자열 접두사만 검사해 일반 사용자가 홈 밖 위치에 CIFS 공유를 마운트하거나 해제할 수 있었다. |
 | [CVE-2026-64561](vulnerability/linux/CVE-2026-64561-kvm-recursive-zap-active-list-uaf.md) | 중첩 가상화에서 KVM/x86 shadow MMU의 재귀 zap이 사용 중인 root를 무효화한 뒤에도 매핑을 계속해 invalid child를 활성 목록에 넣고, 해제 후 list_add가 stale link에 쓰는 Use-After-Free 경로와 Zapscape의 Intel/AMD 조건을 설명한다. |
 | [CVE-2026-46316](vulnerability/linux/CVE-2026-46316-kvm-arm64-vgic-its-translation-cache-uaf.md) | KVM arm64의 VGIC ITS 번역 캐시가 경쟁 중 같은 IRQ 참조를 두 번 해제해 Use-After-Free를 일으키는 원인과 xa_erase 반환값을 사용하는 수정 방법을 설명한다. |
+| [CVE-2021-3996](vulnerability/linux/CVE-2021-3996-libmount-fuse-unmount-permission-bypass.md) | util-linux libmount의 FUSE 언마운트 권한 검사 함수 is_fuse_usermount()에 있던 두 논리 오류(CVE-2021-3996, CVE-2021-3995)로 저권한 로컬 사용자가 다른 사용자 소유 파일시스템을 강제로 언마운트해 서비스 거부를 일으킬 수 있었던 취약점을 분석했다. |
 
 </details>
 
 <details>
-<summary>Opensource (34)</summary>
+<summary>Opensource (35)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -88,6 +91,7 @@
 | [CVE-2025-68616](vulnerability/opensource/CVE-2025-68616-weasyprint-default-url-fetcher-redirect-ssrf-bypass.md) | WeasyPrint 68.0 이전 default_url_fetcher가 내부 urllib 리다이렉트를 자동 추적해 사용자 정의 호스트 차단 정책을 우회하던 SSRF를 allow_redirects=False로 수정한 CVE-2025-68616 분석 |
 | [CVE-2019-14271](vulnerability/opensource/CVE-2019-14271-docker-tar-nss-chroot-code-injection.md) | Docker 19.03.0의 docker-tar가 컨테이너 rootfs로 전환한 뒤 glibc NSS를 처음 로드해 컨테이너의 libnss 공유 라이브러리를 호스트 측 프로세스에서 실행할 수 있었고, 19.03.1은 chroot 전에 NSS를 초기화한다. |
 | [CVE-2018-15664](vulnerability/opensource/CVE-2018-15664-docker-cp-followsymlinkinscope-toctou-symlink-race.md) | Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점 |
+| [CVE-2017-7529](vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md) | nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다. |
 
 </details>
 
