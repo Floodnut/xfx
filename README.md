@@ -8,6 +8,7 @@
 | 2026-08-16 | [CVE-2021-3996](vulnerability/linux/CVE-2021-3996-libmount-fuse-unmount-permission-bypass.md) | Linux | util-linux libmount의 FUSE 언마운트 권한 검사 함수 is_fuse_usermount()에 있던 두 논리 오류(CVE-2021-3996, CVE-2021-3995)로 저권한 로컬 사용자가 다른 사용자 소유 파일시스템을 강제로 언마운트해 서비스 거부를 일으킬 수 있었던 취약점을 분석했다. |
 | 2026-08-16 | [CVE-2017-7529](vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md) | Opensource | nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다. |
 | 2026-08-16 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | OSS / Kubernetes | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
+| 2026-08-16 | [Kafka 컨트롤러 등록 해제](oss-changes/kafka/2026-kafka-08-03-kafka-controller-unregistration.md) | OSS / Apache Kafka | KRaft 컨트롤러 등록을 지울 방법이 없어 이미 클러스터에서 빠진 노드의 등록이 피처 업그레이드를 계속 거부하던 문제를, UnregisterController RPC와 UnregisterControllerRecord로 메타데이터 계층에 등록 해제 경로를 뚫어 해결한 KIP-1312 변경 분석 |
 
 ## CVE 취약점 분석
 
@@ -309,23 +310,16 @@
 </details>
 
 <details>
-<summary>Apache Kafka (0)</summary>
+<summary>Apache Kafka (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Kafka 컨트롤러 등록 해제](oss-changes/kafka/2026-08-03-kafka-controller-unregistration.md) | KRaft 컨트롤러 등록을 지울 방법이 없어 이미 클러스터에서 빠진 노드의 등록이 피처 업그레이드를 계속 거부하던 문제를, UnregisterController RPC와 UnregisterControllerRecord로 메타데이터 계층에 등록 해제 경로를 뚫어 해결한 KIP-1312 변경 분석 |
 
 </details>
 
 <details>
 <summary>TCMalloc (0)</summary>
-
-| 변경 | 내용 |
-| --- | --- |
-
-</details>
-
-<details>
-<summary>NATS Server (0)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
