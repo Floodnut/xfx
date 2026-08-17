@@ -12,6 +12,14 @@
         "summary": "util-linux libmount가 FUSE 마운트의 user_id를 문자열 접두사로 비교해 다른 사용자의 파일시스템 해제를 허용한 문제를 UID 정수 파싱과 정확한 비교로 수정한 과정을 설명한다.",
         "created_at": "2026-08-17T12:22:34+09:00",
         "updated_at": "2026-08-17T12:22:34+09:00"
+      },
+      {
+        "label": "CVE-2024-44308",
+        "category": "Others",
+        "path": "vulnerability/others/CVE-2024-44308-javascriptcore-dfg-jit-register-state.md",
+        "summary": "JavaScriptCore DFG JIT가 느린 경로를 기록한 뒤 임시 레지스터를 할당해 전역 레지스터 상태가 어긋날 수 있었던 문제를, 할당을 느린 경로 이전으로 옮겨 두 제어 흐름의 상태를 일치시킨 수정 분석",
+        "created_at": "2026-08-17T12:24:01+09:00",
+        "updated_at": "2026-08-17T12:24:01+09:00"
       }
     ]
   },
@@ -666,6 +674,13 @@
           "summary": "Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석",
           "created_at": "2026-08-07T05:05:07+09:00",
           "updated_at": "2026-08-07T05:05:07+09:00"
+        },
+        {
+          "label": "CVE-2024-44308",
+          "path": "vulnerability/others/CVE-2024-44308-javascriptcore-dfg-jit-register-state.md",
+          "summary": "JavaScriptCore DFG JIT가 느린 경로를 기록한 뒤 임시 레지스터를 할당해 전역 레지스터 상태가 어긋날 수 있었던 문제를, 할당을 느린 경로 이전으로 옮겨 두 제어 흐름의 상태를 일치시킨 수정 분석",
+          "created_at": "2026-08-17T12:24:01+09:00",
+          "updated_at": "2026-08-17T12:24:01+09:00"
         }
       ]
     }
