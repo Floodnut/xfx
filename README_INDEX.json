@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-20",
+    "date": "2026-08-23",
     "entries": [
       {
-        "label": "CVE-2013-4547",
+        "label": "CVE-2015-4335",
         "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2013-4547-nginx-uri-space-parser-restriction-bypass.md",
-        "summary": "nginx는 URI 안 공백 뒤 첫 문자를 건너뛰어 URI 정규화와 설정 기반 제한을 다르게 적용할 수 있었고, 수정은 두 분기에 p--를 추가해 그 문자를 재처리한다.",
-        "created_at": "2026-08-20T23:22:13+09:00",
-        "updated_at": "2026-08-20T23:22:13+09:00"
+        "path": "vulnerability/opensource/CVE-2015-4335-redis-lua-bytecode-sandbox-escape.md",
+        "summary": "Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다.",
+        "created_at": "2026-08-23T22:33:10+09:00",
+        "updated_at": "2026-08-23T22:33:10+09:00"
       }
     ]
   },
@@ -536,6 +536,13 @@
           "summary": "nginx는 URI 안 공백 뒤 첫 문자를 건너뛰어 URI 정규화와 설정 기반 제한을 다르게 적용할 수 있었고, 수정은 두 분기에 p--를 추가해 그 문자를 재처리한다.",
           "created_at": "2026-08-20T23:22:13+09:00",
           "updated_at": "2026-08-20T23:22:13+09:00"
+        },
+        {
+          "label": "CVE-2015-4335",
+          "path": "vulnerability/opensource/CVE-2015-4335-redis-lua-bytecode-sandbox-escape.md",
+          "summary": "Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다.",
+          "created_at": "2026-08-23T22:33:10+09:00",
+          "updated_at": "2026-08-23T22:33:10+09:00"
         }
       ]
     },
