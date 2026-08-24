@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-23",
+    "date": "2026-08-24",
     "entries": [
       {
-        "label": "CVE-2015-4335",
+        "label": "CVE-2015-8080",
         "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2015-4335-redis-lua-bytecode-sandbox-escape.md",
-        "summary": "Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다.",
-        "created_at": "2026-08-23T22:33:10+09:00",
-        "updated_at": "2026-08-23T22:33:10+09:00"
+        "path": "vulnerability/opensource/CVE-2015-8080-redis-lua-struct-integer-overflow.md",
+        "summary": "Redis Lua struct의 getnum() 정수 범위 미검사로 비정상 크기가 고정 버퍼 직렬화로 전달되는 경로와 2.8.24, 3.0.6, 5.0.8의 수정 과정을 설명한다.",
+        "created_at": "2026-08-24T23:46:19+09:00",
+        "updated_at": "2026-08-24T23:46:19+09:00"
       }
     ]
   },
@@ -543,6 +543,13 @@
           "summary": "Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다.",
           "created_at": "2026-08-23T22:33:10+09:00",
           "updated_at": "2026-08-23T22:33:10+09:00"
+        },
+        {
+          "label": "CVE-2015-8080",
+          "path": "vulnerability/opensource/CVE-2015-8080-redis-lua-struct-integer-overflow.md",
+          "summary": "Redis Lua struct의 getnum() 정수 범위 미검사로 비정상 크기가 고정 버퍼 직렬화로 전달되는 경로와 2.8.24, 3.0.6, 5.0.8의 수정 과정을 설명한다.",
+          "created_at": "2026-08-24T23:46:19+09:00",
+          "updated_at": "2026-08-24T23:46:19+09:00"
         }
       ]
     },
