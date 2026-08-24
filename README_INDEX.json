@@ -732,6 +732,14 @@
           "summary": "프로세스별 LLC 선호를 load-balance 이주에 연결",
           "created_at": "2026-08-25T03:10:28+09:00",
           "updated_at": "2026-08-25T03:10:28+09:00"
+        },
+        {
+          "project_slug": "slurm",
+          "label": "Slurm 외부 이종 작업 수명주기",
+          "path": "oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md",
+          "summary": "외부 컴포넌트와 배치 리더의 책임을 분리",
+          "created_at": "2026-08-25T03:10:38+09:00",
+          "updated_at": "2026-08-25T03:10:38+09:00"
         }
       ]
     },
@@ -955,7 +963,15 @@
       {
         "slug": "slurm",
         "title": "Slurm",
-        "entries": []
+        "entries": [
+          {
+            "label": "Slurm 외부 이종 작업 수명주기",
+            "path": "oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md",
+            "summary": "외부 컴포넌트와 배치 리더의 책임을 분리",
+            "created_at": "2026-08-25T03:10:38+09:00",
+            "updated_at": "2026-08-25T03:10:38+09:00"
+          }
+        ]
       },
       {
         "slug": "containerd",
