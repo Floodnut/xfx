@@ -740,6 +740,14 @@
           "summary": "외부 컴포넌트와 배치 리더의 책임을 분리",
           "created_at": "2026-08-25T03:10:38+09:00",
           "updated_at": "2026-08-25T03:10:38+09:00"
+        },
+        {
+          "project_slug": "containerd",
+          "label": "containerd CRI Checkpoint Restore 경로 분리",
+          "path": "oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md",
+          "summary": "Checkpoint 생성과 CreateContainer 복원 권한을 분리",
+          "created_at": "2026-08-25T03:10:42+09:00",
+          "updated_at": "2026-08-25T03:10:42+09:00"
         }
       ]
     },
@@ -976,7 +984,15 @@
       {
         "slug": "containerd",
         "title": "containerd",
-        "entries": []
+        "entries": [
+          {
+            "label": "containerd CRI Checkpoint Restore 경로 분리",
+            "path": "oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md",
+            "summary": "Checkpoint 생성과 CreateContainer 복원 권한을 분리",
+            "created_at": "2026-08-25T03:10:42+09:00",
+            "updated_at": "2026-08-25T03:10:42+09:00"
+          }
+        ]
       },
       {
         "slug": "istio",
