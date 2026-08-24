@@ -4,16 +4,15 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-16 | [CVE-2018-15664](vulnerability/opensource/CVE-2018-15664-docker-cp-followsymlinkinscope-toctou-symlink-race.md) | Opensource | Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점 |
-| 2026-08-16 | [CVE-2021-3996](vulnerability/linux/CVE-2021-3996-libmount-fuse-unmount-permission-bypass.md) | Linux | util-linux libmount의 FUSE 언마운트 권한 검사 함수 is_fuse_usermount()에 있던 두 논리 오류(CVE-2021-3996, CVE-2021-3995)로 저권한 로컬 사용자가 다른 사용자 소유 파일시스템을 강제로 언마운트해 서비스 거부를 일으킬 수 있었던 취약점을 분석했다. |
-| 2026-08-16 | [CVE-2017-7529](vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md) | Opensource | nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다. |
-| 2026-08-16 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | OSS / Kubernetes | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
-| 2026-08-16 | [Kafka 컨트롤러 등록 해제](oss-changes/kafka/2026-kafka-08-03-kafka-controller-unregistration.md) | OSS / Apache Kafka | KRaft 컨트롤러 등록을 지울 방법이 없어 이미 클러스터에서 빠진 노드의 등록이 피처 업그레이드를 계속 거부하던 문제를, UnregisterController RPC와 UnregisterControllerRecord로 메타데이터 계층에 등록 해제 경로를 뚫어 해결한 KIP-1312 변경 분석 |
+| 2026-08-25 | [CVE-2023-3390](vulnerability/linux/CVE-2023-3390-nf-tables-anonymous-set-uaf.md) | Linux | Linux nf_tables가 익명 세트를 참조하는 규칙 추가 오류 경로에서 NFT_TRANS_RELEASE로 세트를 먼저 해제해 dangling pointer를 만든 원인과 NFT_TRANS_PREPARE 수정 과정을 설명한다. |
+| 2026-08-25 | [Linux Kernel 캐시 인지 로드 밸런싱](oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md) | OSS / Linux Kernel | 프로세스별 LLC 선호를 load-balance 이주에 연결 |
+| 2026-08-25 | [Slurm 외부 이종 작업 수명주기](oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md) | OSS / Slurm | 외부 컴포넌트와 배치 리더의 책임을 분리 |
+| 2026-08-25 | [containerd CRI Checkpoint Restore 경로 분리](oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md) | OSS / containerd | Checkpoint 생성과 CreateContainer 복원 권한을 분리 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (33)</summary>
+<summary>Linux (36)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -50,11 +49,14 @@
 | [CVE-2026-64561](vulnerability/linux/CVE-2026-64561-kvm-recursive-zap-active-list-uaf.md) | 중첩 가상화에서 KVM/x86 shadow MMU의 재귀 zap이 사용 중인 root를 무효화한 뒤에도 매핑을 계속해 invalid child를 활성 목록에 넣고, 해제 후 list_add가 stale link에 쓰는 Use-After-Free 경로와 Zapscape의 Intel/AMD 조건을 설명한다. |
 | [CVE-2026-46316](vulnerability/linux/CVE-2026-46316-kvm-arm64-vgic-its-translation-cache-uaf.md) | KVM arm64의 VGIC ITS 번역 캐시가 경쟁 중 같은 IRQ 참조를 두 번 해제해 Use-After-Free를 일으키는 원인과 xa_erase 반환값을 사용하는 수정 방법을 설명한다. |
 | [CVE-2021-3996](vulnerability/linux/CVE-2021-3996-libmount-fuse-unmount-permission-bypass.md) | util-linux libmount의 FUSE 언마운트 권한 검사 함수 is_fuse_usermount()에 있던 두 논리 오류(CVE-2021-3996, CVE-2021-3995)로 저권한 로컬 사용자가 다른 사용자 소유 파일시스템을 강제로 언마운트해 서비스 거부를 일으킬 수 있었던 취약점을 분석했다. |
+| [CVE-2021-3995](vulnerability/linux/CVE-2021-3995-util-linux-libmount-fuse-uid-prefix-unmount.md) | util-linux libmount가 FUSE 마운트의 user_id를 문자열 접두사로 비교해 다른 사용자의 파일시스템 해제를 허용한 문제를 UID 정수 파싱과 정확한 비교로 수정한 과정을 설명한다. |
+| [CVE-2018-1049](vulnerability/linux/CVE-2018-1049-systemd-automount-race-mountpoint-hang.md) | CVE-2018-1049는 systemd의 .mount 완료가 커널 autofs 요청보다 먼저 처리될 때 늦은 요청 토큰에 READY ACK를 보내지 않아 mountpoint 접근을 멈추게 한 race이며, 수정은 이미 마운트된 분기에서 토큰을 성공 처리하고 반환한다. |
+| [CVE-2023-3390](vulnerability/linux/CVE-2023-3390-nf-tables-anonymous-set-uaf.md) | Linux nf_tables가 익명 세트를 참조하는 규칙 추가 오류 경로에서 NFT_TRANS_RELEASE로 세트를 먼저 해제해 dangling pointer를 만든 원인과 NFT_TRANS_PREPARE 수정 과정을 설명한다. |
 
 </details>
 
 <details>
-<summary>Opensource (35)</summary>
+<summary>Opensource (40)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -93,6 +95,11 @@
 | [CVE-2019-14271](vulnerability/opensource/CVE-2019-14271-docker-tar-nss-chroot-code-injection.md) | Docker 19.03.0의 docker-tar가 컨테이너 rootfs로 전환한 뒤 glibc NSS를 처음 로드해 컨테이너의 libnss 공유 라이브러리를 호스트 측 프로세스에서 실행할 수 있었고, 19.03.1은 chroot 전에 NSS를 초기화한다. |
 | [CVE-2018-15664](vulnerability/opensource/CVE-2018-15664-docker-cp-followsymlinkinscope-toctou-symlink-race.md) | Docker docker cp에서 FollowSymlinkInScope 해석 이후 컨테이너가 심볼릭 링크를 스왑하면 chrootarchive가 호스트 파일시스템을 대상으로 tar 풀기를 실행하는 TOCTOU 취약점 |
 | [CVE-2017-7529](vulnerability/opensource/CVE-2017-7529-nginx-range-filter-integer-overflow-info-disclosure.md) | nginx Range 필터가 여러 구간의 전체 길이를 누적하는 과정에서 정수 오버플로우를 허용해 캐시 파일 헤더 등 민감 정보가 노출될 수 있었고, 사전 덧셈 상한 검사로 수정된 과정을 분석했다. |
+| [CVE-2013-2028](vulnerability/opensource/CVE-2013-2028-nginx-chunked-transfer-encoding-stack-overflow.md) | nginx 1.3.9~1.4.0의 청크 전송 인코딩 파서가 청크 크기를 상한 검사 없이 누적하다 정수 오버플로우로 음수가 되면, 이 값이 discard body 경로의 recv() 길이 인자로 재해석되어 4096바이트 스택 버퍼를 넘겨 쓰는 스택 버퍼 오버플로우로 이어진다. |
+| [CVE-2018-16864](vulnerability/opensource/CVE-2018-16864-systemd-journald-commandline-stack-allocation.md) | systemd-journald가 길이를 제어할 수 있는 명령줄을 스택에서 조합해 충돌할 수 있었고, 수정은 두 명령줄 필드를 힙 할당으로 전환한다. |
+| [CVE-2013-4547](vulnerability/opensource/CVE-2013-4547-nginx-uri-space-parser-restriction-bypass.md) | nginx는 URI 안 공백 뒤 첫 문자를 건너뛰어 URI 정규화와 설정 기반 제한을 다르게 적용할 수 있었고, 수정은 두 분기에 p--를 추가해 그 문자를 재처리한다. |
+| [CVE-2015-4335](vulnerability/opensource/CVE-2015-4335-redis-lua-bytecode-sandbox-escape.md) | Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다. |
+| [CVE-2015-8080](vulnerability/opensource/CVE-2015-8080-redis-lua-struct-integer-overflow.md) | Redis Lua struct의 getnum() 정수 범위 미검사로 비정상 크기가 고정 버퍼 직렬화로 전달되는 경로와 2.8.24, 3.0.6, 5.0.8의 수정 과정을 설명한다. |
 
 </details>
 
@@ -130,20 +137,21 @@
 </details>
 
 <details>
-<summary>Others (3)</summary>
+<summary>Others (4)</summary>
 
 | CVE | 내용 |
 | --- | --- |
 | [CVE-2025-43300](vulnerability/others/CVE-2025-43300-apple-imageio-dng-oob-write.md) | Apple ImageIO의 DNG lossless JPEG 디코더가 SamplesPerPixel과 NumComponents 불일치로 출력 버퍼 범위를 넘어 쓰는 원리와 버퍼 경계 검사 패치를 분석한다. |
 | [CVE-2026-9181](vulnerability/others/CVE-2026-9181-arcgis-uploads-filename-path-traversal.md) | ArcGIS Server 12.0 이하의 UploadsManager가 클라이언트 파일명을 상대 경로 검사 없이 쓰기 경로에 결합해 업로드 루트 밖의 민감한 설정 파일을 덮어쓸 수 있는 취약점이다. |
 | [CVE-2025-6428](vulnerability/others/CVE-2025-6428-firefox-android-link-parameter-open-redirect.md) | Firefox for Android가 일반 URL의 link 매개변수를 앱 링크 대체 목적지로 신뢰해 피싱 경로를 만들던 회귀와 Firefox 140의 수정 분석 |
+| [CVE-2024-44308](vulnerability/others/CVE-2024-44308-javascriptcore-dfg-jit-register-state.md) | JavaScriptCore DFG JIT가 느린 경로를 기록한 뒤 임시 레지스터를 할당해 전역 레지스터 상태가 어긋날 수 있었던 문제를, 할당을 느린 경로 이전으로 옮겨 두 제어 흐름의 상태를 일치시킨 수정 분석 |
 
 </details>
 
 ## OSS 아키텍처 변경 분석
 
 <details>
-<summary>Linux Kernel (4)</summary>
+<summary>Linux Kernel (5)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -151,6 +159,7 @@
 | [Linux Kernel pidfd Process Lifecycle: CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL](oss-changes/linux-kernel/7.1-pidfd-process-lifecycle-autoreap-autokill.md) | clone3()에 CLONE_AUTOREAP/CLONE_PIDFD_AUTOKILL 플래그를 추가해, 부모 전체에 걸리던 SIGCHLD 기반 auto-reap을 자식 단위로 세분화하고 pidfd 소유권에 자식 생명주기를 묶었다. |
 | [Linux Kernel NTFS Driver Resurrection](oss-changes/linux-kernel/7.1-ntfs-driver-resurrection-iomap-rewrite.md) | 제거됐던 read-only NTFS 드라이버가 4년의 재작성을 거쳐 iomap/folio 기반 쓰기 지원 드라이버로 ntfs3와 나란히 공존하며 부활했다. |
 | [Linux Kernel FRED Enabled by Default](oss-changes/linux-kernel/7.1-linux-kernel-fred-enabled-by-default.md) | 6.9에 병합되고도 fred=on 없이는 쓰이지 않던 FRED가 7.1에서 기본값이 되면서, x86-64의 기본 이벤트 전달 경로가 IDT에서 FRED로 넘어갔다. |
+| [Linux Kernel 캐시 인지 로드 밸런싱](oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md) | 프로세스별 LLC 선호를 load-balance 이주에 연결 |
 
 </details>
 
@@ -230,18 +239,20 @@
 </details>
 
 <details>
-<summary>Slurm (0)</summary>
+<summary>Slurm (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Slurm 외부 이종 작업 수명주기](oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md) | 외부 컴포넌트와 배치 리더의 책임을 분리 |
 
 </details>
 
 <details>
-<summary>containerd (0)</summary>
+<summary>containerd (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [containerd CRI Checkpoint Restore 경로 분리](oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md) | Checkpoint 생성과 CreateContainer 복원 권한을 분리 |
 
 </details>
 
