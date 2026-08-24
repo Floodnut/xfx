@@ -723,23 +723,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-08-16",
+      "date": "2026-08-25",
       "entries": [
         {
-          "project_slug": "kubernetes",
-          "label": "Scheduler Parallel PreBind Plugins",
-          "path": "oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md",
-          "summary": "kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석",
-          "created_at": "2026-08-16T01:57:03+09:00",
-          "updated_at": "2026-08-16T01:57:03+09:00"
-        },
-        {
-          "project_slug": "kafka",
-          "label": "Kafka 컨트롤러 등록 해제",
-          "path": "oss-changes/kafka/2026-kafka-08-03-kafka-controller-unregistration.md",
-          "summary": "KRaft 컨트롤러 등록을 지울 방법이 없어 이미 클러스터에서 빠진 노드의 등록이 피처 업그레이드를 계속 거부하던 문제를, UnregisterController RPC와 UnregisterControllerRecord로 메타데이터 계층에 등록 해제 경로를 뚫어 해결한 KIP-1312 변경 분석",
-          "created_at": "2026-08-16T06:11:03+09:00",
-          "updated_at": "2026-08-16T06:11:03+09:00"
+          "project_slug": "linux-kernel",
+          "label": "Linux Kernel 캐시 인지 로드 밸런싱",
+          "path": "oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md",
+          "summary": "프로세스별 LLC 선호를 load-balance 이주에 연결",
+          "created_at": "2026-08-25T03:10:28+09:00",
+          "updated_at": "2026-08-25T03:10:28+09:00"
         }
       ]
     },
@@ -775,6 +767,13 @@
             "summary": "6.9에 병합되고도 fred=on 없이는 쓰이지 않던 FRED가 7.1에서 기본값이 되면서, x86-64의 기본 이벤트 전달 경로가 IDT에서 FRED로 넘어갔다.",
             "created_at": "2026-08-08T20:14:42+09:00",
             "updated_at": "2026-08-08T20:14:42+09:00"
+          },
+          {
+            "label": "Linux Kernel 캐시 인지 로드 밸런싱",
+            "path": "oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md",
+            "summary": "프로세스별 LLC 선호를 load-balance 이주에 연결",
+            "created_at": "2026-08-25T03:10:28+09:00",
+            "updated_at": "2026-08-25T03:10:28+09:00"
           }
         ]
       },
