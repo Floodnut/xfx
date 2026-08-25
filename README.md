@@ -4,7 +4,7 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-25 | [CVE-2023-3390](vulnerability/linux/CVE-2023-3390-nf-tables-anonymous-set-uaf.md) | Linux | Linux nf_tables가 익명 세트를 참조하는 규칙 추가 오류 경로에서 NFT_TRANS_RELEASE로 세트를 먼저 해제해 dangling pointer를 만든 원인과 NFT_TRANS_PREPARE 수정 과정을 설명한다. |
+| 2026-08-26 | [CVE-2026-54917](vulnerability/opensource/CVE-2026-54917-seaweedfs-s3-iceberg-cross-bucket-path-traversal.md) | Opensource | SeaweedFS 4.30 미만의 S3와 Iceberg gateway가 SkipClean(true)로 보존한 경로 변수를 후속 경로 조합에서 재해석해 버킷 경계를 우회한 문제와 handler 전 검증 middleware 수정 과정을 설명한다. |
 | 2026-08-25 | [Linux Kernel 캐시 인지 로드 밸런싱](oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md) | OSS / Linux Kernel | 프로세스별 LLC 선호를 load-balance 이주에 연결 |
 | 2026-08-25 | [Slurm 외부 이종 작업 수명주기](oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md) | OSS / Slurm | 외부 컴포넌트와 배치 리더의 책임을 분리 |
 | 2026-08-25 | [containerd CRI Checkpoint Restore 경로 분리](oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md) | OSS / containerd | Checkpoint 생성과 CreateContainer 복원 권한을 분리 |
@@ -56,7 +56,7 @@
 </details>
 
 <details>
-<summary>Opensource (40)</summary>
+<summary>Opensource (41)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -100,6 +100,7 @@
 | [CVE-2013-4547](vulnerability/opensource/CVE-2013-4547-nginx-uri-space-parser-restriction-bypass.md) | nginx는 URI 안 공백 뒤 첫 문자를 건너뛰어 URI 정규화와 설정 기반 제한을 다르게 적용할 수 있었고, 수정은 두 분기에 p--를 추가해 그 문자를 재처리한다. |
 | [CVE-2015-4335](vulnerability/opensource/CVE-2015-4335-redis-lua-bytecode-sandbox-escape.md) | Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다. |
 | [CVE-2015-8080](vulnerability/opensource/CVE-2015-8080-redis-lua-struct-integer-overflow.md) | Redis Lua struct의 getnum() 정수 범위 미검사로 비정상 크기가 고정 버퍼 직렬화로 전달되는 경로와 2.8.24, 3.0.6, 5.0.8의 수정 과정을 설명한다. |
+| [CVE-2026-54917](vulnerability/opensource/CVE-2026-54917-seaweedfs-s3-iceberg-cross-bucket-path-traversal.md) | SeaweedFS 4.30 미만의 S3와 Iceberg gateway가 SkipClean(true)로 보존한 경로 변수를 후속 경로 조합에서 재해석해 버킷 경계를 우회한 문제와 handler 전 검증 middleware 수정 과정을 설명한다. |
 
 </details>
 
