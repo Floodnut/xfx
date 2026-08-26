@@ -4,10 +4,9 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-26 | [CVE-2026-54917](vulnerability/opensource/CVE-2026-54917-seaweedfs-s3-iceberg-cross-bucket-path-traversal.md) | Opensource | SeaweedFS 4.30 미만의 S3와 Iceberg gateway가 SkipClean(true)로 보존한 경로 변수를 후속 경로 조합에서 재해석해 버킷 경계를 우회한 문제와 handler 전 검증 middleware 수정 과정을 설명한다. |
-| 2026-08-25 | [Linux Kernel 캐시 인지 로드 밸런싱](oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md) | OSS / Linux Kernel | 프로세스별 LLC 선호를 load-balance 이주에 연결 |
-| 2026-08-25 | [Slurm 외부 이종 작업 수명주기](oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md) | OSS / Slurm | 외부 컴포넌트와 배치 리더의 책임을 분리 |
-| 2026-08-25 | [containerd CRI Checkpoint Restore 경로 분리](oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md) | OSS / containerd | Checkpoint 생성과 CreateContainer 복원 권한을 분리 |
+| 2026-08-27 | [CVE-2026-28291](vulnerability/opensource/CVE-2026-28291-simple-git-option-parsing-command-execution.md) | Opensource | simple-git의 부분적인 -u 정규식 검사가 Git의 짧은 옵션 묶음 해석을 놓쳐 위험한 upload-pack 인자를 통과시킨 문제이며, 3.32.0이 묶음 안의 u를 검사하도록 보완했다. |
+| 2026-08-27 | [Cilium Gateway ListenerSet Delegation](oss-changes/cilium/1.20-cilium-gateway-listenerset-delegation.md) | OSS / Cilium | 공유 Gateway의 listener 소유권을 ListenerSet으로 위임하고, Cilium이 병합된 Envoy 설정과 리소스별 TLS 권한 경계를 함께 유지 |
+| 2026-08-27 | [Envoy CPU-local Connection Steering](oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md) | OSS / Envoy | accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계 |
 
 ## CVE 취약점 분석
 
@@ -56,7 +55,7 @@
 </details>
 
 <details>
-<summary>Opensource (41)</summary>
+<summary>Opensource (42)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -101,6 +100,7 @@
 | [CVE-2015-4335](vulnerability/opensource/CVE-2015-4335-redis-lua-bytecode-sandbox-escape.md) | Redis EVAL의 Lua loader가 공격자 제어 binary chunk를 luaU_undump로 받아들여 sandbox 경계를 벗어나던 경로와, source parser만 사용하도록 바꾼 수정 과정을 분석한다. |
 | [CVE-2015-8080](vulnerability/opensource/CVE-2015-8080-redis-lua-struct-integer-overflow.md) | Redis Lua struct의 getnum() 정수 범위 미검사로 비정상 크기가 고정 버퍼 직렬화로 전달되는 경로와 2.8.24, 3.0.6, 5.0.8의 수정 과정을 설명한다. |
 | [CVE-2026-54917](vulnerability/opensource/CVE-2026-54917-seaweedfs-s3-iceberg-cross-bucket-path-traversal.md) | SeaweedFS 4.30 미만의 S3와 Iceberg gateway가 SkipClean(true)로 보존한 경로 변수를 후속 경로 조합에서 재해석해 버킷 경계를 우회한 문제와 handler 전 검증 middleware 수정 과정을 설명한다. |
+| [CVE-2026-28291](vulnerability/opensource/CVE-2026-28291-simple-git-option-parsing-command-execution.md) | simple-git의 부분적인 -u 정규식 검사가 Git의 짧은 옵션 묶음 해석을 놓쳐 위험한 upload-pack 인자를 통과시킨 문제이며, 3.32.0이 묶음 안의 u를 검사하도록 보완했다. |
 
 </details>
 
@@ -191,13 +191,14 @@
 </details>
 
 <details>
-<summary>Cilium (3)</summary>
+<summary>Cilium (4)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [로드밸런싱 컨트롤 플레인 재설계](oss-changes/cilium/1.18-loadbalancer-statedb-redesign.md) | v1.18에서 뮤텍스+해시맵 기반 명령형 모델을 StateDB 테이블 기반 데이터 중심 모델로 전환 |
 | [로드밸런서 백엔드 평탄화 (Aggregated Load-Balancer State)](oss-changes/cilium/1.20-loadbalancer-backend-flatten.md) | v1.19에서 서비스별 인스턴스를 중첩 맵으로 담던 백엔드 행 구조가 실제 프로덕션 메모리 급증을 유발한 사례 — v1.20에서 (서비스,주소,우선순위) 조합마다 독립된 테이블 행으로 평탄화해 해결 |
 | [Cilium Datapath Plugins](oss-changes/cilium/1.20-cilium-datapath-plugins.md) | 서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘 |
+| [Cilium Gateway ListenerSet Delegation](oss-changes/cilium/1.20-cilium-gateway-listenerset-delegation.md) | 공유 Gateway의 listener 소유권을 ListenerSet으로 위임하고, Cilium이 병합된 Envoy 설정과 리소스별 TLS 권한 경계를 함께 유지 |
 
 </details>
 
@@ -290,10 +291,11 @@
 </details>
 
 <details>
-<summary>Envoy (0)</summary>
+<summary>Envoy (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Envoy CPU-local Connection Steering](oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md) | accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계 |
 
 </details>
 
