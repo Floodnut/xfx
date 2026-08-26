@@ -746,6 +746,14 @@
           "summary": "공유 Gateway의 listener 소유권을 ListenerSet으로 위임하고, Cilium이 병합된 Envoy 설정과 리소스별 TLS 권한 경계를 함께 유지",
           "created_at": "2026-08-27T03:14:55+09:00",
           "updated_at": "2026-08-27T03:14:55+09:00"
+        },
+        {
+          "project_slug": "envoy",
+          "label": "Envoy CPU-local Connection Steering",
+          "path": "oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md",
+          "summary": "accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계",
+          "created_at": "2026-08-27T03:15:05+09:00",
+          "updated_at": "2026-08-27T03:15:05+09:00"
         }
       ]
     },
@@ -1022,7 +1030,15 @@
       {
         "slug": "envoy",
         "title": "Envoy",
-        "entries": []
+        "entries": [
+          {
+            "label": "Envoy CPU-local Connection Steering",
+            "path": "oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md",
+            "summary": "accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계",
+            "created_at": "2026-08-27T03:15:05+09:00",
+            "updated_at": "2026-08-27T03:15:05+09:00"
+          }
+        ]
       },
       {
         "slug": "libvirt",
