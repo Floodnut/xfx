@@ -760,6 +760,14 @@
           "summary": "queue federation teardown이 같은 이름 교환기의 Khepri decorator 상태를 손상하던 경로를 exchange 전용 scratch 정리로 제한한 변경",
           "created_at": "2026-08-30T02:52:58+09:00",
           "updated_at": "2026-08-30T02:52:58+09:00"
+        },
+        {
+          "project_slug": "tcmalloc",
+          "label": "TCMalloc 샘플 할당 residency telemetry 분리",
+          "path": "oss-changes/tcmalloc/2026-08-24-tcmalloc-sampled-allocation-residency-telemetry.md",
+          "summary": "주소 재사용 이력을 분리해 heap profile 정확성 향상",
+          "created_at": "2026-08-30T03:12:45+09:00",
+          "updated_at": "2026-08-30T03:12:45+09:00"
         }
       ]
     },
@@ -1077,7 +1085,15 @@
       {
         "slug": "tcmalloc",
         "title": "TCMalloc",
-        "entries": []
+        "entries": [
+          {
+            "label": "TCMalloc 샘플 할당 residency telemetry 분리",
+            "path": "oss-changes/tcmalloc/2026-08-24-tcmalloc-sampled-allocation-residency-telemetry.md",
+            "summary": "주소 재사용 이력을 분리해 heap profile 정확성 향상",
+            "created_at": "2026-08-30T03:12:45+09:00",
+            "updated_at": "2026-08-30T03:12:45+09:00"
+          }
+        ]
       },
       {
         "slug": "rabbitmq",
