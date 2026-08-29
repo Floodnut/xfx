@@ -4,9 +4,9 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-27 | [CVE-2026-28291](vulnerability/opensource/CVE-2026-28291-simple-git-option-parsing-command-execution.md) | Opensource | simple-git의 부분적인 -u 정규식 검사가 Git의 짧은 옵션 묶음 해석을 놓쳐 위험한 upload-pack 인자를 통과시킨 문제이며, 3.32.0이 묶음 안의 u를 검사하도록 보완했다. |
-| 2026-08-27 | [Cilium Gateway ListenerSet Delegation](oss-changes/cilium/1.20-cilium-gateway-listenerset-delegation.md) | OSS / Cilium | 공유 Gateway의 listener 소유권을 ListenerSet으로 위임하고, Cilium이 병합된 Envoy 설정과 리소스별 TLS 권한 경계를 함께 유지 |
-| 2026-08-27 | [Envoy CPU-local Connection Steering](oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md) | OSS / Envoy | accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계 |
+| 2026-08-30 | [CVE-2026-50131](vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md) | Opensource | Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다. |
+| 2026-08-30 | [RabbitMQ Federation 업스트림 삭제 리소스 경계](oss-changes/rabbitmq/4.3.4-rabbitmq-federation-upstream-deletion-resource-boundary.md) | OSS / RabbitMQ | queue federation teardown이 같은 이름 교환기의 Khepri decorator 상태를 손상하던 경로를 exchange 전용 scratch 정리로 제한한 변경 |
+| 2026-08-30 | [TCMalloc 샘플 할당 residency telemetry 분리](oss-changes/tcmalloc/2026-08-24-tcmalloc-sampled-allocation-residency-telemetry.md) | OSS / TCMalloc | 주소 재사용 이력을 분리해 heap profile 정확성 향상 |
 
 ## CVE 취약점 분석
 
@@ -55,7 +55,7 @@
 </details>
 
 <details>
-<summary>Opensource (42)</summary>
+<summary>Opensource (43)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -101,6 +101,7 @@
 | [CVE-2015-8080](vulnerability/opensource/CVE-2015-8080-redis-lua-struct-integer-overflow.md) | Redis Lua struct의 getnum() 정수 범위 미검사로 비정상 크기가 고정 버퍼 직렬화로 전달되는 경로와 2.8.24, 3.0.6, 5.0.8의 수정 과정을 설명한다. |
 | [CVE-2026-54917](vulnerability/opensource/CVE-2026-54917-seaweedfs-s3-iceberg-cross-bucket-path-traversal.md) | SeaweedFS 4.30 미만의 S3와 Iceberg gateway가 SkipClean(true)로 보존한 경로 변수를 후속 경로 조합에서 재해석해 버킷 경계를 우회한 문제와 handler 전 검증 middleware 수정 과정을 설명한다. |
 | [CVE-2026-28291](vulnerability/opensource/CVE-2026-28291-simple-git-option-parsing-command-execution.md) | simple-git의 부분적인 -u 정규식 검사가 Git의 짧은 옵션 묶음 해석을 놓쳐 위험한 upload-pack 인자를 통과시킨 문제이며, 3.32.0이 묶음 안의 u를 검사하도록 보완했다. |
+| [CVE-2026-50131](vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md) | Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다. |
 
 </details>
 
@@ -333,17 +334,19 @@
 </details>
 
 <details>
-<summary>TCMalloc (0)</summary>
+<summary>TCMalloc (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [TCMalloc 샘플 할당 residency telemetry 분리](oss-changes/tcmalloc/2026-08-24-tcmalloc-sampled-allocation-residency-telemetry.md) | 주소 재사용 이력을 분리해 heap profile 정확성 향상 |
 
 </details>
 
 <details>
-<summary>RabbitMQ (0)</summary>
+<summary>RabbitMQ (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [RabbitMQ Federation 업스트림 삭제 리소스 경계](oss-changes/rabbitmq/4.3.4-rabbitmq-federation-upstream-deletion-resource-boundary.md) | queue federation teardown이 같은 이름 교환기의 Khepri decorator 상태를 손상하던 경로를 exchange 전용 scratch 정리로 제한한 변경 |
 
 </details>
