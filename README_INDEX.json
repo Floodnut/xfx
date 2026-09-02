@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-08-30",
+    "date": "2026-09-02",
     "entries": [
       {
-        "label": "CVE-2026-50131",
-        "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md",
-        "summary": "Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다.",
-        "created_at": "2026-08-30T03:01:06+09:00",
-        "updated_at": "2026-08-30T03:01:06+09:00"
+        "label": "CVE-2024-38127",
+        "category": "Windows",
+        "path": "vulnerability/windows/CVE-2024-38127-windows-hyper-v-vhdmp-metadata-oob-read.md",
+        "summary": "CVE-2024-38127은 vhdmp.sys 메타데이터 조회가 작은 출력 버퍼에서 필요한 길이를 완료 길이로 전파해 인접 nonpaged pool 데이터를 읽을 수 있던 Windows Hyper-V 취약점이다.",
+        "created_at": "2026-09-02T12:50:43+09:00",
+        "updated_at": "2026-09-02T12:50:43+09:00"
       }
     ]
   },
@@ -633,6 +633,13 @@
           "summary": "CVE-2025-50168은 DirectComposition 공유 리소스의 타입 태그와 실제 marshaler 객체 레이아웃 불일치가 속성 setter의 범위 밖 쓰기로 이어진 Windows 권한 상승 취약점이다.",
           "created_at": "2026-08-12T13:28:57+09:00",
           "updated_at": "2026-08-12T13:29:49+09:00"
+        },
+        {
+          "label": "CVE-2024-38127",
+          "path": "vulnerability/windows/CVE-2024-38127-windows-hyper-v-vhdmp-metadata-oob-read.md",
+          "summary": "CVE-2024-38127은 vhdmp.sys 메타데이터 조회가 작은 출력 버퍼에서 필요한 길이를 완료 길이로 전파해 인접 nonpaged pool 데이터를 읽을 수 있던 Windows Hyper-V 취약점이다.",
+          "created_at": "2026-09-02T12:50:43+09:00",
+          "updated_at": "2026-09-02T12:50:43+09:00"
         }
       ]
     },
