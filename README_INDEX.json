@@ -758,23 +758,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-08-30",
+      "date": "2026-09-02",
       "entries": [
         {
-          "project_slug": "rabbitmq",
-          "label": "RabbitMQ Federation 업스트림 삭제 리소스 경계",
-          "path": "oss-changes/rabbitmq/4.3.4-rabbitmq-federation-upstream-deletion-resource-boundary.md",
-          "summary": "queue federation teardown이 같은 이름 교환기의 Khepri decorator 상태를 손상하던 경로를 exchange 전용 scratch 정리로 제한한 변경",
-          "created_at": "2026-08-30T02:52:58+09:00",
-          "updated_at": "2026-08-30T02:52:58+09:00"
-        },
-        {
-          "project_slug": "tcmalloc",
-          "label": "TCMalloc 샘플 할당 residency telemetry 분리",
-          "path": "oss-changes/tcmalloc/2026-08-24-tcmalloc-sampled-allocation-residency-telemetry.md",
-          "summary": "주소 재사용 이력을 분리해 heap profile 정확성 향상",
-          "created_at": "2026-08-30T03:12:45+09:00",
-          "updated_at": "2026-08-30T03:12:45+09:00"
+          "project_slug": "kubernetes",
+          "label": "Kubernetes Manifest 기반 Admission Control 구성",
+          "path": "oss-changes/kubernetes/1.36-kubernetes-manifest-based-admission-control-config.md",
+          "summary": "정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경",
+          "created_at": "2026-09-02T12:57:19+09:00",
+          "updated_at": "2026-09-02T12:57:19+09:00"
         }
       ]
     },
@@ -858,6 +850,13 @@
             "summary": "kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석",
             "created_at": "2026-08-16T01:57:03+09:00",
             "updated_at": "2026-08-16T01:57:03+09:00"
+          },
+          {
+            "label": "Kubernetes Manifest 기반 Admission Control 구성",
+            "path": "oss-changes/kubernetes/1.36-kubernetes-manifest-based-admission-control-config.md",
+            "summary": "정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경",
+            "created_at": "2026-09-02T12:57:19+09:00",
+            "updated_at": "2026-09-02T12:57:19+09:00"
           }
         ]
       },
