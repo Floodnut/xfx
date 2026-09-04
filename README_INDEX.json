@@ -782,6 +782,14 @@
           "summary": "API 타입과 제어면 의존성 경계 분리",
           "created_at": "2026-09-04T23:12:33+09:00",
           "updated_at": "2026-09-04T23:12:33+09:00"
+        },
+        {
+          "project_slug": "libvirt",
+          "label": "libvirt QEMU Panic Preserve-running",
+          "path": "oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md",
+          "summary": "Guest 자체 crash dump와 reboot를 위한 수명주기 정책",
+          "created_at": "2026-09-04T23:54:35+09:00",
+          "updated_at": "2026-09-04T23:54:35+09:00"
         }
       ]
     },
@@ -1093,7 +1101,15 @@
       {
         "slug": "libvirt",
         "title": "libvirt",
-        "entries": []
+        "entries": [
+          {
+            "label": "libvirt QEMU Panic Preserve-running",
+            "path": "oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md",
+            "summary": "Guest 자체 crash dump와 reboot를 위한 수명주기 정책",
+            "created_at": "2026-09-04T23:54:35+09:00",
+            "updated_at": "2026-09-04T23:54:35+09:00"
+          }
+        ]
       },
       {
         "slug": "clickhouse",
