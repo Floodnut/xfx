@@ -773,23 +773,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-09-02",
+      "date": "2026-09-04",
       "entries": [
         {
-          "project_slug": "kubernetes",
-          "label": "Kubernetes Manifest 기반 Admission Control 구성",
-          "path": "oss-changes/kubernetes/1.36-kubernetes-manifest-based-admission-control-config.md",
-          "summary": "정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경",
-          "created_at": "2026-09-02T12:57:19+09:00",
-          "updated_at": "2026-09-02T12:57:19+09:00"
-        },
-        {
-          "project_slug": "karpenter",
-          "label": "Karpenter CapacityBuffer 가상 파드 캐시",
-          "path": "oss-changes/karpenter/1.14.1-karpenter-capacitybuffer-virtual-pod-cache.md",
-          "summary": "가상 파드 해석과 cache 갱신을 controller로 옮겨 provisioner scheduling hot path를 가볍게 만든 v1.14.1 변경",
-          "created_at": "2026-09-02T12:57:20+09:00",
-          "updated_at": "2026-09-02T12:57:20+09:00"
+          "project_slug": "cluster-api",
+          "label": "Cluster API 분리 API 모듈",
+          "path": "oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md",
+          "summary": "API 타입과 제어면 의존성 경계 분리",
+          "created_at": "2026-09-04T23:12:33+09:00",
+          "updated_at": "2026-09-04T23:12:33+09:00"
         }
       ]
     },
@@ -1070,7 +1062,15 @@
       {
         "slug": "cluster-api",
         "title": "Cluster API",
-        "entries": []
+        "entries": [
+          {
+            "label": "Cluster API 분리 API 모듈",
+            "path": "oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md",
+            "summary": "API 타입과 제어면 의존성 경계 분리",
+            "created_at": "2026-09-04T23:12:33+09:00",
+            "updated_at": "2026-09-04T23:12:33+09:00"
+          }
+        ]
       },
       {
         "slug": "harvester",
