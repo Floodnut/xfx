@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-09-05",
+    "date": "2026-09-09",
     "entries": [
       {
-        "label": "CVE-2026-59244",
-        "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2026-59244-apache-airflow-var-json-secret-masking-bypass.md",
-        "summary": "Airflow 3.3.0 계열 Task SDK의 var.json dict 값은 문자열 전용 마스킹 조건을 우회해 Rendered Templates UI에 평문으로 남을 수 있었고, 3.3.1에서 원문과 dict를 함께 마스킹하도록 수정되었다.",
-        "created_at": "2026-09-05T23:05:22+09:00",
-        "updated_at": "2026-09-05T23:05:22+09:00"
+        "label": "CVE-2024-1929",
+        "category": "Linux",
+        "path": "vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md",
+        "summary": "dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다.",
+        "created_at": "2026-09-09T02:40:31+09:00",
+        "updated_at": "2026-09-09T02:40:31+09:00"
       }
     ]
   },
@@ -278,6 +278,13 @@
           "summary": "netfilter ipset의 CIDR 0 매크로 누락으로 인한 배열 인덱스 언더플로우와 upstream 수정 분석",
           "created_at": "2026-09-02T12:58:53+09:00",
           "updated_at": "2026-09-02T12:58:53+09:00"
+        },
+        {
+          "label": "CVE-2024-1929",
+          "path": "vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md",
+          "summary": "dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다.",
+          "created_at": "2026-09-09T02:40:31+09:00",
+          "updated_at": "2026-09-09T02:40:31+09:00"
         }
       ]
     },
