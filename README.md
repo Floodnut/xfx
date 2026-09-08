@@ -4,14 +4,14 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-08-30 | [CVE-2026-50131](vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md) | Opensource | Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다. |
-| 2026-08-30 | [RabbitMQ Federation 업스트림 삭제 리소스 경계](oss-changes/rabbitmq/4.3.4-rabbitmq-federation-upstream-deletion-resource-boundary.md) | OSS / RabbitMQ | queue federation teardown이 같은 이름 교환기의 Khepri decorator 상태를 손상하던 경로를 exchange 전용 scratch 정리로 제한한 변경 |
-| 2026-08-30 | [TCMalloc 샘플 할당 residency telemetry 분리](oss-changes/tcmalloc/2026-08-24-tcmalloc-sampled-allocation-residency-telemetry.md) | OSS / TCMalloc | 주소 재사용 이력을 분리해 heap profile 정확성 향상 |
+| 2026-09-09 | [CVE-2024-1929](vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md) | Linux | dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다. |
+| 2026-09-04 | [Cluster API 분리 API 모듈](oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md) | OSS / Cluster API | API 타입과 제어면 의존성 경계 분리 |
+| 2026-09-04 | [libvirt QEMU Panic Preserve-running](oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md) | OSS / libvirt | Guest 자체 crash dump와 reboot를 위한 수명주기 정책 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (36)</summary>
+<summary>Linux (38)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -51,11 +51,13 @@
 | [CVE-2021-3995](vulnerability/linux/CVE-2021-3995-util-linux-libmount-fuse-uid-prefix-unmount.md) | util-linux libmount가 FUSE 마운트의 user_id를 문자열 접두사로 비교해 다른 사용자의 파일시스템 해제를 허용한 문제를 UID 정수 파싱과 정확한 비교로 수정한 과정을 설명한다. |
 | [CVE-2018-1049](vulnerability/linux/CVE-2018-1049-systemd-automount-race-mountpoint-hang.md) | CVE-2018-1049는 systemd의 .mount 완료가 커널 autofs 요청보다 먼저 처리될 때 늦은 요청 토큰에 READY ACK를 보내지 않아 mountpoint 접근을 멈추게 한 race이며, 수정은 이미 마운트된 분기에서 토큰을 성공 처리하고 반환한다. |
 | [CVE-2023-3390](vulnerability/linux/CVE-2023-3390-nf-tables-anonymous-set-uaf.md) | Linux nf_tables가 익명 세트를 참조하는 규칙 추가 오류 경로에서 NFT_TRANS_RELEASE로 세트를 먼저 해제해 dangling pointer를 만든 원인과 NFT_TRANS_PREPARE 수정 과정을 설명한다. |
+| [CVE-2023-42753](vulnerability/linux/CVE-2023-42753-ipset-hash-netportnet-cidr-underflow.md) | netfilter ipset의 CIDR 0 매크로 누락으로 인한 배열 인덱스 언더플로우와 upstream 수정 분석 |
+| [CVE-2024-1929](vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md) | dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다. |
 
 </details>
 
 <details>
-<summary>Opensource (43)</summary>
+<summary>Opensource (44)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -102,11 +104,12 @@
 | [CVE-2026-54917](vulnerability/opensource/CVE-2026-54917-seaweedfs-s3-iceberg-cross-bucket-path-traversal.md) | SeaweedFS 4.30 미만의 S3와 Iceberg gateway가 SkipClean(true)로 보존한 경로 변수를 후속 경로 조합에서 재해석해 버킷 경계를 우회한 문제와 handler 전 검증 middleware 수정 과정을 설명한다. |
 | [CVE-2026-28291](vulnerability/opensource/CVE-2026-28291-simple-git-option-parsing-command-execution.md) | simple-git의 부분적인 -u 정규식 검사가 Git의 짧은 옵션 묶음 해석을 놓쳐 위험한 upload-pack 인자를 통과시킨 문제이며, 3.32.0이 묶음 안의 u를 검사하도록 보완했다. |
 | [CVE-2026-50131](vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md) | Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다. |
+| [CVE-2026-59244](vulnerability/opensource/CVE-2026-59244-apache-airflow-var-json-secret-masking-bypass.md) | Airflow 3.3.0 계열 Task SDK의 var.json dict 값은 문자열 전용 마스킹 조건을 우회해 Rendered Templates UI에 평문으로 남을 수 있었고, 3.3.1에서 원문과 dict를 함께 마스킹하도록 수정되었다. |
 
 </details>
 
 <details>
-<summary>Windows (7)</summary>
+<summary>Windows (8)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -117,6 +120,7 @@
 | [CVE-2022-21882](vulnerability/windows/CVE-2022-21882-win32k-window-object-type-confusion.md) | Win32k user-mode callback 뒤 창 객체 표현을 재검증하지 않아 생긴 타입 혼동과 ConsoleWindow 상태 검증 패치를 분석한다. |
 | [CVE-2025-5986](vulnerability/windows/CVE-2025-5986-thunderbird-mailbox-unc-credential-leak.md) | Thunderbird의 mailbox: UNC 처리 경계를 보강해 무단 다운로드·디스크 소진·Windows SMB 자격 증명 노출 가능성을 차단한 CVE-2025-5986 분석. |
 | [CVE-2025-50168](vulnerability/windows/CVE-2025-50168-win32k-directcomposition-shared-resource-type-confusion.md) | CVE-2025-50168은 DirectComposition 공유 리소스의 타입 태그와 실제 marshaler 객체 레이아웃 불일치가 속성 setter의 범위 밖 쓰기로 이어진 Windows 권한 상승 취약점이다. |
+| [CVE-2024-38127](vulnerability/windows/CVE-2024-38127-windows-hyper-v-vhdmp-metadata-oob-read.md) | CVE-2024-38127은 vhdmp.sys 메타데이터 조회가 작은 출력 버퍼에서 필요한 길이를 완료 길이로 전파해 인접 nonpaged pool 데이터를 읽을 수 있던 Windows Hyper-V 취약점이다. |
 
 </details>
 
@@ -166,7 +170,7 @@
 </details>
 
 <details>
-<summary>Kubernetes (5)</summary>
+<summary>Kubernetes (6)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -175,11 +179,12 @@
 | [Kubernetes SELinux Mount GA](oss-changes/kubernetes/1.36-selinux-mount-ga.md) | RWOP 볼륨에 한해 컨테이너 런타임의 재귀적 SELinux 재라벨링 대신 커널 마운트 옵션으로 라벨을 한 번에 적용하는 방식이 GA로 승격됐다. |
 | [Kubernetes PodGroup API를 Workload에서 분리해 독립 런타임 객체로 만들기](oss-changes/kubernetes/1.36-kubernetes-decouple-podgroup-api-from-workload-api.md) | KEP-5832로 PodGroup을 Workload 내장에서 독립 API 객체로 분리하는 v1alpha2 설계 변경 분석 |
 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
+| [Kubernetes Manifest 기반 Admission Control 구성](oss-changes/kubernetes/1.36-kubernetes-manifest-based-admission-control-config.md) | 정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경 |
 
 </details>
 
 <details>
-<summary>Karpenter (5)</summary>
+<summary>Karpenter (6)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -188,6 +193,7 @@
 | [Karpenter CapacityBuffer: 가상 파드로 여유 용량을 미리 만들어두는 사전 프로비저닝](oss-changes/karpenter/1.14-capacity-buffer-active-provisioning.md) | v1.14에서 alpha로 추가된 CapacityBuffer API가 파드 없이도 노드를 미리 켜두는 방식(가상 파드를 매 루프 주입)과, 그로 인한 노미네이션/emptiness/consolidation 경계 처리를 다룬다. |
 | [Karpenter Dynamic Resource Allocation Scheduling](oss-changes/karpenter/1.14-dynamic-resource-allocation-scheduling.md) | Karpenter가 아직 인스턴스 타입이 확정되지 않은 NodeClaim 상태에서 GPU 등 DRA 디바이스를 배분하기 위해 전용 할당기(pkg/scheduling/dynamicresources)를 새로 구현하고 스케줄러/디스럽션/노드 초기화 전반에 통합한 변경을 분석. |
 | [Karpenter Resize-Aware Resource Accounting](oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md) | InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석 |
+| [Karpenter CapacityBuffer 가상 파드 캐시](oss-changes/karpenter/1.14.1-karpenter-capacitybuffer-virtual-pod-cache.md) | 가상 파드 해석과 cache 갱신을 controller로 옮겨 provisioner scheduling hot path를 가볍게 만든 v1.14.1 변경 |
 
 </details>
 
@@ -276,10 +282,11 @@
 </details>
 
 <details>
-<summary>Cluster API (0)</summary>
+<summary>Cluster API (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Cluster API 분리 API 모듈](oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md) | API 타입과 제어면 의존성 경계 분리 |
 
 </details>
 
@@ -301,10 +308,11 @@
 </details>
 
 <details>
-<summary>libvirt (0)</summary>
+<summary>libvirt (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [libvirt QEMU Panic Preserve-running](oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md) | Guest 자체 crash dump와 reboot를 위한 수명주기 정책 |
 
 </details>
 
