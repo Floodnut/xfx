@@ -4,14 +4,15 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-09-09 | [CVE-2024-1929](vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md) | Linux | dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다. |
-| 2026-09-04 | [Cluster API 분리 API 모듈](oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md) | OSS / Cluster API | API 타입과 제어면 의존성 경계 분리 |
-| 2026-09-04 | [libvirt QEMU Panic Preserve-running](oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md) | OSS / libvirt | Guest 자체 crash dump와 reboot를 위한 수명주기 정책 |
+| 2026-10-07 | [CVE-2026-76020](vulnerability/browser/CVE-2026-76020-v8-background-merge-scope-info-race.md) | Browser | V8 코드 캐시의 백그라운드 병합과 지연 컴파일이 경쟁하여 ScopeInfo 검사와 사용이 어긋나는 원인과 타입 검증을 결합한 두 upstream 수정을 분석한다. |
+| 2026-10-07 | [CVE-2026-71851](vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md) | Opensource | CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다. |
+| 2026-10-07 | [Kubernetes Node Lifecycle Conditions](oss-changes/kubernetes/1.37.1-kubernetes-node-lifecycle-conditions.md) | OSS / Kubernetes | 노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계 |
+| 2026-10-07 | [etcd WAL 기반 최소 버전 검사](oss-changes/etcd/3.7.2-etcd-minimal-version-wal-snapshot.md) | OSS / etcd | 최소 호환 버전 검사의 v2 snapshot 의존성 제거와 WAL 파일 정리 경합의 제한 재시도 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (38)</summary>
+<summary>Linux (39)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -53,11 +54,12 @@
 | [CVE-2023-3390](vulnerability/linux/CVE-2023-3390-nf-tables-anonymous-set-uaf.md) | Linux nf_tables가 익명 세트를 참조하는 규칙 추가 오류 경로에서 NFT_TRANS_RELEASE로 세트를 먼저 해제해 dangling pointer를 만든 원인과 NFT_TRANS_PREPARE 수정 과정을 설명한다. |
 | [CVE-2023-42753](vulnerability/linux/CVE-2023-42753-ipset-hash-netportnet-cidr-underflow.md) | netfilter ipset의 CIDR 0 매크로 누락으로 인한 배열 인덱스 언더플로우와 upstream 수정 분석 |
 | [CVE-2024-1929](vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md) | dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다. |
+| [CVE-2017-18078](vulnerability/linux/CVE-2017-18078-systemd-tmpfiles-hardlink-permission-change.md) | systemd-tmpfiles가 하드링크로 공유된 inode의 권한을 변경하는 원인과 링크 수 및 커널 보호 상태 검사로 이를 차단한 패치를 분석한다. |
 
 </details>
 
 <details>
-<summary>Opensource (44)</summary>
+<summary>Opensource (45)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -105,6 +107,7 @@
 | [CVE-2026-28291](vulnerability/opensource/CVE-2026-28291-simple-git-option-parsing-command-execution.md) | simple-git의 부분적인 -u 정규식 검사가 Git의 짧은 옵션 묶음 해석을 놓쳐 위험한 upload-pack 인자를 통과시킨 문제이며, 3.32.0이 묶음 안의 u를 검사하도록 보완했다. |
 | [CVE-2026-50131](vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md) | Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다. |
 | [CVE-2026-59244](vulnerability/opensource/CVE-2026-59244-apache-airflow-var-json-secret-masking-bypass.md) | Airflow 3.3.0 계열 Task SDK의 var.json dict 값은 문자열 전용 마스킹 조건을 우회해 Rendered Templates UI에 평문으로 남을 수 있었고, 3.3.1에서 원문과 dict를 함께 마스킹하도록 수정되었다. |
+| [CVE-2026-71851](vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md) | CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다. |
 
 </details>
 
@@ -125,7 +128,7 @@
 </details>
 
 <details>
-<summary>Browser (10)</summary>
+<summary>Browser (11)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -139,6 +142,7 @@
 | [CVE-2025-31277](vulnerability/browser/CVE-2025-31277-javascriptcore-jit-type-confusion.md) | JavaScriptCore JIT의 타입 가정이 실제 값 표현과 어긋날 때 메모리 손상으로 이어지는 원리와 DarkSword 초기 RCE 단계에서의 역할을 분석한다. |
 | [CVE-2025-2783](vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md) | Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다. |
 | [CVE-2026-15772](vulnerability/browser/CVE-2026-15772-chrome-android-gpu-fbo-uaf-sandbox-escape.md) | Chrome Android GPU 읽기 경로가 임시 FBO를 해제하기 전에 바인딩을 복원하도록 고쳐 드라이버 내부 UAF와 잠재적 샌드박스 탈출을 차단한 CVE-2026-15772 분석. |
+| [CVE-2026-76020](vulnerability/browser/CVE-2026-76020-v8-background-merge-scope-info-race.md) | V8 코드 캐시의 백그라운드 병합과 지연 컴파일이 경쟁하여 ScopeInfo 검사와 사용이 어긋나는 원인과 타입 검증을 결합한 두 upstream 수정을 분석한다. |
 
 </details>
 
@@ -170,7 +174,7 @@
 </details>
 
 <details>
-<summary>Kubernetes (6)</summary>
+<summary>Kubernetes (7)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -180,6 +184,7 @@
 | [Kubernetes PodGroup API를 Workload에서 분리해 독립 런타임 객체로 만들기](oss-changes/kubernetes/1.36-kubernetes-decouple-podgroup-api-from-workload-api.md) | KEP-5832로 PodGroup을 Workload 내장에서 독립 API 객체로 분리하는 v1alpha2 설계 변경 분석 |
 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
 | [Kubernetes Manifest 기반 Admission Control 구성](oss-changes/kubernetes/1.36-kubernetes-manifest-based-admission-control-config.md) | 정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경 |
+| [Kubernetes Node Lifecycle Conditions](oss-changes/kubernetes/1.37.1-kubernetes-node-lifecycle-conditions.md) | 노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계 |
 
 </details>
 
@@ -274,10 +279,11 @@
 </details>
 
 <details>
-<summary>etcd (0)</summary>
+<summary>etcd (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [etcd WAL 기반 최소 버전 검사](oss-changes/etcd/3.7.2-etcd-minimal-version-wal-snapshot.md) | 최소 호환 버전 검사의 v2 snapshot 의존성 제거와 WAL 파일 정리 경합의 제한 재시도 |
 
 </details>
 
