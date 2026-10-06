@@ -12,6 +12,14 @@
         "summary": "V8 코드 캐시의 백그라운드 병합과 지연 컴파일이 경쟁하여 ScopeInfo 검사와 사용이 어긋나는 원인과 타입 검증을 결합한 두 upstream 수정을 분석한다.",
         "created_at": "2026-10-07T05:05:50+09:00",
         "updated_at": "2026-10-07T05:05:50+09:00"
+      },
+      {
+        "label": "CVE-2026-71851",
+        "category": "Opensource",
+        "path": "vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md",
+        "summary": "CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다.",
+        "created_at": "2026-10-07T05:06:10+09:00",
+        "updated_at": "2026-10-07T05:06:10+09:00"
       }
     ]
   },
@@ -606,6 +614,13 @@
           "summary": "Airflow 3.3.0 계열 Task SDK의 var.json dict 값은 문자열 전용 마스킹 조건을 우회해 Rendered Templates UI에 평문으로 남을 수 있었고, 3.3.1에서 원문과 dict를 함께 마스킹하도록 수정되었다.",
           "created_at": "2026-09-05T23:05:22+09:00",
           "updated_at": "2026-09-05T23:05:22+09:00"
+        },
+        {
+          "label": "CVE-2026-71851",
+          "path": "vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md",
+          "summary": "CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다.",
+          "created_at": "2026-10-07T05:06:10+09:00",
+          "updated_at": "2026-10-07T05:06:10+09:00"
         }
       ]
     },
