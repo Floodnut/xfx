@@ -786,23 +786,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-09-04",
+      "date": "2026-10-07",
       "entries": [
         {
-          "project_slug": "cluster-api",
-          "label": "Cluster API 분리 API 모듈",
-          "path": "oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md",
-          "summary": "API 타입과 제어면 의존성 경계 분리",
-          "created_at": "2026-09-04T23:12:33+09:00",
-          "updated_at": "2026-09-04T23:12:33+09:00"
-        },
-        {
-          "project_slug": "libvirt",
-          "label": "libvirt QEMU Panic Preserve-running",
-          "path": "oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md",
-          "summary": "Guest 자체 crash dump와 reboot를 위한 수명주기 정책",
-          "created_at": "2026-09-04T23:54:35+09:00",
-          "updated_at": "2026-09-04T23:54:35+09:00"
+          "project_slug": "kubernetes",
+          "label": "Kubernetes Node Lifecycle Conditions",
+          "path": "oss-changes/kubernetes/1.37.1-kubernetes-node-lifecycle-conditions.md",
+          "summary": "노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계",
+          "created_at": "2026-10-07T03:08:15+09:00",
+          "updated_at": "2026-10-07T03:08:15+09:00"
         }
       ]
     },
@@ -893,6 +885,13 @@
             "summary": "정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경",
             "created_at": "2026-09-02T12:57:19+09:00",
             "updated_at": "2026-09-02T12:57:19+09:00"
+          },
+          {
+            "label": "Kubernetes Node Lifecycle Conditions",
+            "path": "oss-changes/kubernetes/1.37.1-kubernetes-node-lifecycle-conditions.md",
+            "summary": "노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계",
+            "created_at": "2026-10-07T03:08:15+09:00",
+            "updated_at": "2026-10-07T03:08:15+09:00"
           }
         ]
       },
