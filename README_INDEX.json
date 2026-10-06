@@ -795,6 +795,14 @@
           "summary": "노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계",
           "created_at": "2026-10-07T03:08:15+09:00",
           "updated_at": "2026-10-07T03:08:15+09:00"
+        },
+        {
+          "project_slug": "etcd",
+          "label": "etcd WAL 기반 최소 버전 검사",
+          "path": "oss-changes/etcd/3.7.2-etcd-minimal-version-wal-snapshot.md",
+          "summary": "최소 호환 버전 검사의 v2 snapshot 의존성 제거와 WAL 파일 정리 경합의 제한 재시도",
+          "created_at": "2026-10-07T03:08:16+09:00",
+          "updated_at": "2026-10-07T03:08:16+09:00"
         }
       ]
     },
@@ -1077,7 +1085,15 @@
       {
         "slug": "etcd",
         "title": "etcd",
-        "entries": []
+        "entries": [
+          {
+            "label": "etcd WAL 기반 최소 버전 검사",
+            "path": "oss-changes/etcd/3.7.2-etcd-minimal-version-wal-snapshot.md",
+            "summary": "최소 호환 버전 검사의 v2 snapshot 의존성 제거와 WAL 파일 정리 경합의 제한 재시도",
+            "created_at": "2026-10-07T03:08:16+09:00",
+            "updated_at": "2026-10-07T03:08:16+09:00"
+          }
+        ]
       },
       {
         "slug": "cluster-api",
