@@ -817,6 +817,14 @@
           "summary": "배치 조회 후 갱신된 연결을 재검증해 CT/NAT 오삭제 경합을 줄이고 기존 삭제 정책 유지",
           "created_at": "2026-10-22T04:27:23+09:00",
           "updated_at": "2026-10-22T04:27:23+09:00"
+        },
+        {
+          "project_slug": "envoy",
+          "label": "Envoy 연결별 Drain 판단",
+          "path": "oss-changes/envoy/1.40.0-envoy-connection-drain-ownership.md",
+          "summary": "listener 대상 선택과 연결 이벤트로 inbound-only 종료 누락을 해결하고 Redis 응답 완료 조건 유지",
+          "created_at": "2026-10-22T04:27:24+09:00",
+          "updated_at": "2026-10-22T04:27:24+09:00"
         }
       ]
     },
@@ -1144,6 +1152,13 @@
             "summary": "accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계",
             "created_at": "2026-08-27T03:15:05+09:00",
             "updated_at": "2026-08-27T03:15:05+09:00"
+          },
+          {
+            "label": "Envoy 연결별 Drain 판단",
+            "path": "oss-changes/envoy/1.40.0-envoy-connection-drain-ownership.md",
+            "summary": "listener 대상 선택과 연결 이벤트로 inbound-only 종료 누락을 해결하고 Redis 응답 완료 조건 유지",
+            "created_at": "2026-10-22T04:27:24+09:00",
+            "updated_at": "2026-10-22T04:27:24+09:00"
           }
         ]
       },
