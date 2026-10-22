@@ -4,10 +4,10 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-10-07 | [CVE-2026-76020](vulnerability/browser/CVE-2026-76020-v8-background-merge-scope-info-race.md) | Browser | V8 코드 캐시의 백그라운드 병합과 지연 컴파일이 경쟁하여 ScopeInfo 검사와 사용이 어긋나는 원인과 타입 검증을 결합한 두 upstream 수정을 분석한다. |
-| 2026-10-07 | [CVE-2026-71851](vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md) | Opensource | CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다. |
-| 2026-10-07 | [Kubernetes Node Lifecycle Conditions](oss-changes/kubernetes/1.37.1-kubernetes-node-lifecycle-conditions.md) | OSS / Kubernetes | 노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계 |
-| 2026-10-07 | [etcd WAL 기반 최소 버전 검사](oss-changes/etcd/3.7.2-etcd-minimal-version-wal-snapshot.md) | OSS / etcd | 최소 호환 버전 검사의 v2 snapshot 의존성 제거와 WAL 파일 정리 경합의 제한 재시도 |
+| 2026-10-23 | [CVE-2026-23842](vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md) | Opensource | ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다. |
+| 2026-10-23 | [Cluster API 네임스페이스 캐시 일관성 경계](oss-changes/cluster-api/1.14.3-cluster-api-namespaced-cache-consistency.md) | OSS / Cluster API | 단일 네임스페이스 informer 래퍼를 해제해 기존 쓰기 이후 캐시 검사를 유지하는 설계와 비공개 필드 의존 분석 |
+| 2026-10-23 | [Harvester 복원 완료와 VM 기동 분리](oss-changes/harvester/1.9.0-harvester-restore-completion-without-vm-start.md) | OSS / Harvester | haltAfterRestore로 볼륨 복원 완료와 VM Ready 조건을 분리하고 기존 자동 기동 기본값 유지 |
+| 2026-10-23 | [libvirt QEMU 전체 프로세스 resctrl 범위](oss-changes/libvirt/12.8.0-libvirt-whole-process-resctrl-scope.md) | OSS / libvirt | 실행 전 PID 배치와 그룹 상속으로 vCPU 밖 작업까지 자원 관리 범위 확장 |
 
 ## CVE 취약점 분석
 
@@ -59,7 +59,7 @@
 </details>
 
 <details>
-<summary>Opensource (45)</summary>
+<summary>Opensource (47)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -108,6 +108,8 @@
 | [CVE-2026-50131](vulnerability/opensource/CVE-2026-50131-fedify-special-use-ipv4-ssrf-bypass.md) | Fedify의 공개 URL 검증기는 일부 사설 IPv4 대역만 차단해 특수 목적 IPv4와 IPv6에 내장된 비공개 IPv4를 통과시킬 수 있었고, 수정 커밋은 엄격한 파싱과 CIDR 및 접두사 재검증으로 이 SSRF 경계를 닫았다. |
 | [CVE-2026-59244](vulnerability/opensource/CVE-2026-59244-apache-airflow-var-json-secret-masking-bypass.md) | Airflow 3.3.0 계열 Task SDK의 var.json dict 값은 문자열 전용 마스킹 조건을 우회해 Rendered Templates UI에 평문으로 남을 수 있었고, 3.3.1에서 원문과 dict를 함께 마스킹하도록 수정되었다. |
 | [CVE-2026-71851](vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md) | CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다. |
+| [CVE-2026-24049](vulnerability/opensource/CVE-2026-24049-wheel-unpack-permission-path-traversal.md) | wheel unpack이 추출 결과 대신 원본 파일명으로 권한 변경 경로를 재구성해 외부 파일의 모드를 바꾸는 원인과 반환 경로 재사용 패치를 분석한다. |
+| [CVE-2026-23842](vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md) | ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다. |
 
 </details>
 
@@ -203,7 +205,7 @@
 </details>
 
 <details>
-<summary>Cilium (4)</summary>
+<summary>Cilium (5)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -211,6 +213,7 @@
 | [로드밸런서 백엔드 평탄화 (Aggregated Load-Balancer State)](oss-changes/cilium/1.20-loadbalancer-backend-flatten.md) | v1.19에서 서비스별 인스턴스를 중첩 맵으로 담던 백엔드 행 구조가 실제 프로덕션 메모리 급증을 유발한 사례 — v1.20에서 (서비스,주소,우선순위) 조합마다 독립된 테이블 행으로 평탄화해 해결 |
 | [Cilium Datapath Plugins](oss-changes/cilium/1.20-cilium-datapath-plugins.md) | 서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘 |
 | [Cilium Gateway ListenerSet Delegation](oss-changes/cilium/1.20-cilium-gateway-listenerset-delegation.md) | 공유 Gateway의 listener 소유권을 ListenerSet으로 위임하고, Cilium이 병합된 Envoy 설정과 리소스별 TLS 권한 경계를 함께 유지 |
+| [Cilium Conntrack GC 삭제 직전 재검증](oss-changes/cilium/1.20.3-cilium-conntrack-gc-revalidation.md) | 배치 조회 후 갱신된 연결을 재검증해 CT/NAT 오삭제 경합을 줄이고 기존 삭제 정책 유지 |
 
 </details>
 
@@ -224,11 +227,12 @@
 </details>
 
 <details>
-<summary>LoxiLB (1)</summary>
+<summary>LoxiLB (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [LoxiLB HA Egress Cluster Routing](oss-changes/loxilb/0.9.8-ha-egress-cluster-routing.md) | v0.9.8에서 기존 LB·VIP·HA 상태 기계를 egress 모드로 연결해, 대기 노드의 트래픽을 전용 VXLAN으로 활성 노드에 전달하고 안정적인 SNAT/VIP를 유지하는 초기 설계. |
+| [LoxiLB Fullproxy PROXY v2 선행 전송](oss-changes/loxilb/0.9.8.8-loxilb-fullproxy-proxy-v2-prefix.md) | 백엔드 TCP 연결에 클라이언트와 VIP 정보를 TLS보다 먼저 보내는 스트림 경계 설계 |
 
 </details>
 
@@ -288,37 +292,41 @@
 </details>
 
 <details>
-<summary>Cluster API (1)</summary>
+<summary>Cluster API (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Cluster API 분리 API 모듈](oss-changes/cluster-api/1.14.0-cluster-api-separated-api-module.md) | API 타입과 제어면 의존성 경계 분리 |
+| [Cluster API 네임스페이스 캐시 일관성 경계](oss-changes/cluster-api/1.14.3-cluster-api-namespaced-cache-consistency.md) | 단일 네임스페이스 informer 래퍼를 해제해 기존 쓰기 이후 캐시 검사를 유지하는 설계와 비공개 필드 의존 분석 |
 
 </details>
 
 <details>
-<summary>Harvester (0)</summary>
+<summary>Harvester (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Harvester 복원 완료와 VM 기동 분리](oss-changes/harvester/1.9.0-harvester-restore-completion-without-vm-start.md) | haltAfterRestore로 볼륨 복원 완료와 VM Ready 조건을 분리하고 기존 자동 기동 기본값 유지 |
 
 </details>
 
 <details>
-<summary>Envoy (1)</summary>
+<summary>Envoy (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Envoy CPU-local Connection Steering](oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md) | accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계 |
+| [Envoy 연결별 Drain 판단](oss-changes/envoy/1.40.0-envoy-connection-drain-ownership.md) | listener 대상 선택과 연결 이벤트로 inbound-only 종료 누락을 해결하고 Redis 응답 완료 조건 유지 |
 
 </details>
 
 <details>
-<summary>libvirt (1)</summary>
+<summary>libvirt (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [libvirt QEMU Panic Preserve-running](oss-changes/libvirt/12.6.0-libvirt-qemu-panic-preserve-running-lifecycle-policy.md) | Guest 자체 crash dump와 reboot를 위한 수명주기 정책 |
+| [libvirt QEMU 전체 프로세스 resctrl 범위](oss-changes/libvirt/12.8.0-libvirt-whole-process-resctrl-scope.md) | 실행 전 PID 배치와 그룹 상속으로 vCPU 밖 작업까지 자원 관리 범위 확장 |
 
 </details>
 
