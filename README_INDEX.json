@@ -824,6 +824,14 @@
           "summary": "haltAfterRestore로 볼륨 복원 완료와 VM Ready 조건을 분리하고 기존 자동 기동 기본값 유지",
           "created_at": "2026-10-23T03:02:47+09:00",
           "updated_at": "2026-10-23T03:02:47+09:00"
+        },
+        {
+          "project_slug": "libvirt",
+          "label": "libvirt QEMU 전체 프로세스 resctrl 범위",
+          "path": "oss-changes/libvirt/12.8.0-libvirt-whole-process-resctrl-scope.md",
+          "summary": "실행 전 PID 배치와 그룹 상속으로 vCPU 밖 작업까지 자원 관리 범위 확장",
+          "created_at": "2026-10-23T03:02:47+09:00",
+          "updated_at": "2026-10-23T03:02:47+09:00"
         }
       ]
     },
@@ -1193,6 +1201,13 @@
             "summary": "Guest 자체 crash dump와 reboot를 위한 수명주기 정책",
             "created_at": "2026-09-04T23:54:35+09:00",
             "updated_at": "2026-09-04T23:54:35+09:00"
+          },
+          {
+            "label": "libvirt QEMU 전체 프로세스 resctrl 범위",
+            "path": "oss-changes/libvirt/12.8.0-libvirt-whole-process-resctrl-scope.md",
+            "summary": "실행 전 PID 배치와 그룹 상속으로 vCPU 밖 작업까지 자원 관리 범위 확장",
+            "created_at": "2026-10-23T03:02:47+09:00",
+            "updated_at": "2026-10-23T03:02:47+09:00"
           }
         ]
       },
