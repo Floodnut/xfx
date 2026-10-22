@@ -807,31 +807,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-10-22",
+      "date": "2026-10-23",
       "entries": [
         {
-          "project_slug": "cilium",
-          "label": "Cilium Conntrack GC 삭제 직전 재검증",
-          "path": "oss-changes/cilium/1.20.3-cilium-conntrack-gc-revalidation.md",
-          "summary": "배치 조회 후 갱신된 연결을 재검증해 CT/NAT 오삭제 경합을 줄이고 기존 삭제 정책 유지",
-          "created_at": "2026-10-22T04:27:23+09:00",
-          "updated_at": "2026-10-22T04:27:23+09:00"
-        },
-        {
-          "project_slug": "envoy",
-          "label": "Envoy 연결별 Drain 판단",
-          "path": "oss-changes/envoy/1.40.0-envoy-connection-drain-ownership.md",
-          "summary": "listener 대상 선택과 연결 이벤트로 inbound-only 종료 누락을 해결하고 Redis 응답 완료 조건 유지",
-          "created_at": "2026-10-22T04:27:24+09:00",
-          "updated_at": "2026-10-22T04:27:24+09:00"
-        },
-        {
-          "project_slug": "loxilb",
-          "label": "LoxiLB Fullproxy PROXY v2 선행 전송",
-          "path": "oss-changes/loxilb/0.9.8.8-loxilb-fullproxy-proxy-v2-prefix.md",
-          "summary": "백엔드 TCP 연결에 클라이언트와 VIP 정보를 TLS보다 먼저 보내는 스트림 경계 설계",
-          "created_at": "2026-10-22T04:27:24+09:00",
-          "updated_at": "2026-10-22T04:27:24+09:00"
+          "project_slug": "cluster-api",
+          "label": "Cluster API 네임스페이스 캐시 일관성 경계",
+          "path": "oss-changes/cluster-api/1.14.3-cluster-api-namespaced-cache-consistency.md",
+          "summary": "단일 네임스페이스 informer 래퍼를 해제해 기존 쓰기 이후 캐시 검사를 유지하는 설계와 비공개 필드 의존 분석",
+          "created_at": "2026-10-23T03:02:47+09:00",
+          "updated_at": "2026-10-23T03:02:47+09:00"
         }
       ]
     },
@@ -1148,6 +1132,13 @@
             "summary": "API 타입과 제어면 의존성 경계 분리",
             "created_at": "2026-09-04T23:12:33+09:00",
             "updated_at": "2026-09-04T23:12:33+09:00"
+          },
+          {
+            "label": "Cluster API 네임스페이스 캐시 일관성 경계",
+            "path": "oss-changes/cluster-api/1.14.3-cluster-api-namespaced-cache-consistency.md",
+            "summary": "단일 네임스페이스 informer 래퍼를 해제해 기존 쓰기 이후 캐시 검사를 유지하는 설계와 비공개 필드 의존 분석",
+            "created_at": "2026-10-23T03:02:47+09:00",
+            "updated_at": "2026-10-23T03:02:47+09:00"
           }
         ]
       },
