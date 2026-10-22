@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-10-22",
+    "date": "2026-10-23",
     "entries": [
       {
-        "label": "CVE-2026-24049",
+        "label": "CVE-2026-23842",
         "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2026-24049-wheel-unpack-permission-path-traversal.md",
-        "summary": "wheel unpack이 추출 결과 대신 원본 파일명으로 권한 변경 경로를 재구성해 외부 파일의 모드를 바꾸는 원인과 반환 경로 재사용 패치를 분석한다.",
-        "created_at": "2026-10-22T08:18:18+09:00",
-        "updated_at": "2026-10-22T08:18:18+09:00"
+        "path": "vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md",
+        "summary": "ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다.",
+        "created_at": "2026-10-23T05:03:35+09:00",
+        "updated_at": "2026-10-23T05:03:35+09:00"
       }
     ]
   },
@@ -620,6 +620,13 @@
           "summary": "wheel unpack이 추출 결과 대신 원본 파일명으로 권한 변경 경로를 재구성해 외부 파일의 모드를 바꾸는 원인과 반환 경로 재사용 패치를 분석한다.",
           "created_at": "2026-10-22T08:18:18+09:00",
           "updated_at": "2026-10-22T08:18:18+09:00"
+        },
+        {
+          "label": "CVE-2026-23842",
+          "path": "vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md",
+          "summary": "ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다.",
+          "created_at": "2026-10-23T05:03:35+09:00",
+          "updated_at": "2026-10-23T05:03:35+09:00"
         }
       ]
     },
