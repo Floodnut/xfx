@@ -816,6 +816,14 @@
           "summary": "단일 네임스페이스 informer 래퍼를 해제해 기존 쓰기 이후 캐시 검사를 유지하는 설계와 비공개 필드 의존 분석",
           "created_at": "2026-10-23T03:02:47+09:00",
           "updated_at": "2026-10-23T03:02:47+09:00"
+        },
+        {
+          "project_slug": "harvester",
+          "label": "Harvester 복원 완료와 VM 기동 분리",
+          "path": "oss-changes/harvester/1.9.0-harvester-restore-completion-without-vm-start.md",
+          "summary": "haltAfterRestore로 볼륨 복원 완료와 VM Ready 조건을 분리하고 기존 자동 기동 기본값 유지",
+          "created_at": "2026-10-23T03:02:47+09:00",
+          "updated_at": "2026-10-23T03:02:47+09:00"
         }
       ]
     },
@@ -1145,7 +1153,15 @@
       {
         "slug": "harvester",
         "title": "Harvester",
-        "entries": []
+        "entries": [
+          {
+            "label": "Harvester 복원 완료와 VM 기동 분리",
+            "path": "oss-changes/harvester/1.9.0-harvester-restore-completion-without-vm-start.md",
+            "summary": "haltAfterRestore로 볼륨 복원 완료와 VM Ready 조건을 분리하고 기존 자동 기동 기본값 유지",
+            "created_at": "2026-10-23T03:02:47+09:00",
+            "updated_at": "2026-10-23T03:02:47+09:00"
+          }
+        ]
       },
       {
         "slug": "envoy",
