@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-10-23",
+    "date": "2026-10-27",
     "entries": [
       {
-        "label": "CVE-2026-23842",
-        "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md",
-        "summary": "ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다.",
-        "created_at": "2026-10-23T05:03:35+09:00",
-        "updated_at": "2026-10-23T05:03:35+09:00"
+        "label": "CVE-2020-13529",
+        "category": "Linux",
+        "path": "vulnerability/linux/CVE-2020-13529-systemd-dhcp-forcerenew-authentication.md",
+        "summary": "systemd DHCP 클라이언트가 인증 없는 FORCERENEW로 갱신 상태에 진입하는 원인과 해당 메시지 수락을 중단한 수정 분석",
+        "created_at": "2026-10-27T23:51:09+09:00",
+        "updated_at": "2026-10-27T23:51:09+09:00"
       }
     ]
   },
@@ -292,6 +292,13 @@
           "summary": "systemd-tmpfiles가 하드링크로 공유된 inode의 권한을 변경하는 원인과 링크 수 및 커널 보호 상태 검사로 이를 차단한 패치를 분석한다.",
           "created_at": "2026-10-06T17:42:57+09:00",
           "updated_at": "2026-10-06T17:42:57+09:00"
+        },
+        {
+          "label": "CVE-2020-13529",
+          "path": "vulnerability/linux/CVE-2020-13529-systemd-dhcp-forcerenew-authentication.md",
+          "summary": "systemd DHCP 클라이언트가 인증 없는 FORCERENEW로 갱신 상태에 진입하는 원인과 해당 메시지 수락을 중단한 수정 분석",
+          "created_at": "2026-10-27T23:51:09+09:00",
+          "updated_at": "2026-10-27T23:51:09+09:00"
         }
       ]
     },
