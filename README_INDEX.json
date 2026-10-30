@@ -837,6 +837,14 @@
           "summary": "OSD 업그레이드 상태에 PG 자동 조정 억제와 복원 절차를 연결하고 옵션 및 복원 한계 분석",
           "created_at": "2026-10-31T01:56:50+09:00",
           "updated_at": "2026-10-31T01:56:50+09:00"
+        },
+        {
+          "project_slug": "clickhouse",
+          "label": "ClickHouse Metric Log Bucketed Default",
+          "path": "oss-changes/clickhouse/26.10-clickhouse-metric-log-bucketed-default.md",
+          "summary": "메트릭별 물리 열을 Map과 고정 버킷으로 전환하면서 별칭과 과거 로그 조회 호환성 유지",
+          "created_at": "2026-10-31T01:56:50+09:00",
+          "updated_at": "2026-10-31T01:56:50+09:00"
         }
       ]
     },
@@ -1226,7 +1234,15 @@
       {
         "slug": "clickhouse",
         "title": "ClickHouse",
-        "entries": []
+        "entries": [
+          {
+            "label": "ClickHouse Metric Log Bucketed Default",
+            "path": "oss-changes/clickhouse/26.10-clickhouse-metric-log-bucketed-default.md",
+            "summary": "메트릭별 물리 열을 Map과 고정 버킷으로 전환하면서 별칭과 과거 로그 조회 호환성 유지",
+            "created_at": "2026-10-31T01:56:50+09:00",
+            "updated_at": "2026-10-31T01:56:50+09:00"
+          }
+        ]
       },
       {
         "slug": "scylladb",
