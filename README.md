@@ -4,15 +4,16 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-10-23 | [CVE-2026-23842](vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md) | Opensource | ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다. |
-| 2026-10-23 | [Cluster API 네임스페이스 캐시 일관성 경계](oss-changes/cluster-api/1.14.3-cluster-api-namespaced-cache-consistency.md) | OSS / Cluster API | 단일 네임스페이스 informer 래퍼를 해제해 기존 쓰기 이후 캐시 검사를 유지하는 설계와 비공개 필드 의존 분석 |
-| 2026-10-23 | [Harvester 복원 완료와 VM 기동 분리](oss-changes/harvester/1.9.0-harvester-restore-completion-without-vm-start.md) | OSS / Harvester | haltAfterRestore로 볼륨 복원 완료와 VM Ready 조건을 분리하고 기존 자동 기동 기본값 유지 |
-| 2026-10-23 | [libvirt QEMU 전체 프로세스 resctrl 범위](oss-changes/libvirt/12.8.0-libvirt-whole-process-resctrl-scope.md) | OSS / libvirt | 실행 전 PID 배치와 그룹 상속으로 vCPU 밖 작업까지 자원 관리 범위 확장 |
+| 2026-11-02 | [CVE-2017-5932](vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md) | Linux | Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석 |
+| 2026-11-02 | [CVE-2026-78904](vulnerability/browser/CVE-2026-78904-angle-array-expression-validation.md) | Browser | ANGLE의 배열 표현식 검증에서 qualifier만으로 내장 배열을 식별할 때 생기는 누락과 AST 재귀 검사로 보완한 관련 패치를 분석한다. |
+| 2026-11-02 | [Linux Kernel 커널 스레드 nullfs 격리](oss-changes/linux-kernel/7.3-linux-kernel-kthread-nullfs-isolation.md) | OSS / Linux Kernel | 커널 스레드의 기본 파일시스템 상태를 분리하고 사용자 공간 경로 접근을 명시적으로 선택 |
+| 2026-11-02 | [Slurm GRES 세그먼트별 노드 선택](oss-changes/slurm/26.05.5-slurm-gres-segment-selection.md) | OSS / Slurm | 작업 전체 GRES 요구를 보존하면서 세그먼트별 탐색 목표와 누적량 수명주기 분리 |
+| 2026-11-02 | [containerd 소비 기반 병렬 Fetch](oss-changes/containerd/2.4.2-containerd-consumption-bounded-parallel-fetch.md) | OSS / containerd | 청크 소비 완료에 맞춰 슬롯을 반환하고 pipe를 지연 생성해 병렬 다운로드의 버퍼와 객체 수 제한 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (39)</summary>
+<summary>Linux (42)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -55,6 +56,9 @@
 | [CVE-2023-42753](vulnerability/linux/CVE-2023-42753-ipset-hash-netportnet-cidr-underflow.md) | netfilter ipset의 CIDR 0 매크로 누락으로 인한 배열 인덱스 언더플로우와 upstream 수정 분석 |
 | [CVE-2024-1929](vulnerability/linux/CVE-2024-1929-dnf5daemon-config-plugin-privilege-escalation.md) | dnf5daemon이 일반 사용자의 설정 재정의를 세션 초기화에 적용해 관리자 권한의 플러그인 로딩으로 연결한 원인과 허용 목록 및 reposdir 후속 수정을 분석한다. |
 | [CVE-2017-18078](vulnerability/linux/CVE-2017-18078-systemd-tmpfiles-hardlink-permission-change.md) | systemd-tmpfiles가 하드링크로 공유된 inode의 권한을 변경하는 원인과 링크 수 및 커널 보호 상태 검사로 이를 차단한 패치를 분석한다. |
+| [CVE-2020-13529](vulnerability/linux/CVE-2020-13529-systemd-dhcp-forcerenew-authentication.md) | systemd DHCP 클라이언트가 인증 없는 FORCERENEW로 갱신 상태에 진입하는 원인과 해당 메시지 수락을 중단한 수정 분석 |
+| [CVE-2010-3192](vulnerability/linux/CVE-2010-3192-glibc-stack-failure-diagnostic-disclosure.md) | glibc가 스택 보호 실패 뒤 손상된 argv와 backtrace를 참조해 정보를 노출하는 원인과 2.26의 단계별 수정 범위를 분석한다. |
+| [CVE-2017-5932](vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md) | Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석 |
 
 </details>
 
@@ -130,7 +134,7 @@
 </details>
 
 <details>
-<summary>Browser (11)</summary>
+<summary>Browser (12)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -145,6 +149,7 @@
 | [CVE-2025-2783](vulnerability/browser/CVE-2025-2783-chrome-mojo-pseudo-handle-sandbox-escape.md) | Windows 의사 핸들이 Mojo/ipcz 경계를 건너 수신자 권한으로 재해석될 수 있었던 논리 오류와 다중 경계 차단 패치를 분석한다. |
 | [CVE-2026-15772](vulnerability/browser/CVE-2026-15772-chrome-android-gpu-fbo-uaf-sandbox-escape.md) | Chrome Android GPU 읽기 경로가 임시 FBO를 해제하기 전에 바인딩을 복원하도록 고쳐 드라이버 내부 UAF와 잠재적 샌드박스 탈출을 차단한 CVE-2026-15772 분석. |
 | [CVE-2026-76020](vulnerability/browser/CVE-2026-76020-v8-background-merge-scope-info-race.md) | V8 코드 캐시의 백그라운드 병합과 지연 컴파일이 경쟁하여 ScopeInfo 검사와 사용이 어긋나는 원인과 타입 검증을 결합한 두 upstream 수정을 분석한다. |
+| [CVE-2026-78904](vulnerability/browser/CVE-2026-78904-angle-array-expression-validation.md) | ANGLE의 배열 표현식 검증에서 qualifier만으로 내장 배열을 식별할 때 생기는 누락과 AST 재귀 검사로 보완한 관련 패치를 분석한다. |
 
 </details>
 
@@ -163,7 +168,7 @@
 ## OSS 아키텍처 변경 분석
 
 <details>
-<summary>Linux Kernel (5)</summary>
+<summary>Linux Kernel (6)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -172,6 +177,7 @@
 | [Linux Kernel NTFS Driver Resurrection](oss-changes/linux-kernel/7.1-ntfs-driver-resurrection-iomap-rewrite.md) | 제거됐던 read-only NTFS 드라이버가 4년의 재작성을 거쳐 iomap/folio 기반 쓰기 지원 드라이버로 ntfs3와 나란히 공존하며 부활했다. |
 | [Linux Kernel FRED Enabled by Default](oss-changes/linux-kernel/7.1-linux-kernel-fred-enabled-by-default.md) | 6.9에 병합되고도 fred=on 없이는 쓰이지 않던 FRED가 7.1에서 기본값이 되면서, x86-64의 기본 이벤트 전달 경로가 IDT에서 FRED로 넘어갔다. |
 | [Linux Kernel 캐시 인지 로드 밸런싱](oss-changes/linux-kernel/7.2-linux-kernel-cache-aware-load-balancing.md) | 프로세스별 LLC 선호를 load-balance 이주에 연결 |
+| [Linux Kernel 커널 스레드 nullfs 격리](oss-changes/linux-kernel/7.3-linux-kernel-kthread-nullfs-isolation.md) | 커널 스레드의 기본 파일시스템 상태를 분리하고 사용자 공간 경로 접근을 명시적으로 선택 |
 
 </details>
 
@@ -237,13 +243,14 @@
 </details>
 
 <details>
-<summary>Ceph (3)</summary>
+<summary>Ceph (4)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Ceph mgmt-gateway High Availability](oss-changes/ceph/20.2.0-mgmt-gateway-ha.md) | Tentacle에서 Dashboard와 monitoring endpoint를 NGINX 기반 단일 TLS 경계로 모으고, virtual IP·keepalived·stateless oauth2-proxy로 gateway 자체의 HA까지 보완한 설계. |
 | [Ceph FastEC Partial Writes](oss-changes/ceph/20.2.0-fastec-partial-writes.md) | 소거 코드 풀의 덮어쓰기가 스트라이프 전체를 읽고 다시 쓰던 방식 대신, 건드린 조각만 처리하는 partial write와 parity delta write로 I/O 증폭을 줄이는 새 경로가 추가됐다. |
 | [Ceph mClock EC SubOp Read 스케줄링 분류 개선](oss-changes/ceph/20.2.3-ceph-mclock-ec-subop-read-classification.md) | EC SubOp 읽기의 priority 기반 mClock 분류와 프로파일 조정으로 대규모 EC 클러스터의 백필 시 클라이언트 I/O 지연 개선 |
+| [Ceph Upgrade PG Autoscaler Lifecycle](oss-changes/ceph/21.2.0-ceph-upgrade-pg-autoscaler-lifecycle.md) | OSD 업그레이드 상태에 PG 자동 조정 억제와 복원 절차를 연결하고 옵션 및 복원 한계 분석 |
 
 </details>
 
@@ -257,20 +264,22 @@
 </details>
 
 <details>
-<summary>Slurm (1)</summary>
+<summary>Slurm (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Slurm 외부 이종 작업 수명주기](oss-changes/slurm/slurm-26-05-3-1-slurm-external-heterogeneous-job-lifecycle.md) | 외부 컴포넌트와 배치 리더의 책임을 분리 |
+| [Slurm GRES 세그먼트별 노드 선택](oss-changes/slurm/26.05.5-slurm-gres-segment-selection.md) | 작업 전체 GRES 요구를 보존하면서 세그먼트별 탐색 목표와 누적량 수명주기 분리 |
 
 </details>
 
 <details>
-<summary>containerd (1)</summary>
+<summary>containerd (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [containerd CRI Checkpoint Restore 경로 분리](oss-changes/containerd/2.3.4-containerd-cri-checkpoint-restore-path-separation.md) | Checkpoint 생성과 CreateContainer 복원 권한을 분리 |
+| [containerd 소비 기반 병렬 Fetch](oss-changes/containerd/2.4.2-containerd-consumption-bounded-parallel-fetch.md) | 청크 소비 완료에 맞춰 슬롯을 반환하고 pipe를 지연 생성해 병렬 다운로드의 버퍼와 객체 수 제한 |
 
 </details>
 
@@ -331,10 +340,11 @@
 </details>
 
 <details>
-<summary>ClickHouse (0)</summary>
+<summary>ClickHouse (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [ClickHouse Metric Log Bucketed Default](oss-changes/clickhouse/26.10-clickhouse-metric-log-bucketed-default.md) | 메트릭별 물리 열을 Map과 고정 버킷으로 전환하면서 별칭과 과거 로그 조회 호환성 유지 |
 
 </details>
 
