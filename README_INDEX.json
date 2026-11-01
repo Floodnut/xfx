@@ -828,23 +828,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-10-31",
+      "date": "2026-11-02",
       "entries": [
         {
-          "project_slug": "ceph",
-          "label": "Ceph Upgrade PG Autoscaler Lifecycle",
-          "path": "oss-changes/ceph/21.2.0-ceph-upgrade-pg-autoscaler-lifecycle.md",
-          "summary": "OSD 업그레이드 상태에 PG 자동 조정 억제와 복원 절차를 연결하고 옵션 및 복원 한계 분석",
-          "created_at": "2026-10-31T01:56:50+09:00",
-          "updated_at": "2026-10-31T01:56:50+09:00"
-        },
-        {
-          "project_slug": "clickhouse",
-          "label": "ClickHouse Metric Log Bucketed Default",
-          "path": "oss-changes/clickhouse/26.10-clickhouse-metric-log-bucketed-default.md",
-          "summary": "메트릭별 물리 열을 Map과 고정 버킷으로 전환하면서 별칭과 과거 로그 조회 호환성 유지",
-          "created_at": "2026-10-31T01:56:50+09:00",
-          "updated_at": "2026-10-31T01:56:50+09:00"
+          "project_slug": "linux-kernel",
+          "label": "Linux Kernel 커널 스레드 nullfs 격리",
+          "path": "oss-changes/linux-kernel/7.3-linux-kernel-kthread-nullfs-isolation.md",
+          "summary": "커널 스레드의 기본 파일시스템 상태를 분리하고 사용자 공간 경로 접근을 명시적으로 선택",
+          "created_at": "2026-11-02T03:07:46+09:00",
+          "updated_at": "2026-11-02T03:07:46+09:00"
         }
       ]
     },
@@ -887,6 +879,13 @@
             "summary": "프로세스별 LLC 선호를 load-balance 이주에 연결",
             "created_at": "2026-08-25T03:10:28+09:00",
             "updated_at": "2026-08-25T03:10:28+09:00"
+          },
+          {
+            "label": "Linux Kernel 커널 스레드 nullfs 격리",
+            "path": "oss-changes/linux-kernel/7.3-linux-kernel-kthread-nullfs-isolation.md",
+            "summary": "커널 스레드의 기본 파일시스템 상태를 분리하고 사용자 공간 경로 접근을 명시적으로 선택",
+            "created_at": "2026-11-02T03:07:46+09:00",
+            "updated_at": "2026-11-02T03:07:46+09:00"
           }
         ]
       },
