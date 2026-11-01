@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-10-31",
+    "date": "2026-11-02",
     "entries": [
       {
-        "label": "CVE-2010-3192",
+        "label": "CVE-2017-5932",
         "category": "Linux",
-        "path": "vulnerability/linux/CVE-2010-3192-glibc-stack-failure-diagnostic-disclosure.md",
-        "summary": "glibc가 스택 보호 실패 뒤 손상된 argv와 backtrace를 참조해 정보를 노출하는 원인과 2.26의 단계별 수정 범위를 분석한다.",
-        "created_at": "2026-10-31T01:56:48+09:00",
-        "updated_at": "2026-10-31T01:57:55+09:00"
+        "path": "vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md",
+        "summary": "Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석",
+        "created_at": "2026-11-02T05:00:41+09:00",
+        "updated_at": "2026-11-02T05:00:41+09:00"
       }
     ]
   },
@@ -306,6 +306,13 @@
           "summary": "glibc가 스택 보호 실패 뒤 손상된 argv와 backtrace를 참조해 정보를 노출하는 원인과 2.26의 단계별 수정 범위를 분석한다.",
           "created_at": "2026-10-31T01:56:48+09:00",
           "updated_at": "2026-10-31T01:57:55+09:00"
+        },
+        {
+          "label": "CVE-2017-5932",
+          "path": "vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md",
+          "summary": "Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석",
+          "created_at": "2026-11-02T05:00:41+09:00",
+          "updated_at": "2026-11-02T05:00:41+09:00"
         }
       ]
     },
