@@ -4,11 +4,10 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-11-02 | [CVE-2017-5932](vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md) | Linux | Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석 |
-| 2026-11-02 | [CVE-2026-78904](vulnerability/browser/CVE-2026-78904-angle-array-expression-validation.md) | Browser | ANGLE의 배열 표현식 검증에서 qualifier만으로 내장 배열을 식별할 때 생기는 누락과 AST 재귀 검사로 보완한 관련 패치를 분석한다. |
-| 2026-11-02 | [Linux Kernel 커널 스레드 nullfs 격리](oss-changes/linux-kernel/7.3-linux-kernel-kthread-nullfs-isolation.md) | OSS / Linux Kernel | 커널 스레드의 기본 파일시스템 상태를 분리하고 사용자 공간 경로 접근을 명시적으로 선택 |
-| 2026-11-02 | [Slurm GRES 세그먼트별 노드 선택](oss-changes/slurm/26.05.5-slurm-gres-segment-selection.md) | OSS / Slurm | 작업 전체 GRES 요구를 보존하면서 세그먼트별 탐색 목표와 누적량 수명주기 분리 |
-| 2026-11-02 | [containerd 소비 기반 병렬 Fetch](oss-changes/containerd/2.4.2-containerd-consumption-bounded-parallel-fetch.md) | OSS / containerd | 청크 소비 완료에 맞춰 슬롯을 반환하고 pipe를 지연 생성해 병렬 다운로드의 버퍼와 객체 수 제한 |
+| 2026-11-03 | [CVE-2019-9740](vulnerability/opensource/CVE-2019-9740-python-urllib-request-target-crlf-injection.md) | Opensource | Python urllib의 요청 대상 제어문자 검증 누락으로 발생하는 HTTP 헤더 주입과 직렬화 직전 InvalidURL 차단 패치를 분석한다. |
+| 2026-11-03 | [OVN 설정 세대와 전파 시각 결합](oss-changes/ovn/26.09-ovn-generation-timestamp-pairing.md) | OSS / OVN | 세대와 시작 시각을 완료 응답까지 보존해 중앙 쓰기 없이 로컬 전파 지연 관측 |
+| 2026-11-03 | [OPA 알려진 컬렉션의 every 전개](oss-changes/opa/1.22.0-opa-known-domain-every-unrolling.md) | OSS / OPA | 작은 알려진 컬렉션의 every를 논리곱으로 전개하고 중첩 크기로 팽창 제한 |
+| 2026-11-03 | [Istio Ambient 노드 준비 상태 결합](oss-changes/istio/1.31.3-istio-ambient-node-readiness-gate.md) | OSS / Istio | CNI와 같은 노드 ztunnel의 Ready 상태를 결합해 초기 taint 제거 대상 선정 |
 
 ## CVE 취약점 분석
 
@@ -63,7 +62,7 @@
 </details>
 
 <details>
-<summary>Opensource (47)</summary>
+<summary>Opensource (48)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -114,6 +113,7 @@
 | [CVE-2026-71851](vulnerability/opensource/CVE-2026-71851-crypto-js-wordarray-weak-randomness.md) | CryptoJS WordArray.random의 MWC 상태와 캐시 결합으로 인한 엔트로피 부족, 4.0.0 네이티브 난수 전환 및 기존 비밀값 교체 필요성을 분석한다. |
 | [CVE-2026-24049](vulnerability/opensource/CVE-2026-24049-wheel-unpack-permission-path-traversal.md) | wheel unpack이 추출 결과 대신 원본 파일명으로 권한 변경 경로를 재구성해 외부 파일의 모드를 바꾸는 원인과 반환 경로 재사용 패치를 분석한다. |
 | [CVE-2026-23842](vulnerability/opensource/CVE-2026-23842-chatterbot-generator-session-pool-exhaustion.md) | ChatterBot의 검색 제너레이터와 예외 경로에서 세션 정리가 누락되어 연결 풀이 고갈되는 원인과 1.2.11의 finally 기반 정리 및 풀 설정 수정을 분석합니다. |
+| [CVE-2019-9740](vulnerability/opensource/CVE-2019-9740-python-urllib-request-target-crlf-injection.md) | Python urllib의 요청 대상 제어문자 검증 누락으로 발생하는 HTTP 헤더 주입과 직렬화 직전 InvalidURL 차단 패치를 분석한다. |
 
 </details>
 
@@ -224,11 +224,12 @@
 </details>
 
 <details>
-<summary>OPA (1)</summary>
+<summary>OPA (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [컨테이너 자원 인지 (GOMAXPROCS/GOMEMLIMIT)](oss-changes/opa/1.18.0-container-aware-gomaxprocs-gomemlimit.md) | v1.18.0에서 automaxprocs 복원 + automemlimit 신규 추가 — Go 네이티브 cgroup 인지의 최소값 차이(1 vs 2)로 저메모리 배포에서 발생한 OOM 회귀를 되돌린 사례 |
+| [OPA 알려진 컬렉션의 every 전개](oss-changes/opa/1.22.0-opa-known-domain-every-unrolling.md) | 작은 알려진 컬렉션의 every를 논리곱으로 전개하고 중첩 크기로 팽창 제한 |
 
 </details>
 
@@ -255,11 +256,12 @@
 </details>
 
 <details>
-<summary>OVN (1)</summary>
+<summary>OVN (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [OVN Flow-Based Tunnels](oss-changes/ovn/26.03-flow-based-tunnels.md) | v26.03에서 원격 chassis별 tunnel port 대신 type별 shared port를 만들고 OpenFlow가 패킷마다 tunnel endpoint를 설정해 대규모 환경의 port 수를 줄인 실험적 설계. |
+| [OVN 설정 세대와 전파 시각 결합](oss-changes/ovn/26.09-ovn-generation-timestamp-pairing.md) | 세대와 시작 시각을 완료 응답까지 보존해 중앙 쓰기 없이 로컬 전파 지연 관측 |
 
 </details>
 
@@ -284,10 +286,11 @@
 </details>
 
 <details>
-<summary>Istio (0)</summary>
+<summary>Istio (1)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
+| [Istio Ambient 노드 준비 상태 결합](oss-changes/istio/1.31.3-istio-ambient-node-readiness-gate.md) | CNI와 같은 노드 ztunnel의 Ready 상태를 결합해 초기 taint 제거 대상 선정 |
 
 </details>
 
