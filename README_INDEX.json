@@ -850,31 +850,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-11-02",
+      "date": "2026-11-03",
       "entries": [
         {
-          "project_slug": "linux-kernel",
-          "label": "Linux Kernel 커널 스레드 nullfs 격리",
-          "path": "oss-changes/linux-kernel/7.3-linux-kernel-kthread-nullfs-isolation.md",
-          "summary": "커널 스레드의 기본 파일시스템 상태를 분리하고 사용자 공간 경로 접근을 명시적으로 선택",
-          "created_at": "2026-11-02T03:07:46+09:00",
-          "updated_at": "2026-11-02T03:07:46+09:00"
-        },
-        {
-          "project_slug": "slurm",
-          "label": "Slurm GRES 세그먼트별 노드 선택",
-          "path": "oss-changes/slurm/26.05.5-slurm-gres-segment-selection.md",
-          "summary": "작업 전체 GRES 요구를 보존하면서 세그먼트별 탐색 목표와 누적량 수명주기 분리",
-          "created_at": "2026-11-02T03:07:46+09:00",
-          "updated_at": "2026-11-02T03:07:46+09:00"
-        },
-        {
-          "project_slug": "containerd",
-          "label": "containerd 소비 기반 병렬 Fetch",
-          "path": "oss-changes/containerd/2.4.2-containerd-consumption-bounded-parallel-fetch.md",
-          "summary": "청크 소비 완료에 맞춰 슬롯을 반환하고 pipe를 지연 생성해 병렬 다운로드의 버퍼와 객체 수 제한",
-          "created_at": "2026-11-02T03:07:46+09:00",
-          "updated_at": "2026-11-02T03:07:46+09:00"
+          "project_slug": "ovn",
+          "label": "OVN 설정 세대와 전파 시각 결합",
+          "path": "oss-changes/ovn/26.09-ovn-generation-timestamp-pairing.md",
+          "summary": "세대와 시작 시각을 완료 응답까지 보존해 중앙 쓰기 없이 로컬 전파 지연 관측",
+          "created_at": "2026-11-03T03:03:44+09:00",
+          "updated_at": "2026-11-03T03:03:44+09:00"
         }
       ]
     },
@@ -1148,6 +1132,13 @@
             "summary": "v26.03에서 원격 chassis별 tunnel port 대신 type별 shared port를 만들고 OpenFlow가 패킷마다 tunnel endpoint를 설정해 대규모 환경의 port 수를 줄인 실험적 설계.",
             "created_at": "2026-08-03T00:16:21+09:00",
             "updated_at": "2026-08-03T00:16:21+09:00"
+          },
+          {
+            "label": "OVN 설정 세대와 전파 시각 결합",
+            "path": "oss-changes/ovn/26.09-ovn-generation-timestamp-pairing.md",
+            "summary": "세대와 시작 시각을 완료 응답까지 보존해 중앙 쓰기 없이 로컬 전파 지연 관측",
+            "created_at": "2026-11-03T03:03:44+09:00",
+            "updated_at": "2026-11-03T03:03:44+09:00"
           }
         ]
       },
