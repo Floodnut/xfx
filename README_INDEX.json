@@ -859,6 +859,14 @@
           "summary": "세대와 시작 시각을 완료 응답까지 보존해 중앙 쓰기 없이 로컬 전파 지연 관측",
           "created_at": "2026-11-03T03:03:44+09:00",
           "updated_at": "2026-11-03T03:03:44+09:00"
+        },
+        {
+          "project_slug": "opa",
+          "label": "OPA 알려진 컬렉션의 every 전개",
+          "path": "oss-changes/opa/1.22.0-opa-known-domain-every-unrolling.md",
+          "summary": "작은 알려진 컬렉션의 every를 논리곱으로 전개하고 중첩 크기로 팽창 제한",
+          "created_at": "2026-11-03T03:03:44+09:00",
+          "updated_at": "2026-11-03T03:03:44+09:00"
         }
       ]
     },
@@ -1065,6 +1073,13 @@
             "summary": "v1.18.0에서 automaxprocs 복원 + automemlimit 신규 추가 — Go 네이티브 cgroup 인지의 최소값 차이(1 vs 2)로 저메모리 배포에서 발생한 OOM 회귀를 되돌린 사례",
             "created_at": "2026-07-29T02:18:46+09:00",
             "updated_at": "2026-07-29T02:18:46+09:00"
+          },
+          {
+            "label": "OPA 알려진 컬렉션의 every 전개",
+            "path": "oss-changes/opa/1.22.0-opa-known-domain-every-unrolling.md",
+            "summary": "작은 알려진 컬렉션의 every를 논리곱으로 전개하고 중첩 크기로 팽창 제한",
+            "created_at": "2026-11-03T03:03:44+09:00",
+            "updated_at": "2026-11-03T03:03:44+09:00"
           }
         ]
       },
