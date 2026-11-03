@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-11-03",
+    "date": "2026-11-04",
     "entries": [
       {
-        "label": "CVE-2019-9740",
-        "category": "Opensource",
-        "path": "vulnerability/opensource/CVE-2019-9740-python-urllib-request-target-crlf-injection.md",
-        "summary": "Python urllib의 요청 대상 제어문자 검증 누락으로 발생하는 HTTP 헤더 주입과 직렬화 직전 InvalidURL 차단 패치를 분석한다.",
-        "created_at": "2026-11-03T05:07:26+09:00",
-        "updated_at": "2026-11-03T05:07:26+09:00"
+        "label": "CVE-2018-12561",
+        "category": "Linux",
+        "path": "vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md",
+        "summary": "Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다.",
+        "created_at": "2026-11-04T05:07:32+09:00",
+        "updated_at": "2026-11-04T05:07:32+09:00"
       }
     ]
   },
@@ -313,6 +313,13 @@
           "summary": "Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석",
           "created_at": "2026-11-02T05:00:41+09:00",
           "updated_at": "2026-11-02T05:00:41+09:00"
+        },
+        {
+          "label": "CVE-2018-12561",
+          "path": "vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md",
+          "summary": "Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다.",
+          "created_at": "2026-11-04T05:07:32+09:00",
+          "updated_at": "2026-11-04T05:07:32+09:00"
         }
       ]
     },
