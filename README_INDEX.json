@@ -866,6 +866,14 @@
           "summary": "역방향 응답 선택과 정방향 출력 구성을 분리해 Ready 메시지 순서와 입력 소유권 보존",
           "created_at": "2026-11-04T03:26:08+09:00",
           "updated_at": "2026-11-04T03:26:08+09:00"
+        },
+        {
+          "project_slug": "karpenter",
+          "label": "Karpenter 예약 용량 소진과 일시적 점유의 오류 분리",
+          "path": "oss-changes/karpenter/1.15.1-karpenter-reservation-exhaustion-fallback.md",
+          "summary": "예약 소진을 일반 오류로 분류해 NodePool 대안과 선호 완화를 허용하고 일시적 점유의 대기는 유지",
+          "created_at": "2026-11-04T03:26:08+09:00",
+          "updated_at": "2026-11-04T03:26:08+09:00"
         }
       ]
     },
@@ -1025,6 +1033,13 @@
             "summary": "가상 파드 해석과 cache 갱신을 controller로 옮겨 provisioner scheduling hot path를 가볍게 만든 v1.14.1 변경",
             "created_at": "2026-09-02T12:57:20+09:00",
             "updated_at": "2026-09-02T12:57:20+09:00"
+          },
+          {
+            "label": "Karpenter 예약 용량 소진과 일시적 점유의 오류 분리",
+            "path": "oss-changes/karpenter/1.15.1-karpenter-reservation-exhaustion-fallback.md",
+            "summary": "예약 소진을 일반 오류로 분류해 NodePool 대안과 선호 완화를 허용하고 일시적 점유의 대기는 유지",
+            "created_at": "2026-11-04T03:26:08+09:00",
+            "updated_at": "2026-11-04T03:26:08+09:00"
           }
         ]
       },
