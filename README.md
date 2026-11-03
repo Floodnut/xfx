@@ -4,15 +4,15 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-11-03 | [CVE-2019-9740](vulnerability/opensource/CVE-2019-9740-python-urllib-request-target-crlf-injection.md) | Opensource | Python urllib의 요청 대상 제어문자 검증 누락으로 발생하는 HTTP 헤더 주입과 직렬화 직전 InvalidURL 차단 패치를 분석한다. |
-| 2026-11-03 | [OVN 설정 세대와 전파 시각 결합](oss-changes/ovn/26.09-ovn-generation-timestamp-pairing.md) | OSS / OVN | 세대와 시작 시각을 완료 응답까지 보존해 중앙 쓰기 없이 로컬 전파 지연 관측 |
-| 2026-11-03 | [OPA 알려진 컬렉션의 every 전개](oss-changes/opa/1.22.0-opa-known-domain-every-unrolling.md) | OSS / OPA | 작은 알려진 컬렉션의 every를 논리곱으로 전개하고 중첩 크기로 팽창 제한 |
-| 2026-11-03 | [Istio Ambient 노드 준비 상태 결합](oss-changes/istio/1.31.3-istio-ambient-node-readiness-gate.md) | OSS / Istio | CNI와 같은 노드 ztunnel의 Ready 상태를 결합해 초기 taint 제거 대상 선정 |
+| 2026-11-04 | [CVE-2018-12561](vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md) | Linux | Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다. |
+| 2026-11-04 | [Kubernetes 일관된 LIST 타임아웃 역압](oss-changes/kubernetes/1.37.2-kubernetes-consistent-list-timeout-backpressure.md) | OSS / Kubernetes | 캐시 신선도 대기 초과 시 저장소 목록 조회 대신 429를 반환하는 선택적 역압과 범위 분석 |
+| 2026-11-04 | [etcd Raft 메시지 필터와 전송 순서의 분리](oss-changes/etcd/3.7.3-etcd-raft-ready-message-order.md) | OSS / etcd | 역방향 응답 선택과 정방향 출력 구성을 분리해 Ready 메시지 순서와 입력 소유권 보존 |
+| 2026-11-04 | [Karpenter 예약 용량 소진과 일시적 점유의 오류 분리](oss-changes/karpenter/1.15.1-karpenter-reservation-exhaustion-fallback.md) | OSS / Karpenter | 예약 소진을 일반 오류로 분류해 NodePool 대안과 선호 완화를 허용하고 일시적 점유의 대기는 유지 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (42)</summary>
+<summary>Linux (43)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -58,6 +58,7 @@
 | [CVE-2020-13529](vulnerability/linux/CVE-2020-13529-systemd-dhcp-forcerenew-authentication.md) | systemd DHCP 클라이언트가 인증 없는 FORCERENEW로 갱신 상태에 진입하는 원인과 해당 메시지 수락을 중단한 수정 분석 |
 | [CVE-2010-3192](vulnerability/linux/CVE-2010-3192-glibc-stack-failure-diagnostic-disclosure.md) | glibc가 스택 보호 실패 뒤 손상된 argv와 backtrace를 참조해 정보를 노출하는 원인과 2.26의 단계별 수정 범위를 분석한다. |
 | [CVE-2017-5932](vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md) | Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석 |
+| [CVE-2018-12561](vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md) | Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다. |
 
 </details>
 
@@ -182,7 +183,7 @@
 </details>
 
 <details>
-<summary>Kubernetes (7)</summary>
+<summary>Kubernetes (8)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -193,11 +194,12 @@
 | [Scheduler Parallel PreBind Plugins](oss-changes/kubernetes/1.36-kubernetes-parallel-prebind-plugins.md) | kube-scheduler binding cycle의 PreBind 플러그인이 항상 순차 실행되어 볼륨 바인딩 대기와 DRA 디바이스 attach 대기가 합산되던 문제를, PreBindPreFlight이 AllowParallel을 함께 반환하고 연속된 병렬 허용 플러그인을 그룹으로 묶어 동시에 실행하도록 바꾼 v1.36 스케줄링 프레임워크 변경 분석 |
 | [Kubernetes Manifest 기반 Admission Control 구성](oss-changes/kubernetes/1.36-kubernetes-manifest-based-admission-control-config.md) | 정적 manifest source와 API source를 static-first로 결합해 bootstrap과 self-protection 공백을 줄인 v1.36 alpha 변경 |
 | [Kubernetes Node Lifecycle Conditions](oss-changes/kubernetes/1.37.1-kubernetes-node-lifecycle-conditions.md) | 노드 drain과 유지보수 상태의 공통 condition 정의 및 관리자와 제어 동작의 책임 경계 |
+| [Kubernetes 일관된 LIST 타임아웃 역압](oss-changes/kubernetes/1.37.2-kubernetes-consistent-list-timeout-backpressure.md) | 캐시 신선도 대기 초과 시 저장소 목록 조회 대신 429를 반환하는 선택적 역압과 범위 분석 |
 
 </details>
 
 <details>
-<summary>Karpenter (6)</summary>
+<summary>Karpenter (7)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -207,6 +209,7 @@
 | [Karpenter Dynamic Resource Allocation Scheduling](oss-changes/karpenter/1.14-dynamic-resource-allocation-scheduling.md) | Karpenter가 아직 인스턴스 타입이 확정되지 않은 NodeClaim 상태에서 GPU 등 DRA 디바이스를 배분하기 위해 전용 할당기(pkg/scheduling/dynamicresources)를 새로 구현하고 스케줄러/디스럽션/노드 초기화 전반에 통합한 변경을 분석. |
 | [Karpenter Resize-Aware Resource Accounting](oss-changes/karpenter/1.14-karpenter-resize-aware-resource-accounting.md) | InPlacePodVerticalScaling 도중 spec.requests만 읽던 Ceiling() 계산을 kube-scheduler와 동일하게 status 기반 최댓값으로 고친 v1.14.0 변경 분석 |
 | [Karpenter CapacityBuffer 가상 파드 캐시](oss-changes/karpenter/1.14.1-karpenter-capacitybuffer-virtual-pod-cache.md) | 가상 파드 해석과 cache 갱신을 controller로 옮겨 provisioner scheduling hot path를 가볍게 만든 v1.14.1 변경 |
+| [Karpenter 예약 용량 소진과 일시적 점유의 오류 분리](oss-changes/karpenter/1.15.1-karpenter-reservation-exhaustion-fallback.md) | 예약 소진을 일반 오류로 분류해 NodePool 대안과 선호 완화를 허용하고 일시적 점유의 대기는 유지 |
 
 </details>
 
@@ -295,11 +298,12 @@
 </details>
 
 <details>
-<summary>etcd (1)</summary>
+<summary>etcd (2)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [etcd WAL 기반 최소 버전 검사](oss-changes/etcd/3.7.2-etcd-minimal-version-wal-snapshot.md) | 최소 호환 버전 검사의 v2 snapshot 의존성 제거와 WAL 파일 정리 경합의 제한 재시도 |
+| [etcd Raft 메시지 필터와 전송 순서의 분리](oss-changes/etcd/3.7.3-etcd-raft-ready-message-order.md) | 역방향 응답 선택과 정방향 출력 구성을 분리해 Ready 메시지 순서와 입력 소유권 보존 |
 
 </details>
 
