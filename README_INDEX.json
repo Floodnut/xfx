@@ -865,6 +865,14 @@
           "summary": "초기 prune 제외 집합과 초기화 순서로 다운그레이드 시 직접 경로 보호",
           "created_at": "2026-11-05T03:02:09+09:00",
           "updated_at": "2026-11-05T03:02:09+09:00"
+        },
+        {
+          "project_slug": "envoy",
+          "label": "Envoy VHDS 스트림 재개",
+          "path": "oss-changes/envoy/1.40.2-envoy-vhds-stream-continuation.md",
+          "summary": "라우트 스냅샷 갱신과 기존 스트림 재개로 필터 중복 실행 방지",
+          "created_at": "2026-11-05T03:02:09+09:00",
+          "updated_at": "2026-11-05T03:02:09+09:00"
         }
       ]
     },
@@ -1299,6 +1307,13 @@
             "summary": "listener 대상 선택과 연결 이벤트로 inbound-only 종료 누락을 해결하고 Redis 응답 완료 조건 유지",
             "created_at": "2026-10-22T04:27:24+09:00",
             "updated_at": "2026-10-22T04:27:24+09:00"
+          },
+          {
+            "label": "Envoy VHDS 스트림 재개",
+            "path": "oss-changes/envoy/1.40.2-envoy-vhds-stream-continuation.md",
+            "summary": "라우트 스냅샷 갱신과 기존 스트림 재개로 필터 중복 실행 방지",
+            "created_at": "2026-11-05T03:02:09+09:00",
+            "updated_at": "2026-11-05T03:02:09+09:00"
           }
         ]
       },
