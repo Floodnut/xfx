@@ -3,15 +3,15 @@
   "title": "xfx",
   "vulnerabilities_title": "CVE 취약점 분석",
   "last_updated": {
-    "date": "2026-11-04",
+    "date": "2026-11-05",
     "entries": [
       {
-        "label": "CVE-2018-12561",
+        "label": "CVE-2002-0184",
         "category": "Linux",
-        "path": "vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md",
-        "summary": "Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다.",
-        "created_at": "2026-11-04T05:07:32+09:00",
-        "updated_at": "2026-11-04T05:07:32+09:00"
+        "path": "vulnerability/linux/CVE-2002-0184-sudo-prompt-expansion-state-carryover.md",
+        "summary": "Sudo의 프롬프트 길이 계산 상태가 복사 순회에 남아 힙 경계 밖 쓰기를 일으키는 원인과 순회 시작 상태 초기화 수정을 분석한다.",
+        "created_at": "2026-11-05T05:00:59+09:00",
+        "updated_at": "2026-11-05T05:00:59+09:00"
       }
     ]
   },
@@ -320,6 +320,13 @@
           "summary": "Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다.",
           "created_at": "2026-11-04T05:07:32+09:00",
           "updated_at": "2026-11-04T05:07:32+09:00"
+        },
+        {
+          "label": "CVE-2002-0184",
+          "path": "vulnerability/linux/CVE-2002-0184-sudo-prompt-expansion-state-carryover.md",
+          "summary": "Sudo의 프롬프트 길이 계산 상태가 복사 순회에 남아 힙 경계 밖 쓰기를 일으키는 원인과 순회 시작 상태 초기화 수정을 분석한다.",
+          "created_at": "2026-11-05T05:00:59+09:00",
+          "updated_at": "2026-11-05T05:00:59+09:00"
         }
       ]
     },
