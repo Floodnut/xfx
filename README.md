@@ -4,15 +4,15 @@
 
 | 일자 | 리포트 | 분류 | 내용 |
 | --- | --- | --- | --- |
-| 2026-11-04 | [CVE-2018-12561](vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md) | Linux | Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다. |
-| 2026-11-04 | [Kubernetes 일관된 LIST 타임아웃 역압](oss-changes/kubernetes/1.37.2-kubernetes-consistent-list-timeout-backpressure.md) | OSS / Kubernetes | 캐시 신선도 대기 초과 시 저장소 목록 조회 대신 429를 반환하는 선택적 역압과 범위 분석 |
-| 2026-11-04 | [etcd Raft 메시지 필터와 전송 순서의 분리](oss-changes/etcd/3.7.3-etcd-raft-ready-message-order.md) | OSS / etcd | 역방향 응답 선택과 정방향 출력 구성을 분리해 Ready 메시지 순서와 입력 소유권 보존 |
-| 2026-11-04 | [Karpenter 예약 용량 소진과 일시적 점유의 오류 분리](oss-changes/karpenter/1.15.1-karpenter-reservation-exhaustion-fallback.md) | OSS / Karpenter | 예약 소진을 일반 오류로 분류해 NodePool 대안과 선호 완화를 허용하고 일시적 점유의 대기는 유지 |
+| 2026-11-05 | [CVE-2002-0184](vulnerability/linux/CVE-2002-0184-sudo-prompt-expansion-state-carryover.md) | Linux | Sudo의 프롬프트 길이 계산 상태가 복사 순회에 남아 힙 경계 밖 쓰기를 일으키는 원인과 순회 시작 상태 초기화 수정을 분석한다. |
+| 2026-11-05 | [Cilium 경로 관리 주체 전환](oss-changes/cilium/1.20.4-cilium-route-prune-ownership-handoff.md) | OSS / Cilium | 초기 prune 제외 집합과 초기화 순서로 다운그레이드 시 직접 경로 보호 |
+| 2026-11-05 | [Envoy VHDS 스트림 재개](oss-changes/envoy/1.40.2-envoy-vhds-stream-continuation.md) | OSS / Envoy | 라우트 스냅샷 갱신과 기존 스트림 재개로 필터 중복 실행 방지 |
+| 2026-11-05 | [LoxiLB SCTP 중간 흐름 복구](oss-changes/loxilb/0.9.8.8-loxilb-sctp-midstream-state-recovery.md) | OSS / LoxiLB | INIT을 놓친 NAT 흐름의 조건부 EST 재분류와 상태 복원 범위 |
 
 ## CVE 취약점 분석
 
 <details>
-<summary>Linux (43)</summary>
+<summary>Linux (44)</summary>
 
 | CVE | 내용 |
 | --- | --- |
@@ -59,6 +59,7 @@
 | [CVE-2010-3192](vulnerability/linux/CVE-2010-3192-glibc-stack-failure-diagnostic-disclosure.md) | glibc가 스택 보호 실패 뒤 손상된 argv와 backtrace를 참조해 정보를 노출하는 원인과 2.26의 단계별 수정 범위를 분석한다. |
 | [CVE-2017-5932](vulnerability/linux/CVE-2017-5932-bash-completion-dequote-flag-loss.md) | Bash 자동완성의 중복 인용 제거와 재귀 확장 플래그 유실이 파일 이름을 명령 실행으로 연결하는 원인 및 patch 7의 수정 분석 |
 | [CVE-2018-12561](vulnerability/linux/CVE-2018-12561-cantata-mounter-option-injection.md) | Cantata의 root 마운트 서비스가 URL domain 값을 옵션 문자열에 직접 연결해 추가 옵션을 허용한 원인과 내부 Samba 기능 제거 패치를 분석한다. |
+| [CVE-2002-0184](vulnerability/linux/CVE-2002-0184-sudo-prompt-expansion-state-carryover.md) | Sudo의 프롬프트 길이 계산 상태가 복사 순회에 남아 힙 경계 밖 쓰기를 일으키는 원인과 순회 시작 상태 초기화 수정을 분석한다. |
 
 </details>
 
@@ -214,7 +215,7 @@
 </details>
 
 <details>
-<summary>Cilium (5)</summary>
+<summary>Cilium (6)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
@@ -223,6 +224,7 @@
 | [Cilium Datapath Plugins](oss-changes/cilium/1.20-cilium-datapath-plugins.md) | 서드파티 BPF 프로그램을 Cilium의 datapath에 안전하게 끼워 넣을 수 있는 gRPC 기반 플러그인 프로토콜과 디스패처 프로그램 메커니즘 |
 | [Cilium Gateway ListenerSet Delegation](oss-changes/cilium/1.20-cilium-gateway-listenerset-delegation.md) | 공유 Gateway의 listener 소유권을 ListenerSet으로 위임하고, Cilium이 병합된 Envoy 설정과 리소스별 TLS 권한 경계를 함께 유지 |
 | [Cilium Conntrack GC 삭제 직전 재검증](oss-changes/cilium/1.20.3-cilium-conntrack-gc-revalidation.md) | 배치 조회 후 갱신된 연결을 재검증해 CT/NAT 오삭제 경합을 줄이고 기존 삭제 정책 유지 |
+| [Cilium 경로 관리 주체 전환](oss-changes/cilium/1.20.4-cilium-route-prune-ownership-handoff.md) | 초기 prune 제외 집합과 초기화 순서로 다운그레이드 시 직접 경로 보호 |
 
 </details>
 
@@ -237,12 +239,13 @@
 </details>
 
 <details>
-<summary>LoxiLB (2)</summary>
+<summary>LoxiLB (3)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [LoxiLB HA Egress Cluster Routing](oss-changes/loxilb/0.9.8-ha-egress-cluster-routing.md) | v0.9.8에서 기존 LB·VIP·HA 상태 기계를 egress 모드로 연결해, 대기 노드의 트래픽을 전용 VXLAN으로 활성 노드에 전달하고 안정적인 SNAT/VIP를 유지하는 초기 설계. |
 | [LoxiLB Fullproxy PROXY v2 선행 전송](oss-changes/loxilb/0.9.8.8-loxilb-fullproxy-proxy-v2-prefix.md) | 백엔드 TCP 연결에 클라이언트와 VIP 정보를 TLS보다 먼저 보내는 스트림 경계 설계 |
+| [LoxiLB SCTP 중간 흐름 복구](oss-changes/loxilb/0.9.8.8-loxilb-sctp-midstream-state-recovery.md) | INIT을 놓친 NAT 흐름의 조건부 EST 재분류와 상태 복원 범위 |
 
 </details>
 
@@ -327,12 +330,13 @@
 </details>
 
 <details>
-<summary>Envoy (2)</summary>
+<summary>Envoy (3)</summary>
 
 | 변경 | 내용 |
 | --- | --- |
 | [Envoy CPU-local Connection Steering](oss-changes/envoy/1.39-envoy-cpu-local-connection-steering.md) | accept마다 mutex를 잡는 정확한 균형 대신 SO_REUSEPORT BPF가 수신 CPU에 고정된 worker socket으로 연결을 보내는 Linux TCP 설계 |
 | [Envoy 연결별 Drain 판단](oss-changes/envoy/1.40.0-envoy-connection-drain-ownership.md) | listener 대상 선택과 연결 이벤트로 inbound-only 종료 누락을 해결하고 Redis 응답 완료 조건 유지 |
+| [Envoy VHDS 스트림 재개](oss-changes/envoy/1.40.2-envoy-vhds-stream-continuation.md) | 라우트 스냅샷 갱신과 기존 스트림 재개로 필터 중복 실행 방지 |
 
 </details>
 
