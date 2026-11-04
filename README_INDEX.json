@@ -856,31 +856,15 @@
     "title": "OSS 아키텍처 변경 분석",
     "description": [],
     "last_updated": {
-      "date": "2026-11-04",
+      "date": "2026-11-05",
       "entries": [
         {
-          "project_slug": "kubernetes",
-          "label": "Kubernetes 일관된 LIST 타임아웃 역압",
-          "path": "oss-changes/kubernetes/1.37.2-kubernetes-consistent-list-timeout-backpressure.md",
-          "summary": "캐시 신선도 대기 초과 시 저장소 목록 조회 대신 429를 반환하는 선택적 역압과 범위 분석",
-          "created_at": "2026-11-04T03:26:08+09:00",
-          "updated_at": "2026-11-04T03:26:08+09:00"
-        },
-        {
-          "project_slug": "etcd",
-          "label": "etcd Raft 메시지 필터와 전송 순서의 분리",
-          "path": "oss-changes/etcd/3.7.3-etcd-raft-ready-message-order.md",
-          "summary": "역방향 응답 선택과 정방향 출력 구성을 분리해 Ready 메시지 순서와 입력 소유권 보존",
-          "created_at": "2026-11-04T03:26:08+09:00",
-          "updated_at": "2026-11-04T03:26:08+09:00"
-        },
-        {
-          "project_slug": "karpenter",
-          "label": "Karpenter 예약 용량 소진과 일시적 점유의 오류 분리",
-          "path": "oss-changes/karpenter/1.15.1-karpenter-reservation-exhaustion-fallback.md",
-          "summary": "예약 소진을 일반 오류로 분류해 NodePool 대안과 선호 완화를 허용하고 일시적 점유의 대기는 유지",
-          "created_at": "2026-11-04T03:26:08+09:00",
-          "updated_at": "2026-11-04T03:26:08+09:00"
+          "project_slug": "cilium",
+          "label": "Cilium 경로 관리 주체 전환",
+          "path": "oss-changes/cilium/1.20.4-cilium-route-prune-ownership-handoff.md",
+          "summary": "초기 prune 제외 집합과 초기화 순서로 다운그레이드 시 직접 경로 보호",
+          "created_at": "2026-11-05T03:02:09+09:00",
+          "updated_at": "2026-11-05T03:02:09+09:00"
         }
       ]
     },
@@ -1088,6 +1072,13 @@
             "summary": "배치 조회 후 갱신된 연결을 재검증해 CT/NAT 오삭제 경합을 줄이고 기존 삭제 정책 유지",
             "created_at": "2026-10-22T04:27:23+09:00",
             "updated_at": "2026-10-22T04:27:23+09:00"
+          },
+          {
+            "label": "Cilium 경로 관리 주체 전환",
+            "path": "oss-changes/cilium/1.20.4-cilium-route-prune-ownership-handoff.md",
+            "summary": "초기 prune 제외 집합과 초기화 순서로 다운그레이드 시 직접 경로 보호",
+            "created_at": "2026-11-05T03:02:09+09:00",
+            "updated_at": "2026-11-05T03:02:09+09:00"
           }
         ]
       },
